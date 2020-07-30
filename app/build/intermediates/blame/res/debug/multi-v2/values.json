@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nodog/Downloads/examples-master/lite/examples/posenet/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/nodog/Downloads/examples-master/lite/examples/posenet/android/app/src/main/res/values/strings.xml",
+                    "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "16,18,17",
                         "startColumns": "2,2,2",
@@ -18,25 +18,6 @@
                         "startOffsets": "24235,24377,24539",
                         "endColumns": "141,161,155",
                         "endOffsets": "24372,24534,24690"
-                    }
-                },
-                {
-                    "source": "/home/nodog/Downloads/examples-master/lite/examples/posenet/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "2",
-                        "startOffsets": "50",
-                        "endLines": "9",
-                        "endColumns": "10",
-                        "endOffsets": "425"
-                    },
-                    "to": {
-                        "startLines": "416",
-                        "startColumns": "4",
-                        "startOffsets": "25137",
-                        "endLines": "422",
-                        "endColumns": "10",
-                        "endOffsets": "25512"
                     }
                 },
                 {
@@ -78,20 +59,22 @@
                     }
                 },
                 {
-                    "source": "/home/nodog/Downloads/examples-master/lite/examples/posenet/android/app/src/main/res/values/colors.xml",
+                    "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "19,17,18,21",
-                        "startColumns": "2,2,2,2",
-                        "startOffsets": "762,657,707,812",
-                        "endColumns": "48,49,54,54",
-                        "endOffsets": "808,704,759,864"
+                        "startLines": "3",
+                        "startColumns": "2",
+                        "startOffsets": "50",
+                        "endLines": "9",
+                        "endColumns": "10",
+                        "endOffsets": "425"
                     },
                     "to": {
-                        "startLines": "194,195,196,197",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "10413,10464,10516,10573",
-                        "endColumns": "50,51,56,56",
-                        "endOffsets": "10459,10511,10568,10625"
+                        "startLines": "416",
+                        "startColumns": "4",
+                        "startOffsets": "25137",
+                        "endLines": "422",
+                        "endColumns": "10",
+                        "endOffsets": "25512"
                     }
                 },
                 {
@@ -111,6 +94,23 @@
                         "endLines": "174,175,278,279,280,281,282,283,284,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,357,358,362,363,364,365,366,367,368,369,370,371,372,378,407,1763,1767,1768,1772,1773,1916,1917,2639,2731,2763,2800,2807",
                         "endColumns": "68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,56,49,60,56,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24",
                         "endOffsets": "9060,9123,16128,16196,16268,16338,16399,16473,16546,17391,17452,17514,17578,17640,17701,17769,17869,17929,17995,18068,18137,18194,18246,18308,18833,18909,18974,19033,19092,19152,19212,19272,19332,19392,19452,19512,19572,19632,19692,19751,19811,19871,19931,19991,20051,20111,20171,20231,20291,20351,20410,20470,20530,20589,20648,20707,20766,20825,20884,21158,21193,21390,21453,21508,21566,21623,21673,21734,21791,21825,21860,21895,22240,24230,115937,116138,116248,116449,116578,127893,127960,167097,178518,180583,182343,182720"
+                    }
+                },
+                {
+                    "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/values/colors.xml",
+                    "from": {
+                        "startLines": "19,17,18,21",
+                        "startColumns": "2,2,2,2",
+                        "startOffsets": "762,657,707,812",
+                        "endColumns": "48,49,54,54",
+                        "endOffsets": "808,704,759,864"
+                    },
+                    "to": {
+                        "startLines": "194,195,196,197",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "10413,10464,10516,10573",
+                        "endColumns": "50,51,56,56",
+                        "endOffsets": "10459,10511,10568,10625"
                     }
                 },
                 {

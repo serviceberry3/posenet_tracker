@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nodog/Downloads/examples-master/lite/examples/posenet/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/values-zh-rHK/values-zh-rHK.xml",
