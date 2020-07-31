@@ -196,7 +196,7 @@ class PosenetActivity : Fragment(), ActivityCompat.OnRequestPermissionsResultCal
     }
   }
 
-  /**
+  /**m
    * Shows a [Toast] on the UI thread.
    *
    * @param text The message to show
@@ -206,11 +206,8 @@ class PosenetActivity : Fragment(), ActivityCompat.OnRequestPermissionsResultCal
     activity?.runOnUiThread { Toast.makeText(activity, text, Toast.LENGTH_SHORT).show() }
   }
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? = inflater.inflate(R.layout.tfe_pn_activity_posenet, container, false)
+  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+          View? = inflater.inflate(R.layout.tfe_pn_activity_posenet, container, false)
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     surfaceView = view.findViewById(R.id.surfaceView)
@@ -264,6 +261,7 @@ class PosenetActivity : Fragment(), ActivityCompat.OnRequestPermissionsResultCal
   }
 
   private fun allPermissionsGranted(grantResults: IntArray) = grantResults.all {
+    //this returns true if all elements of grantResults match this constant
     it == PackageManager.PERMISSION_GRANTED
   }
 

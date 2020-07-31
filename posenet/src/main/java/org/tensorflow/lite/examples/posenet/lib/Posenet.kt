@@ -70,11 +70,8 @@ enum class Device {
   GPU
 }
 
-class Posenet(
-  val context: Context,
-  val filename: String = "posenet_model.tflite",
-  val device: Device = Device.CPU
-) : AutoCloseable {
+class Posenet(val context: Context, val filename: String = "posenet_model.tflite", val device: Device = Device.CPU) : AutoCloseable {
+
   var lastInferenceTimeNanos: Long = -1
     private set
 

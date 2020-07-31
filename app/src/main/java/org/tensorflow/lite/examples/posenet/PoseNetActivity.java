@@ -17,9 +17,11 @@
 package org.tensorflow.lite.examples.posenet;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -46,6 +48,7 @@ import android.os.HandlerThread;
 import android.os.Process;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.util.Pair;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -65,12 +68,16 @@ import androidx.fragment.app.FragmentActivity;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 //kotlin.math.abs?
 import org.tensorflow.lite.examples.posenet.lib.BodyPart;
+import org.tensorflow.lite.examples.posenet.lib.Device;
 import org.tensorflow.lite.examples.posenet.lib.Person;
 import org.tensorflow.lite.examples.posenet.lib.Posenet;
+
+import static org.tensorflow.lite.examples.posenet.PosenetActivity.FRAGMENT_DIALOG;
 
 public class PosenetActivity extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -101,9 +108,16 @@ private float circleRadius = 8.0f;
 /** A shape for extracting frame data.   */
 private int PREVIEW_WIDTH = 640;
 private int PREVIEW_HEIGHT = 480;
+public static final String ARG_MESSAGE = "message";
+/**
+ * Tag for the [Log].
+ */
+private String TAG = "PosenetActivity";
+
+private String FRAGMENT_DIALOG = "dialog";
 
 /** An object for the Posenet library.    */
-//private lateinit var posenet: Posenet
+private Posenet posenet;
 
 /** ID of the current [CameraDevice].   */
 private String cameraId = null; //nullable
@@ -167,101 +181,130 @@ private class cameraStateCallback extends CameraDevice.StateCallback {
 
         @Override
         public void onOpened(@NonNull CameraDevice cameraDevice) {
-                cameraOpenCloseLock.release()
-                this@PosenetActivity.cameraDevice = cameraDevice
-                createCameraPreviewSession()
+                cameraOpenCloseLock.release();
+                PosenetActivity.this.cameraDevice = cameraDevice;
+                createCameraPreviewSession();
         }
 
         @Override
         public void onDisconnected(@NonNull CameraDevice cameraDevice) {
-                cameraOpenCloseLock.release()
-                cameraDevice.close()
-                this@PosenetActivity.cameraDevice = null
+                cameraOpenCloseLock.release();
+                cameraDevice.close();
+                PosenetActivity.this.cameraDevice = null;
         }
 
         @Override
         public void onError(@NonNull CameraDevice cameraDevice, int i) {
-                onDisconnected(cameraDevice)
-                this@PosenetActivity.activity?.finish()
+                onDisconnected(cameraDevice);
+
+                //getActivity in a Fragment returns the activity the fragment is associated with
+                if (PosenetActivity.this.getActivity() == null) {
+                        return;
+                }
+                PosenetActivity.this.getActivity().finish();
         }
 }
 
 /**
  * A [CameraCaptureSession.CaptureCallback] that handles events related to JPEG capture.
  */
-private val captureCallback = object : CameraCaptureSession.CaptureCallback() {
-        override fun onCaptureProgressed(
-        session: CameraCaptureSession,
-        request: CaptureRequest,
-        partialResult: CaptureResult
-        ) {
+private class captureCallback extends CameraCaptureSession.CaptureCallback {
+        @Override
+        public void onCaptureProgressed(@NonNull CameraCaptureSession session, @NonNull CaptureRequest request, @NonNull CaptureResult partialResult) {
+                super.onCaptureProgressed(session, request, partialResult);
+
         }
 
-        override fun onCaptureCompleted(
-        session: CameraCaptureSession,
-        request: CaptureRequest,
-        result: TotalCaptureResult
-        ) {
+        @Override
+        public void onCaptureCompleted(@NonNull CameraCaptureSession session, @NonNull CaptureRequest request, @NonNull TotalCaptureResult result) {
+                super.onCaptureCompleted(session, request, result);
+
         }
-        }
+}
 
 /**
  * Shows a [Toast] on the UI thread.
  *
  * @param text The message to show
  */
-private fun showToast(text: String) {
-        val activity = activity
-        activity?.runOnUiThread { Toast.makeText(activity, text, Toast.LENGTH_SHORT).show() }
+private void showToast(final String text) {
+        final Activity activity = PosenetActivity.this.getActivity();
+        if (activity!=null)
+                activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                                Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
+                        }
+                });
+}
+
+
+        @Nullable
+        @Override
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                inflater.inflate(R.layout.tfe_pn_activity_posenet, container, false);
+                return super.onCreateView(inflater, container, savedInstanceState);
         }
 
-        override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-        ): View? = inflater.inflate(R.layout.tfe_pn_activity_posenet, container, false)
-
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        surfaceView = view.findViewById(R.id.surfaceView)
-        surfaceHolder = surfaceView!!.holder
+        @Override
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+                super.onViewCreated(view, savedInstanceState);
+                surfaceView = view.findViewById(R.id.surfaceView);
+                surfaceHolder = surfaceView.getHolder();
         }
 
-        override fun onResume() {
-        super.onResume()
-        startBackgroundThread()
+        @Override
+        public void onResume() {
+                super.onResume();
+                startBackgroundThread();
         }
 
-        override fun onStart() {
-        super.onStart()
-        showToast("Added PoseNet submodule fragment into Activity")
-        openCamera()
-        posenet = Posenet(this.context!!)
+        @Override
+        public void onStart() {
+                super.onStart();
+                showToast("Added PoseNet submodule fragment into Activity");
+                openCamera();
+                posenet = new Posenet(this.getContext(), "posenet_model.tflite", Device.CPU);
         }
 
-        override fun onPause() {
-        closeCamera()
-        stopBackgroundThread()
-        super.onPause()
+        @Override
+        public void onPause() {
+                closeCamera();
+                stopBackgroundThread();
+                super.onPause();
         }
 
-        override fun onDestroy() {
-        super.onDestroy()
-        posenet.close()
+        @Override
+        public void onDestroy() {
+                super.onDestroy();
+                posenet.close();
         }
 
-private fun requestCameraPermission() {
+
+private void requestCameraPermission() {
         if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
-        ConfirmationDialog().show(childFragmentManager, FRAGMENT_DIALOG)
-        } else {
-        requestPermissions(arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
-        }
+                ConfirmationDialog confirmationDialog = new ConfirmationDialog();
+                confirmationDialog.show(getChildFragmentManager(), FRAGMENT_DIALOG);
         }
 
-        override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-        ) {
+        else {
+                String[] camera = {Manifest.permission.CAMERA};
+                requestPermissions(camera, Constants.REQUEST_CAMERA_PERMISSION);
+        }
+}
+
+
+        @Override
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+                if (requestCode==Constants.REQUEST_CAMERA_PERMISSION) {
+                        if (allPermissionsGranted(grantResults)) {
+                                Error
+                        }
+                }
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
         if (allPermissionsGranted(grantResults)) {
         ErrorDialog.newInstance(getString(R.string.tfe_pn_request_permission))
@@ -272,9 +315,21 @@ private fun requestCameraPermission() {
         }
         }
 
-private fun allPermissionsGranted(grantResults: IntArray) = grantResults.all {
-        it == PackageManager.PERMISSION_GRANTED
+//was a lambda expression in Kotlin
+        /*
+        private fun allPermissionsGranted(grantResults: IntArray) = grantResults.all {
+    //this returns true if all elements of grantResults match this constant
+    it == PackageManager.PERMISSION_GRANTED
+  }
+         */
+private boolean allPermissionsGranted(int[] grantResults) {
+        for (int grantResult : grantResults) {
+                if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                        return false;
+                }
         }
+        return true;
+}
 
 /**
  * Sets up member variables related to camera.
@@ -674,43 +729,46 @@ private fun setAutoFlash(requestBuilder: CaptureRequest.Builder) {
 /**
  * Shows an error message dialog.
  */
-class ErrorDialog : DialogFragment() {
+private static class ErrorDialog extends DialogFragment {
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+                assert getArguments() != null;
+                new AlertDialog.Builder(getActivity()).setMessage(getArguments().getString(ARG_MESSAGE))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                        Objects.requireNonNull(getActivity()).finish();
+                                }
+                        }).create();
+                return super.onCreateDialog(savedInstanceState);
+        }
 
-        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
-        AlertDialog.Builder(activity)
-        .setMessage(arguments!!.getString(ARG_MESSAGE))
-        .setPositiveButton(android.R.string.ok) { _, _ -> activity!!.finish() }
-        .create()
 
-        companion object {
+        public static ErrorDialog newInstance(String message) {
 
-@JvmStatic
-private val ARG_MESSAGE = "message"
+                Bundle args = new Bundle();
 
-@JvmStatic
-      fun newInstance(message: String): ErrorDialog = ErrorDialog().apply {
-              arguments = Bundle().apply { putString(ARG_MESSAGE, message) }
-              }
-              }
-              }
+                args.putString(ARG_MESSAGE, message);
+
+                ErrorDialog fragment = new ErrorDialog();
+                fragment.setArguments(args);
+                return fragment;
+        }
+}
 
               companion object {
-/**
- * Conversion from screen rotation to JPEG orientation.
- */
-private val ORIENTATIONS = SparseIntArray()
-private val FRAGMENT_DIALOG = "dialog"
+                        /**
+                         * Conversion from screen rotation to JPEG orientation.
+                         */
+                        private val ORIENTATIONS = SparseIntArray()
 
-        init {
-        ORIENTATIONS.append(Surface.ROTATION_0, 90)
-        ORIENTATIONS.append(Surface.ROTATION_90, 0)
-        ORIENTATIONS.append(Surface.ROTATION_180, 270)
-        ORIENTATIONS.append(Surface.ROTATION_270, 180)
-        }
 
-/**
- * Tag for the [Log].
- */
-private const val TAG = "PosenetActivity"
+                                init {
+                                ORIENTATIONS.append(Surface.ROTATION_0, 90)
+                                ORIENTATIONS.append(Surface.ROTATION_90, 0)
+                                ORIENTATIONS.append(Surface.ROTATION_180, 270)
+                                ORIENTATIONS.append(Surface.ROTATION_270, 180)
+                                }
         }
-        }
+}
