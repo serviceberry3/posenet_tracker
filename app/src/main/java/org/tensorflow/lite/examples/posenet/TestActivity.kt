@@ -25,6 +25,7 @@ import android.os.Bundle
 import androidx.core.content.res.ResourcesCompat
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
+import android.widget.Toast
 import org.tensorflow.lite.examples.posenet.lib.Posenet as Posenet
 
 class TestActivity : AppCompatActivity() {
@@ -44,6 +45,7 @@ class TestActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.tfe_pn_activity_test)
 
+    Toast.makeText(this.applicationContext, "Testing 123", Toast.LENGTH_SHORT).show()
     val sampleImageView = findViewById<ImageView>(R.id.image)
     val drawedImage = ResourcesCompat.getDrawable(resources, R.drawable.image, null)
     val imageBitmap = drawableToBitmap(drawedImage!!)

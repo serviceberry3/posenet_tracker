@@ -68,12 +68,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
@@ -104,12 +104,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -136,12 +136,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -168,12 +168,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable/abc_ratingbar_material.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable/abc_ratingbar_material.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_internal_bg.xml.flat",
@@ -184,16 +184,16 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_ic_star_black_48dp.png"
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -220,36 +220,36 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-watch-v20_abc_dialog_material_background.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-watch-v20/abc_dialog_material_background.xml"
-    },
-    {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/layout/abc_screen_toolbar.xml"
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color_abc_primary_text_disable_only_material_light.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-watch-v20_abc_dialog_material_background.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-watch-v20/abc_dialog_material_background.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
@@ -264,12 +264,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color-v23/abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_btn_radio_to_on_mtrl_dot_group_animation.xml.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/btn_radio_to_on_mtrl_dot_group_animation.xml"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_abc_ic_menu_overflow_material.xml.flat",
@@ -308,12 +308,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/layout/custom_dialog.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-v21/abc_action_bar_item_background_material.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -328,12 +328,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_btn_checkbox_to_unchecked_check_path_merged_animation.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_btn_checkbox_to_unchecked_check_path_merged_animation.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
@@ -428,12 +428,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/btn_checkbox_to_checked_box_outer_merged_animation.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_abc_fade_in.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/abc_fade_in.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_abc_fade_in.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -488,24 +488,24 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-mdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color_abc_tint_seek_thumb.xml.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_posenet.xml.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_posenet.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/interpolator_btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -532,12 +532,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_action_info.png.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_action_info.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/anim_btn_radio_to_on_mtrl_ring_outer_animation.xml.flat",
@@ -580,12 +580,12 @@
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
-        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
+        "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/color/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -842,6 +842,10 @@
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_activity_pose_net_java.xml.flat",
+        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/activity_pose_net_java.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",

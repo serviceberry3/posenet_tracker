@@ -57,6 +57,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentActivity
 import java.util.concurrent.Semaphore
 import java.util.concurrent.TimeUnit
 import kotlin.math.abs
@@ -64,9 +65,7 @@ import org.tensorflow.lite.examples.posenet.lib.BodyPart
 import org.tensorflow.lite.examples.posenet.lib.Person
 import org.tensorflow.lite.examples.posenet.lib.Posenet
 
-class PosenetActivity :
-  Fragment(),
-  ActivityCompat.OnRequestPermissionsResultCallback {
+class PosenetActivity : Fragment(), ActivityCompat.OnRequestPermissionsResultCallback {
 
   /** List of body joints that should be connected.    */
   private val bodyJoints = listOf(
@@ -225,6 +224,7 @@ class PosenetActivity :
 
   override fun onStart() {
     super.onStart()
+    showToast("Added PoseNet submodule fragment into Activity")
     openCamera()
     posenet = Posenet(this.context!!)
   }
@@ -501,12 +501,17 @@ class PosenetActivity :
     val right: Int
     val top: Int
     val bottom: Int
+
+
     if (canvas.height > canvas.width) {
       screenWidth = canvas.width
       screenHeight = canvas.width
       left = 0
       top = (canvas.height - canvas.width) / 2
-    } else {
+    }
+
+
+    else {
       screenWidth = canvas.height
       screenHeight = canvas.height
       left = (canvas.width - canvas.height) / 2
@@ -537,10 +542,8 @@ class PosenetActivity :
     }
 
     for (line in bodyJoints) {
-      if (
-        (person.keyPoints[line.first.ordinal].score > minConfidence) and
-        (person.keyPoints[line.second.ordinal].score > minConfidence)
-      ) {
+      if ((person.keyPoints[line.first.ordinal].score > minConfidence) and (person.keyPoints[line.second.ordinal].score > minConfidence))
+      {
         canvas.drawLine(
           person.keyPoints[line.first.ordinal].position.x.toFloat() * widthRatio + left,
           person.keyPoints[line.first.ordinal].position.y.toFloat() * heightRatio + top,
@@ -549,6 +552,7 @@ class PosenetActivity :
           paint
         )
       }
+
     }
 
     canvas.drawText(

@@ -46,22 +46,10 @@ INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/sr
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:11-69
-uses-permission#android.permission.CAMERA
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:3-63
-	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:20-60
-uses-feature#android.hardware.camera
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:3-58
-	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:17-55
-uses-feature#android.hardware.camera.autofocus
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:3-68
-	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:17-65
 uses-sdk
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
 MERGED from [:posenet] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:posenet] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/AndroidManifest.xml:20:5-22:41
@@ -112,20 +100,32 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.grad
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ed2a18969869bf5dcd8affc0a7dacb25/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c3ed2c7d34a863810f2f70bf0a539e2f/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c3ed2c7d34a863810f2f70bf0a539e2f/AndroidManifest.xml:20:5-44
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
+INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
 	android:targetSdkVersion
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
-		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
-		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:3-15
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:22-62
+uses-feature#android.hardware.camera
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:5-60
+	android:name
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:5-70
+	android:name
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:19-67
 application
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:12:3-33:17
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:12:5-33:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/9bf01a69d505a839d5db4ac9dea30fee/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/9bf01a69d505a839d5db4ac9dea30fee/AndroidManifest.xml:9:5-20
 MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/792a3d0c3b40fb2aa1a9fd078f4a90da/AndroidManifest.xml:10:5-20
@@ -139,38 +139,42 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:17:7-33
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:15:7-46
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-48
 	android:roundIcon
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:16:7-52
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:14:7-41
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:13:7-33
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:18:7-46
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:18:9-48
+activity#org.tensorflow.lite.examples.posenet.PoseNetJavaActivity
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:19:9-66
+	android:name
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:19:19-54
 activity#org.tensorflow.lite.examples.posenet.TestActivity
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:20:5-24:16
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:20:9-23:64
 	android:label
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:22:9-48
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:13-52
 	android:exported
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:9-32
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-37
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:13-41
 activity#org.tensorflow.lite.examples.posenet.CameraActivity
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:26:5-31:16
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:9-32:20
 	android:exported
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:26:46-69
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:26:15-45
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:25:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:27:7-30:23
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:9-60
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:17-58
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:29:9-68
+ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:29:19-66
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:30:27-74
