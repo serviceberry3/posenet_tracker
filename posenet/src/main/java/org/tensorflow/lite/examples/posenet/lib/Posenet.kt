@@ -27,25 +27,32 @@ import java.nio.channels.FileChannel
 import kotlin.math.exp
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.gpu.GpuDelegate
+import kotlin.properties.Delegates
 
-enum class BodyPart {
-  NOSE,
-  LEFT_EYE,
-  RIGHT_EYE,
-  LEFT_EAR,
-  RIGHT_EAR,
-  LEFT_SHOULDER,
-  RIGHT_SHOULDER,
-  LEFT_ELBOW,
-  RIGHT_ELBOW,
-  LEFT_WRIST,
-  RIGHT_WRIST,
-  LEFT_HIP,
-  RIGHT_HIP,
-  LEFT_KNEE,
-  RIGHT_KNEE,
-  LEFT_ANKLE,
-  RIGHT_ANKLE
+enum class BodyPart (val value: Int) {
+  NOSE(0),
+  LEFT_EYE(1),
+  RIGHT_EYE(2),
+  LEFT_EAR(3),
+  RIGHT_EAR(4),
+  LEFT_SHOULDER(5),
+  RIGHT_SHOULDER(6),
+  LEFT_ELBOW(7),
+  RIGHT_ELBOW(8),
+  LEFT_WRIST(9),
+  RIGHT_WRIST(10),
+  LEFT_HIP(11),
+  RIGHT_HIP(12),
+  LEFT_KNEE(13),
+  RIGHT_KNEE(14),
+  LEFT_ANKLE(15),
+  RIGHT_ANKLE(16);
+
+
+  companion object {
+    @JvmStatic
+    fun getValue(bodyPart: BodyPart) : Int {return bodyPart.value}
+  }
 }
 
 class Position {
