@@ -4,7 +4,7 @@
             "outputFile": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/values-v26/values-v26.xml",
+                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

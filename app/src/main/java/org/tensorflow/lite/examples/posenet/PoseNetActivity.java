@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ImageFormat;
@@ -65,19 +66,24 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 //kotlin.math.abs?
 import org.tensorflow.lite.examples.posenet.lib.BodyPart;
 import org.tensorflow.lite.examples.posenet.lib.Device;
+import org.tensorflow.lite.examples.posenet.lib.KeyPoint;
 import org.tensorflow.lite.examples.posenet.lib.Person;
 import org.tensorflow.lite.examples.posenet.lib.Posenet;
+import org.tensorflow.lite.examples.posenet.lib.Position;
 
-import static org.tensorflow.lite.examples.posenet.PosenetActivity.FRAGMENT_DIALOG;
+import static org.tensorflow.lite.examples.posenet.Constants.MODEL_WIDTH;
+
 
 public class PosenetActivity extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -103,7 +109,7 @@ private double minConfidence = 0.5;
 private float circleRadius = 8.0f;
 
 /** Paint class holds the style and color information to draw geometries,text and bitmaps. */
-//private var paint = Paint()
+private Paint paint = new Paint();
 
 /** A shape for extracting frame data.   */
 private int PREVIEW_WIDTH = 640;
@@ -147,7 +153,7 @@ private int frameCounter = 0;
 private int[] rgbBytes;
 
 /** A ByteArray to save image data in YUV format  */
-private byte[] yuvBytes;  //???
+private byte[][] yuvBytes;  //???
 
 /** An additional thread for running tasks that shouldn't block the UI.   */
 private HandlerThread backgroundThread = null; //nullable
@@ -177,7 +183,7 @@ private int sensorOrientation = 0;  //was null. Need Integer?
 private SurfaceHolder surfaceHolder = null; //nullable
 
 /** [CameraDevice.StateCallback] is called when [CameraDevice] changes its state.   */
-private class cameraStateCallback extends CameraDevice.StateCallback {
+private class stateCallback extends CameraDevice.StateCallback {
 
         @Override
         public void onOpened(@NonNull CameraDevice cameraDevice) {
@@ -298,21 +304,13 @@ private void requestCameraPermission() {
         public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
                 if (requestCode==Constants.REQUEST_CAMERA_PERMISSION) {
                         if (allPermissionsGranted(grantResults)) {
-                                Error
+                                ErrorDialog.newInstance(getString(R.string.tfe_pn_request_permission))
+                                        .show(getChildFragmentManager(), FRAGMENT_DIALOG);
                         }
                 }
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        if (requestCode == REQUEST_CAMERA_PERMISSION) {
-        if (allPermissionsGranted(grantResults)) {
-        ErrorDialog.newInstance(getString(R.string.tfe_pn_request_permission))
-        .show(childFragmentManager, FRAGMENT_DIALOG)
-        }
-        } else {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        }
+                else {
+                        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                }
         }
 
 //was a lambda expression in Kotlin
@@ -334,275 +332,286 @@ private boolean allPermissionsGranted(int[] grantResults) {
 /**
  * Sets up member variables related to camera.
  */
-private fun setUpCameraOutputs() {
-        val activity = activity
-        val manager = activity!!.getSystemService(Context.CAMERA_SERVICE) as CameraManager
+private void setUpCameraOutputs() {
+        Activity activity = getActivity();
+        CameraManager cameraManager = (CameraManager) Objects.requireNonNull(getActivity()).getSystemService(Context.CAMERA_SERVICE);
+
         try {
-        for (cameraId in manager.cameraIdList) {
-        val characteristics = manager.getCameraCharacteristics(cameraId)
+                for (String cameraId : cameraManager.getCameraIdList()) {
+                        CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(cameraId);
 
-        // We don't use a front facing camera in this sample.
-        val cameraDirection = characteristics.get(CameraCharacteristics.LENS_FACING)
-        if (cameraDirection != null &&
-        cameraDirection == CameraCharacteristics.LENS_FACING_FRONT
-        ) {
-        continue
+                        //don't use front facing camera in this example
+                        Integer cameraDirection = cameraCharacteristics.get(CameraCharacteristics.LENS_FACING);
+
+                        if (cameraDirection !=null && cameraDirection == CameraCharacteristics.LENS_FACING_FRONT) {
+                                //skip this one because it's a front-facing camera
+                                continue;
+                        }
+
+                        previewSize = new Size(PREVIEW_WIDTH, PREVIEW_HEIGHT);
+
+                        imageReader = ImageReader.newInstance(PREVIEW_WIDTH, PREVIEW_HEIGHT, ImageFormat.YUV_420_888, 2);
+
+                        try {
+                                sensorOrientation = cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
+                        } catch (NullPointerException e) {
+                                e.printStackTrace();
+                        }
+
+                        previewHeight = previewSize.getHeight();
+                        previewWidth = previewSize.getWidth();
+
+                        rgbBytes = new int[previewWidth * previewHeight];
+
+                        flashSupported = cameraCharacteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+
+                        this.cameraId = cameraId;
+
+                        //we've now found a usable back camera and finished setting up member variables, so don't need to keep iterating
+                        return;
+
+                }
+        } catch (CameraAccessException e) {
+                e.printStackTrace();
+        } catch (NullPointerException e) {
+                //NPE thrown when Camera2API is used but not supported on the device
+                ErrorDialog.newInstance(getString(R.string.tfe_pn_camera_error)).show(getChildFragmentManager(), FRAGMENT_DIALOG);
         }
+}
 
-        previewSize = Size(PREVIEW_WIDTH, PREVIEW_HEIGHT)
-
-        imageReader = ImageReader.newInstance(
-        PREVIEW_WIDTH, PREVIEW_HEIGHT,
-        ImageFormat.YUV_420_888, /*maxImages*/ 2
-        )
-
-        sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION)!!
-
-        previewHeight = previewSize!!.height
-        previewWidth = previewSize!!.width
-
-        // Initialize the storage bitmaps once when the resolution is known.
-        rgbBytes = IntArray(previewWidth * previewHeight)
-
-        // Check if the flash is supported.
-        flashSupported =
-        characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE) == true
-
-        this.cameraId = cameraId
-
-        // We've found a viable camera and finished setting up member variables,
-        // so we don't need to iterate through other available cameras.
-        return
-        }
-        } catch (e: CameraAccessException) {
-        Log.e(TAG, e.toString())
-        } catch (e: NullPointerException) {
-        // Currently an NPE is thrown when the Camera2API is used but not supported on the
-        // device this code runs.
-        ErrorDialog.newInstance(getString(R.string.tfe_pn_camera_error))
-        .show(childFragmentManager, FRAGMENT_DIALOG)
-        }
-        }
 
 /**
  * Opens the camera specified by [PosenetActivity.cameraId].
  */
-private fun openCamera() {
-        val permissionCamera = getContext()!!.checkPermission(
-        Manifest.permission.CAMERA, Process.myPid(), Process.myUid()
-        )
+private void openCamera() {
+        int permissionCamera = Objects.requireNonNull(getContext()).checkPermission(Manifest.permission.CAMERA, Process.myPid(), Process.myUid());
         if (permissionCamera != PackageManager.PERMISSION_GRANTED) {
-        requestCameraPermission()
+                //still need permission to access camera, so get it now
+                requestCameraPermission();
         }
-        setUpCameraOutputs()
-        val manager = activity!!.getSystemService(Context.CAMERA_SERVICE) as CameraManager
+
+        setUpCameraOutputs();
+
+        CameraManager cameraManager = (CameraManager)Objects.requireNonNull(getActivity()).getSystemService(Context.CAMERA_SERVICE);
+
         try {
         // Wait for camera to open - 2.5 seconds is sufficient
         if (!cameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
-        throw RuntimeException("Time out waiting to lock camera opening.")
+                throw new RuntimeException("Time out waiting to lock camera opening.");
         }
-        manager.openCamera(cameraId!!, stateCallback, backgroundHandler)
-        } catch (e: CameraAccessException) {
-        Log.e(TAG, e.toString())
-        } catch (e: InterruptedException) {
-        throw RuntimeException("Interrupted while trying to lock camera opening.", e)
+
+        cameraManager.openCamera(cameraId, new stateCallback(), backgroundHandler);
+
+
+        } catch (InterruptedException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Interrupted while trying to lock camera opening.");
+        } catch (CameraAccessException e) {
+                e.printStackTrace();
         }
-        }
+
+}
 
 /**
  * Closes the current [CameraDevice].
  */
-private fun closeCamera() {
+private void closeCamera() {
         if (captureSession == null) {
-        return
+                return;
         }
 
         try {
-        cameraOpenCloseLock.acquire()
-        captureSession!!.close()
-        captureSession = null
-        cameraDevice!!.close()
-        cameraDevice = null
-        imageReader!!.close()
-        imageReader = null
-        } catch (e: InterruptedException) {
-        throw RuntimeException("Interrupted while trying to lock camera closing.", e)
-        } finally {
-        cameraOpenCloseLock.release()
+                cameraOpenCloseLock.acquire();
+                captureSession.close();
+                captureSession = null;
+                cameraDevice.close();
+                cameraDevice = null;
+                imageReader.close();
+                imageReader = null;
         }
+        catch (InterruptedException e) {
+                throw new RuntimeException("Interrupted while trying to lock camera closing.", e);
         }
+
+        //Java finally block is always executed whether exception occurs or not and is handled or not
+        //often used for important cleanup code that MUST be executed
+        finally {
+                cameraOpenCloseLock.release();
+        }
+}
 
 /**
  * Starts a background thread and its [Handler].
  */
-private fun startBackgroundThread() {
-        backgroundThread = HandlerThread("imageAvailableListener").also { it.start() }
-        backgroundHandler = Handler(backgroundThread!!.looper)
-        }
+private void startBackgroundThread() {
+        backgroundThread = new HandlerThread("imageAvailableListener");
+
+        //start up the background thread
+        backgroundThread.start();
+
+        //create a new Handler to post work on the background thread
+        backgroundHandler = new Handler(backgroundThread.getLooper());
+}
 
 /**
  * Stops the background thread and its [Handler].
  */
-private fun stopBackgroundThread() {
-        backgroundThread?.quitSafely()
-        try {
-        backgroundThread?.join()
-        backgroundThread = null
-        backgroundHandler = null
-        } catch (e: InterruptedException) {
-        Log.e(TAG, e.toString())
-        }
+private void stopBackgroundThread() {
+        if (backgroundThread!=null)  {
+                backgroundThread.quitSafely();
         }
 
+        try {
+                if (backgroundThread!=null) {
+                        //terminate the background thread by joining
+                        backgroundThread.join();
+                }
+                backgroundThread = null;
+                backgroundHandler = null;
+        }
+        catch (InterruptedException e) {
+                Log.e(TAG, e.toString());
+        }
+}
+
 /** Fill the yuvBytes with data from image planes.   */
-private fun fillBytes(planes: Array<Image.Plane>, yuvBytes: Array<ByteArray?>) {
+private void fillBytes(Image.Plane[] planes, byte[][] yuvBytes) {
         // Row stride is the total number of bytes occupied in memory by a row of an image.
         // Because of the variable row stride it's not possible to know in
         // advance the actual necessary dimensions of the yuv planes.
-        for (i in planes.indices) {
-        val buffer = planes[i].buffer
-        if (yuvBytes[i] == null) {
-        yuvBytes[i] = ByteArray(buffer.capacity())
+        for (int i = 0; i<planes.length; i++) {
+                ByteBuffer buffer = planes[i].getBuffer();
+
+                if (yuvBytes[i] == null) {
+                        yuvBytes[i] = new byte[(buffer.capacity())];
+                }
+
+                //store the raw ByteBuffer of the plane at this location in yuvBytes 2D array
+                buffer.get(yuvBytes[i]);
         }
-        buffer.get(yuvBytes[i]!!)
-        }
-        }
+}
 
 /** A [OnImageAvailableListener] to receive frames as they are available.  */
-private var imageAvailableListener = object : OnImageAvailableListener {
-        override fun onImageAvailable(imageReader: ImageReader) {
-        // We need wait until we have some size from onPreviewSizeChosen
-        if (previewWidth == 0 || previewHeight == 0) {
-        return
+private class imageAvailableListener implements OnImageAvailableListener {
+        @Override
+        public void onImageAvailable(ImageReader imageReader) {
+                // We need wait until we have some size from onPreviewSizeChosen
+                if (previewWidth == 0 || previewHeight == 0) {
+                        return;
+                }
+
+                //acquire the latest image from the the ImageReader queue
+                Image image = imageReader.acquireLatestImage();
+                if (image==null) {
+                        return;
+                }
+
+                fillBytes(image.getPlanes(), yuvBytes);
+
+                ImageUtils imageUtils = new ImageUtils();
+
+                imageUtils.convertYUV420ToARGB8888(yuvBytes[0], yuvBytes[1], yuvBytes[2], previewWidth, previewHeight,
+                        /*yRowStride=*/ image.getPlanes()[0].getRowStride(),
+                        /*uvRowStride=*/ image.getPlanes()[1].getRowStride(),
+                        /*uvPixelStride=*/ image.getPlanes()[1].getPixelStride(),
+                        rgbBytes
+                );
+
+                // Create bitmap from int array
+                Bitmap imageBitmap = Bitmap.createBitmap(rgbBytes, previewWidth, previewHeight, Bitmap.Config.ARGB_8888);
+
+                // Create rotated version for portrait display
+                Matrix rotateMatrix = new Matrix();
+                rotateMatrix.postRotate(90.0f);
+
+                Bitmap rotatedBitmap = Bitmap.createBitmap(imageBitmap, 0, 0, previewWidth, previewHeight, rotateMatrix, true);
+                image.close();
+
+                processImage(rotatedBitmap);
         }
-
-        val image = imageReader.acquireLatestImage() ?: return
-        fillBytes(image.planes, yuvBytes)
-
-        ImageUtils.convertYUV420ToARGB8888(
-        yuvBytes[0]!!,
-        yuvBytes[1]!!,
-        yuvBytes[2]!!,
-        previewWidth,
-        previewHeight,
-        /*yRowStride=*/ image.planes[0].rowStride,
-        /*uvRowStride=*/ image.planes[1].rowStride,
-        /*uvPixelStride=*/ image.planes[1].pixelStride,
-        rgbBytes
-        )
-
-        // Create bitmap from int array
-        val imageBitmap = Bitmap.createBitmap(
-        rgbBytes, previewWidth, previewHeight,
-        Bitmap.Config.ARGB_8888
-        )
-
-        // Create rotated version for portrait display
-        val rotateMatrix = Matrix()
-        rotateMatrix.postRotate(90.0f)
-
-        val rotatedBitmap = Bitmap.createBitmap(
-        imageBitmap, 0, 0, previewWidth, previewHeight,
-        rotateMatrix, true
-        )
-        image.close()
-
-        processImage(rotatedBitmap)
-        }
-        }
+}
 
 /** Crop Bitmap to maintain aspect ratio of model input.   */
-private fun cropBitmap(bitmap: Bitmap): Bitmap {
-        val bitmapRatio = bitmap.height.toFloat() / bitmap.width
-        val modelInputRatio = MODEL_HEIGHT.toFloat() / MODEL_WIDTH
-        var croppedBitmap = bitmap
+private Bitmap cropBitmap(Bitmap bitmap) {
+        float bitmapRatio = (float)bitmap.getHeight() / bitmap.getWidth();
+
+        float modelInputRatio = (float)Constants.MODEL_HEIGHT / MODEL_WIDTH;
+
+        //first set new edited bitmap equal to the passed one
+        Bitmap croppedBitmap = bitmap;
 
         // Acceptable difference between the modelInputRatio and bitmapRatio to skip cropping.
-        val maxDifference = 1e-5
+        double maxDifference = 1e-5;
 
         // Checks if the bitmap has similar aspect ratio as the required model input.
-        when {
-        abs(modelInputRatio - bitmapRatio) < maxDifference -> return croppedBitmap
-        modelInputRatio < bitmapRatio -> {
-        // New image is taller so we are height constrained.
-        val cropHeight = bitmap.height - (bitmap.width.toFloat() / modelInputRatio)
-        croppedBitmap = Bitmap.createBitmap(
-        bitmap,
-        0,
-        (cropHeight / 2).toInt(),
-        bitmap.width,
-        (bitmap.height - cropHeight).toInt()
-        )
+        if (Math.abs(modelInputRatio - bitmapRatio) < maxDifference) {
+                return croppedBitmap;
         }
-        else -> {
-        val cropWidth = bitmap.width - (bitmap.height.toFloat() * modelInputRatio)
-        croppedBitmap = Bitmap.createBitmap(
-        bitmap,
-        (cropWidth / 2).toInt(),
-        0,
-        (bitmap.width - cropWidth).toInt(),
-        bitmap.height
-        )
+        else if (modelInputRatio < bitmapRatio) {
+                // New image is taller so we are height constrained.
+                float cropHeight = bitmap.getHeight() - ((float)bitmap.getWidth() / modelInputRatio);
+
+                croppedBitmap = Bitmap.createBitmap(bitmap, 0, (int)(cropHeight / 2), bitmap.getWidth(), (int)(bitmap.getHeight() - cropHeight));
         }
+        else {
+                float cropWidth = bitmap.getWidth() - ((float)bitmap.getHeight() * modelInputRatio);
+
+                croppedBitmap = Bitmap.createBitmap(bitmap, (int)(cropWidth / 2), 0, (int)(bitmap.getWidth() - cropWidth), bitmap.getHeight());
         }
-        return croppedBitmap
-        }
+
+        return croppedBitmap;
+}
 
 /** Set the paint color and size.    */
-private fun setPaint() {
-        paint.color = Color.RED
-        paint.textSize = 80.0f
-        paint.strokeWidth = 8.0f
-        }
+private void setPaint() {
+        paint.setColor(Color.RED);
+        paint.setTextSize(80.0f);
+        paint.setStrokeWidth(8.0f);
+}
 
 /** Draw bitmap on Canvas.   */
-private fun draw(canvas: Canvas, person: Person, bitmap: Bitmap) {
+private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR)
         // Draw `bitmap` and `person` in square canvas.
-        val screenWidth: Int
-        val screenHeight: Int
-        val left: Int
-        val right: Int
-        val top: Int
-        val bottom: Int
 
+        int screenWidth, screenHeight, left, right, top, bottom, canvasHeight, canvasWidth;
 
-        if (canvas.height > canvas.width) {
-        screenWidth = canvas.width
-        screenHeight = canvas.width
-        left = 0
-        top = (canvas.height - canvas.width) / 2
+        canvasHeight = canvas.getHeight();
+        canvasWidth = canvas.getWidth();
+
+        if (canvasHeight > canvasWidth) {
+                screenWidth = canvasWidth;
+                screenHeight = canvasWidth;
+                left = 0;
+                top = (canvasHeight - canvasWidth) / 2;
         }
-
 
         else {
-        screenWidth = canvas.height
-        screenHeight = canvas.height
-        left = (canvas.width - canvas.height) / 2
-        top = 0
+                screenWidth = canvasHeight;
+                screenHeight = canvasHeight;
+                left = (canvasWidth - canvasHeight) / 2;
+                top = 0;
         }
-        right = left + screenWidth
-        bottom = top + screenHeight
 
-        setPaint()
-        canvas.drawBitmap(
-        bitmap,
-        Rect(0, 0, bitmap.width, bitmap.height),
-        Rect(left, top, right, bottom),
-        paint
-        )
+        right = left + screenWidth;
+        bottom = top + screenHeight;
 
-        val widthRatio = screenWidth.toFloat() / MODEL_WIDTH
-        val heightRatio = screenHeight.toFloat() / MODEL_HEIGHT
+        //set up the Paint tool
+        setPaint();
+
+        canvas.drawBitmap(bitmap, new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()), new Rect(left, top, right, bottom), paint);
+
+        float widthRatio = screenWidth.toFloat() / MODEL_WIDTH
+        float heightRatio = screenHeight.toFloat() / MODEL_HEIGHT
 
         // Draw key points over the image.
-        for (keyPoint in person.keyPoints) {
-        if (keyPoint.score > minConfidence) {
-        val position = keyPoint.position
-        val adjustedX: Float = position.x.toFloat() * widthRatio + left
-        val adjustedY: Float = position.y.toFloat() * heightRatio + top
-        canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint)
-        }
+        for (KeyPoint keyPoint : person.getKeyPoints()) {
+                if (keyPoint.getScore() > minConfidence) {
+                        Position position = keyPoint.getPosition();
+                        val adjustedX: Float = position.x.toFloat() * widthRatio + left
+                        val adjustedY: Float = position.y.toFloat() * heightRatio + top
+                        canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint)
+                }
         }
 
         for (line in bodyJoints) {
@@ -643,7 +652,7 @@ private fun draw(canvas: Canvas, person: Person, bitmap: Bitmap) {
         }
 
 /** Process image using Posenet library.   */
-private fun processImage(bitmap: Bitmap) {
+private fun processImage(Bitmap bitmap) {
         // Crop bitmap.
         val croppedBitmap = cropBitmap(bitmap)
 
@@ -723,8 +732,10 @@ private fun setAutoFlash(requestBuilder: CaptureRequest.Builder) {
         CaptureRequest.CONTROL_AE_MODE,
         CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH
         )
+
         }
-        }
+
+}
 
 /**
  * Shows an error message dialog.

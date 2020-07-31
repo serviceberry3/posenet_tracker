@@ -16,10 +16,10 @@ limitations under the License.
 package org.tensorflow.lite.examples.posenet
 
 /** Utility class for manipulating images.  */
-object ImageUtils {
+class ImageUtils {
   // This value is 2 ^ 18 - 1, and is used to hold the RGB values together before their ranges
   // are normalized to eight bits.
-  private const val MAX_CHANNEL_VALUE = 262143
+  private val maxChannelValue = 262143
 
   /** Helper function to convert y,u,v integer values to RGB format */
   private fun convertYUVToRGB(y: Int, u: Int, v: Int): Int {
@@ -35,7 +35,7 @@ object ImageUtils {
     // Clipping RGB values to be inside boundaries [ 0 , MAX_CHANNEL_VALUE ]
     val checkBoundaries = { x: Int ->
       when {
-        x > MAX_CHANNEL_VALUE -> MAX_CHANNEL_VALUE
+        x > maxChannelValue -> maxChannelValue
         x < 0 -> 0
         else -> x
       }

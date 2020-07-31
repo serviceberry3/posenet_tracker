@@ -4,7 +4,7 @@
             "outputFile": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
             "map": [
                 {
-                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/625e61929bca6be3eaab4613d72328b4/res/values-sr/values-sr.xml",
+                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/6e68a1bfd7233b0a16d445c4769fa317/res/values-sr/values-sr.xml",
+                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
