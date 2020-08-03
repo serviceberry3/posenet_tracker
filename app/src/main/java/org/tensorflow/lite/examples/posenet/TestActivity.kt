@@ -26,6 +26,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
 import android.widget.Toast
+import org.tensorflow.lite.examples.posenet.lib.Device
 import org.tensorflow.lite.examples.posenet.lib.Posenet as Posenet
 
 class TestActivity : AppCompatActivity() {
@@ -50,7 +51,7 @@ class TestActivity : AppCompatActivity() {
     val drawedImage = ResourcesCompat.getDrawable(resources, R.drawable.image, null)
     val imageBitmap = drawableToBitmap(drawedImage!!)
     sampleImageView.setImageBitmap(imageBitmap)
-    val posenet = Posenet(this.applicationContext)
+    val posenet = Posenet(this.applicationContext,"posenet_model.tflite", Device.GPU);
     val person = posenet.estimateSinglePose(imageBitmap)
 
     // Draw the keypoints over the image.

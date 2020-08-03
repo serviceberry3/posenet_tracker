@@ -280,7 +280,7 @@ private void showToast(final String text) {
                 super.onStart();
                 showToast("Added PoseNet submodule fragment into Activity");
                 openCamera();
-                posenet = new Posenet(this.getContext(), "posenet_model.tflite", Device.CPU);
+                posenet = new Posenet(Objects.requireNonNull(this.getContext()), "posenet_model.tflite", Device.GPU);
         }
 
         @Override
@@ -579,53 +579,107 @@ private void setPaint() {
         paint.setStrokeWidth(8.0f);
 }
 
-/** Draw bitmap on Canvas.   */
-private void draw(Canvas canvas, Person person, Bitmap bitmap) {
-        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-        // Draw `bitmap` and `person` in square canvas.
+private int noseFound = 0;
+private float noseOriginX, noseOriginY;
 
+/** Draw bitmap on Canvas.   */
+//the Canvas class holds the draw() calls. To draw something, you need 4 basic components: A Bitmap to hold the pixels,
+// a Canvas to host the draw calls (writing into the bitmap),
+// a drawing primitive (e.g. Rect, Path, text, Bitmap), and a paint (to describe the colors and styles for the drawing).
+private void draw(Canvas canvas, Person person, Bitmap bitmap) {
+        //draw clear nothing color to the screen (needs this to clear out the old text and stuff)
+        canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+
+        // Draw `bitmap` and `person` in square canvas.
         int screenWidth, screenHeight, left, right, top, bottom, canvasHeight, canvasWidth;
 
+        float xValue, yValue;
+
+        BodyPart currentPart;
+
+        //get the dimensions of our drawing canvas
         canvasHeight = canvas.getHeight();
         canvasWidth = canvas.getWidth();
 
+        //check screen orientation: if portrait mode, set the camera preview square appropriately
         if (canvasHeight > canvasWidth) {
                 screenWidth = canvasWidth;
                 screenHeight = canvasWidth;
                 left = 0;
                 top = (canvasHeight - canvasWidth) / 2;
-        } else {
+        }
+
+        //otherwise if landscape mode, set the width and height of the camera preview square appropriately
+        else {
                 screenWidth = canvasHeight;
                 screenHeight = canvasHeight;
                 left = (canvasWidth - canvasHeight) / 2;
                 top = 0;
         }
 
+        //right is right edge of screen if portrait mode; otherwise it's in middle of screen
         right = left + screenWidth;
         bottom = top + screenHeight;
 
         //set up the Paint tool
         setPaint();
 
-        canvas.drawBitmap(bitmap, new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()), new Rect(left, top, right, bottom), paint);
+        //draw the camera preview square bitmap on the screen
+        //Android fxn documentation: Draw the specified bitmap, scaling/translating automatically to fill the destination rectangle.
+        //*If the source rectangle is not null, it specifies the subset of the bitmap to draw.
+        //This function ignores the density associated with the bitmap. This is because the source and destination rectangle
+        // coordinate spaces are in their respective densities, so must already have the appropriate scaling factor applied.
+        canvas.drawBitmap(bitmap, /*src*/new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()),
+                /*dest*/new Rect(left, top, right, bottom), paint);
 
         float widthRatio = (float) screenWidth / MODEL_WIDTH;
         float heightRatio = (float) screenHeight / Constants.MODEL_HEIGHT;
 
-        // Draw key points over the image.
+        //get the keypoints list ONCE at the beginning
+        List<KeyPoint> keyPoints = person.getKeyPoints();
+
+        //Log.d(TAG, String.format("Found %d keypoints for the person", keyPoints.size()));
+
+        // Draw key points of the peron's body parts over the camera image
         for (KeyPoint keyPoint : person.getKeyPoints()) {
+                //get the bodypart ONCE at the beginning
+                currentPart = keyPoint.getBodyPart();
+
+                //make sure we're confident enough about where this posenet pose is to display it
                 if (keyPoint.getScore() > minConfidence) {
                         Position position = keyPoint.getPosition();
-                        float adjustedX = (float) position.getX() * widthRatio + left;
-                        float adjustedY = (float) position.getY() * heightRatio + top;
+                        xValue = (float) position.getX();
+                        yValue = (float) position.getY();
+
+                        float adjustedX = (float) xValue * widthRatio + left;
+                        float adjustedY = (float) yValue * heightRatio + top;
+
+                        //I'll start by just using the person's nose to try to estimate how fast the phone is moving
+                        if (currentPart == BodyPart.NOSE) {
+                                if (noseFound==0) {
+                                        noseFound = 1;
+                                        setInitialNoseLocation(xValue, yValue);
+                                }
+
+                                else {
+                                        //compute the displacement from the starting position that the nose has traveled (helper fxn)
+                                        computeDisplacement(xValue, yValue);
+                                }
+                        }
+
+                        //draw the point
                         canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint);
+                }
+                //if this point is the nose but we've lost our lock on it (confidence level is low)
+                else if (currentPart == BodyPart.NOSE) {
+                        //set noseFound back to 0
+                        noseFound = 0;
                 }
         }
 
-
+        //draw the lines of the person's limbs
         for (Pair line : bodyJoints) {
                 assert line.first != null;
-                List<KeyPoint> keyPoints = person.getKeyPoints();
                 assert line.second != null;
 
                 if ((keyPoints.get(BodyPart.getValue((BodyPart) line.first)).getScore() > minConfidence) &&
@@ -663,6 +717,20 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
         // Draw to the screen!
         surfaceHolder.unlockCanvasAndPost(canvas);
+}
+
+private void setInitialNoseLocation(float x, float y) {
+        noseOriginX = x;
+        noseOriginY = y;
+        Log.d(TAG, String.format("Nose origin set to %f, %f", x, y));
+}
+
+private float computeDisplacement(float x, float y) {
+        //compute vector of displacement
+        float deltaX = x - noseOriginX;
+        float deltaY = y - noseOriginY;
+
+        return 0;
 }
 
 /** Process image using Posenet library.   */

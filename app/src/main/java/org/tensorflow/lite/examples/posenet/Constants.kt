@@ -24,3 +24,6 @@ const val REQUEST_CAMERA_PERMISSION = 1
 /** Model input shape for images.   */
 const val MODEL_WIDTH = 257
 const val MODEL_HEIGHT = 257
+
+//average pupillary distance for adults? use this *for now* to estimate drone's distance from person
+const val PD = 0.063; //63 mm
