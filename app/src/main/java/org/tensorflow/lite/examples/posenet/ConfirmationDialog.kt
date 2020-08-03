@@ -32,8 +32,7 @@ class ConfirmationDialog : DialogFragment() {
       .setMessage(R.string.tfe_pn_request_permission)
       .setPositiveButton(android.R.string.ok) { _, _ ->
         parentFragment!!.requestPermissions(
-          arrayOf(Manifest.permission.CAMERA),
-          REQUEST_CAMERA_PERMISSION
+          arrayOf(Manifest.permission.CAMERA), Constants.REQUEST_CAMERA_PERMISSION
         )
       }
       .setNegativeButton(android.R.string.cancel) { _, _ ->

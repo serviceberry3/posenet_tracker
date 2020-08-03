@@ -55,14 +55,12 @@ enum class BodyPart (val value: Int) {
   }
 }
 
-class Position {
-  var x: Int = 0
-  var y: Int = 0
+class Position (var x: Float, var y: Float) {
 }
 
 class KeyPoint {
   var bodyPart: BodyPart = BodyPart.NOSE
-  var position: Position = Position()
+  var position: Position = Position(0f, 0f)
   var score: Float = 0.0f
 }
 
@@ -124,9 +122,7 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
     val bytesPerChannel = 4
     val inputChannels = 3
     val batchSize = 1
-    val inputBuffer = ByteBuffer.allocateDirect(
-      batchSize * bytesPerChannel * bitmap.height * bitmap.width * inputChannels
-    )
+    val inputBuffer = ByteBuffer.allocateDirect(batchSize * bytesPerChannel * bitmap.height * bitmap.width * inputChannels)
     inputBuffer.order(ByteOrder.nativeOrder())
     inputBuffer.rewind()
 
@@ -146,9 +142,7 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
   private fun loadModelFile(path: String, context: Context): MappedByteBuffer {
     val fileDescriptor = context.assets.openFd(path)
     val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
-    return inputStream.channel.map(
-      FileChannel.MapMode.READ_ONLY, fileDescriptor.startOffset, fileDescriptor.declaredLength
-    )
+    return inputStream.channel.map(FileChannel.MapMode.READ_ONLY, fileDescriptor.startOffset, fileDescriptor.declaredLength)
   }
 
   /**
@@ -201,23 +195,18 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
   fun estimateSinglePose(bitmap: Bitmap): Person {
     val estimationStartTimeNanos = SystemClock.elapsedRealtimeNanos()
     val inputArray = arrayOf(initInputArray(bitmap))
-    Log.i(
-      "posenet",
-      String.format(
-        "Scaling to [-1,1] took %.2f ms",
-        1.0f * (SystemClock.elapsedRealtimeNanos() - estimationStartTimeNanos) / 1_000_000
-      )
-    )
+
+    //print out how long scaling took
+    //Log.i("posenet", String.format("Scaling to [-1,1] took %.2f ms", 1.0f * (SystemClock.elapsedRealtimeNanos() - estimationStartTimeNanos) / 1_000_000))
 
     val outputMap = initOutputMap(getInterpreter())
 
     val inferenceStartTimeNanos = SystemClock.elapsedRealtimeNanos()
     getInterpreter().runForMultipleInputsOutputs(inputArray, outputMap)
     lastInferenceTimeNanos = SystemClock.elapsedRealtimeNanos() - inferenceStartTimeNanos
-    Log.i(
-      "posenet",
-      String.format("Interpreter took %.2f ms", 1.0f * lastInferenceTimeNanos / 1_000_000)
-    )
+
+    //print out how long the interpreter took
+    //Log.i("posenet", String.format("Interpreter took %.2f ms", 1.0f * lastInferenceTimeNanos / 1_000_000))
 
     val heatmaps = outputMap[0] as Array<Array<Array<FloatArray>>>
     val offsets = outputMap[1] as Array<Array<Array<FloatArray>>>
@@ -251,25 +240,22 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
     keypointPositions.forEachIndexed { idx, position ->
       val positionY = keypointPositions[idx].first
       val positionX = keypointPositions[idx].second
-      yCoords[idx] = (
-        position.first / (height - 1).toFloat() * bitmap.height +
-          offsets[0][positionY][positionX][idx]
-        ).toInt()
-      xCoords[idx] = (
-        position.second / (width - 1).toFloat() * bitmap.width +
-          offsets[0][positionY]
-          [positionX][idx + numKeypoints]
-        ).toInt()
+
+      yCoords[idx] = (position.first / (height - 1).toFloat() * bitmap.height + offsets[0][positionY][positionX][idx]).toInt()
+
+      xCoords[idx] = (position.second / (width - 1).toFloat() * bitmap.width + offsets[0][positionY][positionX][idx + numKeypoints]).toInt()
+
       confidenceScores[idx] = sigmoid(heatmaps[0][positionY][positionX][idx])
     }
 
     val person = Person()
     val keypointList = Array(numKeypoints) { KeyPoint() }
     var totalScore = 0.0f
+
     enumValues<BodyPart>().forEachIndexed { idx, it ->
       keypointList[idx].bodyPart = it
-      keypointList[idx].position.x = xCoords[idx]
-      keypointList[idx].position.y = yCoords[idx]
+      keypointList[idx].position.x = xCoords[idx].toFloat();
+      keypointList[idx].position.y = yCoords[idx].toFloat();
       keypointList[idx].score = confidenceScores[idx]
       totalScore += confidenceScores[idx]
     }

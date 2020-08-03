@@ -83,8 +83,7 @@ import org.tensorflow.lite.examples.posenet.lib.Person;
 import org.tensorflow.lite.examples.posenet.lib.Posenet;
 import org.tensorflow.lite.examples.posenet.lib.Position;
 
-import static org.tensorflow.lite.examples.posenet.Constants.MODEL_WIDTH;
-
+import org.tensorflow.lite.examples.posenet.Constants;
 
 public class PosenetActivity extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -278,6 +277,7 @@ private void showToast(final String text) {
         @Override
         public void onStart() {
                 super.onStart();
+                velocity[0] = velocity[1] = 0;
                 showToast("Added PoseNet submodule fragment into Activity");
                 openCamera();
                 posenet = new Posenet(Objects.requireNonNull(this.getContext()), "posenet_model.tflite", Device.GPU);
@@ -545,7 +545,7 @@ private class imageAvailableListener implements OnImageAvailableListener {
 private Bitmap cropBitmap(Bitmap bitmap) {
         float bitmapRatio = (float)bitmap.getHeight() / bitmap.getWidth();
 
-        float modelInputRatio = (float)Constants.MODEL_HEIGHT / MODEL_WIDTH;
+        float modelInputRatio = (float)Constants.MODEL_HEIGHT / Constants.MODEL_WIDTH;
 
         //first set new edited bitmap equal to the passed one
         Bitmap croppedBitmap = bitmap;
@@ -580,7 +580,7 @@ private void setPaint() {
 }
 
 private int noseFound = 0;
-private float noseOriginX, noseOriginY;
+private float noseOriginX, noseOriginY, lastNosePosX, lastNosePosY;
 
 /** Draw bitmap on Canvas.   */
 //the Canvas class holds the draw() calls. To draw something, you need 4 basic components: A Bitmap to hold the pixels,
@@ -593,9 +593,12 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         // Draw `bitmap` and `person` in square canvas.
         int screenWidth, screenHeight, left, right, top, bottom, canvasHeight, canvasWidth;
 
-        float xValue, yValue;
+        int rightEyeFound = 0, leftEyeFound = 0;
+
+        float xValue, yValue, xVel, yVel;
 
         BodyPart currentPart;
+        Position leftEye = null, rightEye = null;
 
         //get the dimensions of our drawing canvas
         canvasHeight = canvas.getHeight();
@@ -632,7 +635,15 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         canvas.drawBitmap(bitmap, /*src*/new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()),
                 /*dest*/new Rect(left, top, right, bottom), paint);
 
-        float widthRatio = (float) screenWidth / MODEL_WIDTH;
+
+        //Next need to calculate ratios used to scale image back up from the 257x257 passed to PoseNet to the actual display
+
+        //divide the available screen width pixels by PoseNet's required number of width pixels to get the number of real screen pixels
+        //widthwise per posenet input image "pixel"
+        float widthRatio = (float) screenWidth / Constants.MODEL_WIDTH;
+
+        //divide the available screen height pixels by PoseNet's required number of height pixels to get number of real screen pixels
+        //heightwise per posenet input image "pixel"
         float heightRatio = (float) screenHeight / Constants.MODEL_HEIGHT;
 
         //get the keypoints list ONCE at the beginning
@@ -642,7 +653,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
         // Draw key points of the peron's body parts over the camera image
         for (KeyPoint keyPoint : person.getKeyPoints()) {
-                //get the bodypart ONCE at the beginning
+                //get the body part ONCE at the beginning
                 currentPart = keyPoint.getBodyPart();
 
                 //make sure we're confident enough about where this posenet pose is to display it
@@ -651,19 +662,39 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         xValue = (float) position.getX();
                         yValue = (float) position.getY();
 
-                        float adjustedX = (float) xValue * widthRatio + left;
-                        float adjustedY = (float) yValue * heightRatio + top;
+                        //the real x value for this body part dot should be the xValue PoseNet found in its 257x257 input bitmap multiplied
+                        //by the number of real Android display (or at least Canvas) pixels per Posenet input bitmap pixel
+                        float adjustedX = (float) xValue * widthRatio + left; //x value adjusted for actual Android display
+                        float adjustedY = (float) yValue * heightRatio + top; //y value adjusted for actual Android display
 
                         //I'll start by just using the person's nose to try to estimate how fast the phone is moving
                         if (currentPart == BodyPart.NOSE) {
-                                if (noseFound==0) {
+                                if (noseFound == 0) {
                                         noseFound = 1;
-                                        setInitialNoseLocation(xValue, yValue);
+                                        setInitialNoseLocation(adjustedX, adjustedY);
                                 }
 
                                 else {
                                         //compute the displacement from the starting position that the nose has traveled (helper fxn)
-                                        computeDisplacement(xValue, yValue);
+                                        computeDisplacement(adjustedX, adjustedY);
+                                }
+                        }
+                        else if (currentPart == BodyPart.LEFT_EYE) {
+                                leftEyeFound = 1;
+                                leftEye = new Position(adjustedX, adjustedY);
+
+                                //if we've also already found right eye, we have both eyes. Send data to the scale computer
+                                if (rightEyeFound == 1) {
+                                        computeScale(leftEye, rightEye);
+                                }
+                        }
+                        else if (currentPart == BodyPart.RIGHT_EYE) {
+                                rightEyeFound = 1;
+                                rightEye = new Position(adjustedX, adjustedY);
+
+                                //if we've also already found left eye, we have both eyes. Send data to the scale computer
+                                if (leftEyeFound == 1) {
+                                        computeScale(leftEye, rightEye);
                                 }
                         }
 
@@ -684,11 +715,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
                 if ((keyPoints.get(BodyPart.getValue((BodyPart) line.first)).getScore() > minConfidence) &&
                         (keyPoints.get(BodyPart.getValue((BodyPart) line.second)).getScore() > minConfidence)) {
+
+                        //draw a line for this "limb" using coordinates of the two BodyPart points and the scaling ratios again
                         canvas.drawLine(
                                 keyPoints.get(BodyPart.getValue((BodyPart) line.first)).getPosition().getX() * widthRatio + left,
                                 keyPoints.get(BodyPart.getValue((BodyPart) line.first)).getPosition().getY() * heightRatio + top,
                                 keyPoints.get(BodyPart.getValue((BodyPart) line.second)).getPosition().getX() * widthRatio + left,
                                 keyPoints.get(BodyPart.getValue((BodyPart) line.second)).getPosition().getY() * heightRatio + top,
+                                //the paint tool we've set up
                                 paint
                         );
                 }
@@ -708,6 +742,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 paint
         );
 
+        //print out the time it took to do calculation of this frame
         canvas.drawText(
                 String.format("Time: %.2f ms", posenet.getLastInferenceTimeNanos() * 1.0f / 1_000_000),
                 (15.0f * widthRatio),
@@ -715,31 +750,86 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 paint
         );
 
-        // Draw to the screen!
+        //print out velocity vector values
+        canvas.drawText(
+                String.format("Velocity(m/s) X: %.2f, Y: %.2f", velocity[0], velocity[1]),
+                (15.0f * widthRatio),
+                (90.0f * heightRatio + bottom),
+                paint
+        );
+
+        //draw/push the Canvas bits to the screen
         surfaceHolder.unlockCanvasAndPost(canvas);
 }
 
 private void setInitialNoseLocation(float x, float y) {
-        noseOriginX = x;
-        noseOriginY = y;
+        noseOriginX = lastNosePosX = x;
+        noseOriginY = lastNosePosY = y;
         Log.d(TAG, String.format("Nose origin set to %f, %f", x, y));
 }
 
-private float computeDisplacement(float x, float y) {
+private float[] velocity = new float[2];
+
+private void computeDisplacement(float x, float y) {
         //compute vector of displacement
-        float deltaX = x - noseOriginX;
-        float deltaY = y - noseOriginY;
+        float deltaX = (x - lastNosePosX) * mPerPixel;
+        float deltaY = (y - lastNosePosY) * mPerPixel;
+
+        //set the current nose position to the last nose position
+        lastNosePosX = x;
+        lastNosePosY = y;
+
+        Log.d(TAG, String.format("X displacement %f, Y displacement %f", deltaX, deltaY));
+
+        float time = posenet.getLastInferenceTimeNanos() / 1000000000f;
+
+        //now we'll try to calculate the velocity by using time of each frame
+        float velocityX = deltaX/time;
+        float velocityY = deltaY/time;
+
+        //set the global fields
+        velocity[0] = velocityX;
+        velocity[1] = velocityY;
+
+        Log.d(TAG, String.format("X velocity %f, Y velocity %f", velocityX, velocityY));
+
+}
+
+
+//how many real-world meters each pixel in the camera image represents
+private float mPerPixel;
+
+//compute how much distance each pixel currently represents in real life, using known data about avg human pupillary distance
+private float computeScale(Position leftEye, Position rightEye) {
+        //I'll just use the x distance between left eye and right eye points to get distance in pixels between eyes
+        //don't forget left eye is on the right and vice versa
+        float distance = leftEye.getX() - rightEye.getX();
+
+        Log.d(TAG, String.format("Pupillary distance in pixels: %f", distance));
+
+        //now we want to find out how many real meters each pixel on the display corresponds to
+        float scale = Constants.PD/distance;
+        mPerPixel = scale;
+
+        Log.d(TAG, String.format("Each pixel on the screen represents %f meters in real life in plane of peron's face", scale));
 
         return 0;
 }
 
-/** Process image using Posenet library.   */
+//use calculated meters per pixel and pixel displacement to calculate estimated velocity of the phone (or person, for now)
+//the issue of relativity here needs to be fixed
+private float computeVelocity() {
+        return 0;
+}
+
+//Process image using Posenet library. The image needs to be scaled in order to fit Posenet's input dimension requirements of
+//257 x 257 (defined in Constants.java), and probably needs to be cropped in order to preserve the image's aspect ratio
 private void processImage(Bitmap bitmap) {
         // Crop bitmap.
         Bitmap croppedBitmap = cropBitmap(bitmap);
 
         // Created scaled version of bitmap for model input.
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(croppedBitmap, MODEL_WIDTH, Constants.MODEL_HEIGHT, true);
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(croppedBitmap, Constants.MODEL_WIDTH, Constants.MODEL_HEIGHT, true);
 
         // Perform inference.
         Person person = posenet.estimateSinglePose(scaledBitmap);
@@ -752,9 +842,8 @@ private void processImage(Bitmap bitmap) {
         draw(canvas, person, scaledBitmap);
 }
 
-/**
- * Creates a new [CameraCaptureSession] for camera preview.
- */
+
+//Creates a new [CameraCaptureSession] for camera preview.
 private void createCameraPreviewSession() {
         try {
                 // We capture images from preview in YUV format.
