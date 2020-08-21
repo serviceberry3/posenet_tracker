@@ -40,10 +40,6 @@
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/tfl2_logo_dark.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_activity_camera2.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/activity_camera2.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_test.xml.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_test.xml"
     },

@@ -1,73 +1,61 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="org.tensorflow.lite.examples.posenet"
+3    package="weiner.noah.noshake.posenet.test"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-7-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
 8        android:minSdkVersion="21"
-8-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
-9        android:targetSdkVersion="23" />
-9-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:5:5-17
+8-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:5-65
-11-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:7:22-62
+11-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:6:5-65
+11-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:6:22-62
 12
 13    <uses-feature android:name="android.hardware.camera" />
-13-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:5-60
-13-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:19-57
+13-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:5-60
+13-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:19-57
 14    <uses-feature android:name="android.hardware.camera.autofocus" />
-14-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:5-70
-14-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:10:19-67
+14-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:5-70
+14-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:19-67
 15
 16    <application
-16-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:12:5-33:19
+16-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:11:5-28:19
 17        android:allowBackup="true"
-17-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-35
+17-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:12:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 18-->[androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-20-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-43
-21        android:label="@string/tfe_pn_app_name"
-21-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-48
+20-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-43
+21        android:label="PoseNet"
+21-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-32
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-54
+22-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-54
 23        android:supportsRtl="true"
-23-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-35
+23-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-35
 24        android:testOnly="true"
 25        android:theme="@style/AppTheme.Posenet" >
-25-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:18:9-48
-26        <activity android:name="org.tensorflow.lite.examples.posenet.PoseNetJavaActivity" />
-26-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:19:9-57
-26-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:19:19-54
-27        <activity
-27-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:20:9-23:55
-28            android:name="org.tensorflow.lite.examples.posenet.TestActivity"
-28-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:13-41
-29            android:exported="true"
-29-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-36
-30            android:label="@string/tfe_pn_app_name" />
-30-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:13-52
-31        <activity
-31-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:9-32:20
-32            android:name="org.tensorflow.lite.examples.posenet.CameraActivity"
-32-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:25:13-43
-33            android:exported="true" >
-33-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:26:13-36
-34            <intent-filter>
-34-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:27:13-31:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:17-69
-35-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:28:25-66
+25-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-48
+26        <activity
+26-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-26:20
+27            android:name="weiner.noah.noshake.posenet.test.CameraActivity"
+27-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:19-49
+28            android:exported="true" >
+28-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:50-73
+29            <intent-filter>
+29-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-25:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:17-68
+30-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:17-77
+32-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:27-74
+33            </intent-filter>
+34        </activity>
+35    </application>
 36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:30:17-77
-37-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:30:27-74
-38            </intent-filter>
-39        </activity>
-40    </application>
-41
-42</manifest>
+37</manifest>

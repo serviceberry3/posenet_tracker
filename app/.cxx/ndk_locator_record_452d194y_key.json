@@ -1,0 +1,12 @@
+{
+  "ndkVersionFromDsl": "21.3.6528147",
+  "ndkDirProperty": "/home/nodog/Android/Sdk/ndk/21.3.6528147",
+  "sdkFolder": "/home/nodog/Android/Sdk",
+  "sideBySideNdkFolderNames": [
+    "21.3.6528147",
+    "android-ndk-r17c-linux-x86_64",
+    "21.2.6472646",
+    "21.0.6113669",
+    "android-ndk-r21d-linux-x86_64"
+  ]
+}

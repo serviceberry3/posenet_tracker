@@ -1,4 +1,4 @@
-org.tensorflow.lite.examples.posenet.lib
+org.tensorflow.lite.examples.noah.lib
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom

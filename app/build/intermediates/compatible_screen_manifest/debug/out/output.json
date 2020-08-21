@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.tensorflow.lite.examples.posenet",
+  "applicationId": "weiner.noah.noshake.posenet.test",
   "variantType": "BASE_APK",
   "elements": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.tensorflow.lite.examples.posenet",
+  "applicationId": "weiner.noah.noshake.posenet.test",
   "variantType": "BASE_APK",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "resources-debug.ap_",
       "properties": {
-        "packageId": "org.tensorflow.lite.examples.posenet",
+        "packageId": "weiner.noah.noshake.posenet.test",
         "split": "",
         "minSdkVersion": "21"
       }

@@ -1,0 +1,3 @@
+/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/circ_buffer.dir

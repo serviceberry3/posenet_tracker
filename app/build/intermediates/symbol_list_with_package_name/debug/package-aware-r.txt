@@ -1,4 +1,4 @@
-org.tensorflow.lite.examples.posenet
+weiner.noah.noshake.posenet.test
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -399,6 +399,9 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -653,6 +656,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable action
+drawable android
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -908,7 +912,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_camera2
+layout activity_main
 layout activity_pose_net_java
 layout custom_dialog
 layout notification_action
@@ -955,6 +959,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string app_name
 string search_menu_title
 string status_bar_notification_info_overflow
 string tfe_pn_app_name
@@ -965,6 +970,7 @@ style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
+style AppTheme
 style AppTheme_Posenet
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light

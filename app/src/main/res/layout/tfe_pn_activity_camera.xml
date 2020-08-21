@@ -19,4 +19,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="org.tensorflow.lite.examples.posenet.CameraActivity" />
+    tools:context="org.tensorflow.lite.examples.noah.weiner.tensorflow.lite.examples.noah.CameraActivity" />

@@ -1,0 +1,9 @@
+# ninja log v5
+0	96	1598021068	CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o	f3a9aaecdcd2b6d9
+0	109	1598021069	CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o	e6d379409627e65d
+0	119	1598021069	CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o	c34916d025a6808f
+119	185	1598021069	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcirc_buffer.so	6899a8e3791c50d5
+0	108	1598022178	CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o	c34916d025a6808f
+14	108	1598022178	CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o	e6d379409627e65d
+6	119	1598022178	CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o	f3a9aaecdcd2b6d9
+119	173	1598022178	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcirc_buffer.so	6899a8e3791c50d5

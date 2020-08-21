@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "applicationId": "org.tensorflow.lite.examples.posenet.lib",
+  "applicationId": "org.tensorflow.lite.examples.noah.lib",
   "variantType": "LIBRARY",
   "elements": [
     {
@@ -19,7 +19,7 @@
       },
       "path": "../../library_manifest/debug/AndroidManifest.xml",
       "properties": {
-        "packageId": "org.tensorflow.lite.examples.posenet.lib",
+        "packageId": "org.tensorflow.lite.examples.noah.lib",
         "split": ""
       }
     }

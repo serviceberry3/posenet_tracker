@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tensorflow.lite.examples.posenet"
+    package="weiner.noah.noshake.posenet.test"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -18,18 +18,13 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/tfe_pn_app_name"
+        android:label="PoseNet"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme.Posenet" >
-        <activity android:name="org.tensorflow.lite.examples.posenet.PoseNetJavaActivity" />
         <activity
-            android:name="org.tensorflow.lite.examples.posenet.TestActivity"
-            android:exported="true"
-            android:label="@string/tfe_pn_app_name" />
-        <activity
-            android:name="org.tensorflow.lite.examples.posenet.CameraActivity"
+            android:name="weiner.noah.noshake.posenet.test.CameraActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

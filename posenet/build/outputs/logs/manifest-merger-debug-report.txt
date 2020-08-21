@@ -8,7 +8,7 @@ INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posene
 INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml:1:1-6:12
 INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml:1:1-6:12
 	package
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml:2:3-53
+		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml:2:3-50
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml
 		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/src/main/AndroidManifest.xml
 	android:versionName

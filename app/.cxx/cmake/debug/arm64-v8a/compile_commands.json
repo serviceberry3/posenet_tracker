@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dcirc_buffer_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o -c /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/convolve.cpp",
+  "file": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/convolve.cpp"
+},
+
+{
+  "directory": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dcirc_buffer_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o -c /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/circ_buffer.cpp",
+  "file": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/circ_buffer.cpp"
+},
+
+{
+  "directory": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a",
+  "command": "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dcirc_buffer_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -std=c++11 -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o -c /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/impulse_response.cpp",
+  "file": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/impulse_response.cpp"
+}
+]

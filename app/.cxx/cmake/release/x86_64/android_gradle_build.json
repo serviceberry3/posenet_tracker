@@ -1,0 +1,53 @@
+{
+  "stringTable": {
+    "0": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/x86_64",
+    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dcirc_buffer_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -frtti -fexceptions -fsigned-char -std=c++11 -O2 -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "/home/nodog/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake",
+    "/home/nodog/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake",
+    "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/x86_64\" clean"
+  ],
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "circ_buffer-Release-x86_64": {
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/x86_64\" circ_buffer",
+      "buildType": "release",
+      "toolchain": "4068951531",
+      "abi": "x86_64",
+      "artifactName": "circ_buffer",
+      "files": [
+        {
+          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/convolve.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/circ_buffer.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/impulse_response.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/cmake/release/obj/x86_64/libcirc_buffer.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "4068951531": {
+      "cppCompilerExecutable": "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
