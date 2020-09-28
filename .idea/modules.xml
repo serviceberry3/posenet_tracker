@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="posenet_tracker/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary341/openCVLibrary341.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary341/openCVLibrary341.iml" group="posenet_tracker/openCVLibrary341" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" filepath="$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" group="posenet_tracker/opengl" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/posenet/posenet.iml" filepath="$PROJECT_DIR$/.idea/modules/posenet/posenet.iml" group="posenet_tracker/posenet" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/posenet_tracker.iml" filepath="$PROJECT_DIR$/.idea/modules/posenet_tracker.iml" group="posenet_tracker" />

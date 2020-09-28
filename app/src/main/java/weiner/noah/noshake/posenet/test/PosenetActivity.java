@@ -29,6 +29,7 @@ import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.hardware.Sensor;
@@ -82,6 +83,12 @@ import weiner.noah.noshake.posenet.test.R;
 import weiner.noah.noshake.posenet.test.ctojavaconnector.CircBuffer;
 import weiner.noah.noshake.posenet.test.ctojavaconnector.Convolve;
 import weiner.noah.noshake.posenet.test.ctojavaconnector.ImpulseResponse;
+
+import org.opencv.calib3d.Calib3d;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfPoint3f;
+import org.opencv.core.Point3;
+import org.opencv.imgproc.Imgproc;
 import org.tensorflow.lite.examples.noah.lib.BodyPart;
 import org.tensorflow.lite.examples.noah.lib.Device;
 import org.tensorflow.lite.examples.noah.lib.KeyPoint;
@@ -257,6 +264,10 @@ public static float toMoveX, toMoveY;
 
 float noseDeltaX, noseDeltaY;
 
+//declare global matrix containing my model 3D coordinates of human pose, to be used for camera pose estimation
+private Point3[] humanModelRaw = new Point3[5];
+private List<Point3> humanModelList = new ArrayList<Point3>();
+private MatOfPoint3f humanModelMat = new MatOfPoint3f();
 
 //thread that writes data to the circular buffer
 class getDataWriteBuffer implements Runnable {
@@ -394,10 +405,14 @@ private void showToast(final String text) {
         @Override
         public void onResume() {
                 super.onResume();
+
+                /*
                 startBackgroundThread();
                 sensorManager.registerListener(this, accelerometer, 1);
                 openGLView.onResume();
+                 */
         }
+
 
         @Override
         public void onStart() {
@@ -419,6 +434,7 @@ private void showToast(final String text) {
                 getActivity().setContentView(openGLView);
                 */
 
+                /*
                 //initiate the openGLView and create an instance with this activity
                 openGLView = new OpenGLView(getActivity().getApplicationContext());
 
@@ -433,9 +449,29 @@ private void showToast(final String text) {
                 getActivity().setContentView(openGLView);
 
                 velocity[0] = velocity[1] = 0;
+                 */
+
                 showToast("Added PoseNet submodule fragment into Activity");
                 openCamera();
                 posenet = new Posenet(Objects.requireNonNull(this.getContext()), "posenet_model.tflite", Device.GPU);
+
+                //populate the 3D human model
+                humanModelRaw[0] = new Point3(0.0f, 0.0f, 0.0f); //nose
+                humanModelRaw[1] = new Point3(-150.0f, 170.0f, -135.0f); //left eye ctr
+                humanModelRaw[2] = new Point3(150.0f, 170.0f, -135.0f); //rt eye ctr
+                humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
+                humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
+
+                //push all of the model coordinates into the ArrayList version so they can be converted to a MatofPoint3f
+                humanModelList.add(humanModelRaw[0]);
+                humanModelList.add(humanModelRaw[1]);
+                humanModelList.add(humanModelRaw[2]);
+                humanModelList.add(humanModelRaw[3]);
+                humanModelList.add(humanModelRaw[4]);
+
+
+                humanModelMat.fromList(humanModelList);
+
 
 
                 /*
@@ -450,7 +486,6 @@ private void showToast(final String text) {
                 ogTopMargin = originalLayoutParams.topMargin;
 
 
-
                 //get pixel dimensions of screen
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -458,6 +493,7 @@ private void showToast(final String text) {
                 int width = displayMetrics.widthPixels;
                  */
 
+                /*
                 //initialize a circular buffer of 211 floats
                 CircBuffer.circular_buffer(NoShakeConstants.buffer_size, 0);
                 CircBuffer.circular_buffer(NoShakeConstants.buffer_size, 1);
@@ -476,17 +512,15 @@ private void showToast(final String text) {
                 Convolve.convolver(CircBuffer.circular_buf_address(0), 0);
                 Convolve.convolver(CircBuffer.circular_buf_address(1), 1);
 
-                /*
+
                 //immediately start a looping thread that constantly reads the last 50 data and sets the "shaking" flag accordingly
                 detectShaking shakeListener = new detectShaking();
                 new Thread(shakeListener).start();
 
 
-
                 bufferWait waitingTextThread = new bufferWait();
                 new Thread(waitingTextThread).start();
 
-                 */
 
                 gravity[0]=gravity[1]=gravity[2] = 0;
                 accelBuffer[0]=accelBuffer[1]=accelBuffer[2] = 0;
@@ -521,9 +555,9 @@ private void showToast(final String text) {
         @Override
         public void onPause() {
                 closeCamera();
-                stopBackgroundThread();
+                //stopBackgroundThread();
                 super.onPause();
-                openGLView.onPause();
+                //openGLView.onPause();
         }
 
         @Override
@@ -754,6 +788,27 @@ private class imageAvailableListener implements OnImageAvailableListener {
                         return;
                 }
 
+                //get the planes from the image
+                Image.Plane[] planes = image.getPlanes();
+
+                //get raw bytes from incoming 2d image
+                ByteBuffer byteBuffer = planes[0].getBuffer();
+
+                //create new array of raw bytes of the appropriate size (remaining)
+                byte[] buffer = new byte[byteBuffer.remaining()];
+
+                //store the ByteBuffer in the raw byte array
+                byteBuffer.get(buffer);
+
+                //instantiate new Matrix object
+                Mat imageGrab = new Mat();
+
+                //put all of the bytes into the Mat
+                imageGrab.put(0,0,buffer);
+
+
+
+
                 fillBytes(image.getPlanes(), yuvBytes);
 
                 ImageUtils imageUtils = new ImageUtils();
@@ -888,7 +943,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         List<KeyPoint> keyPoints = person.getKeyPoints();
 
         //Log.d(TAG, String.format("Found %d keypoints for the person", keyPoints.size()));
-
 
         // Draw key points of the peron's body parts over the camera image
         for (KeyPoint keyPoint : person.getKeyPoints()) {
@@ -1220,9 +1274,9 @@ private void processImage(Bitmap bitmap) {
         }
 
          */
-        //draw(canvas, person, scaledBitmap);
+        draw(canvas, person, scaledBitmap);
 
-        displacementOnly(person, canvas);
+        //displacementOnly(person, canvas);
 }
 
 
@@ -1343,7 +1397,7 @@ companion object {
                         //layoutSensor.setVisibility(View.INVISIBLE);
 
                         //noShake implementation
-                        noShake钟林(event);
+                        //noShake钟林(event);
 
                         //more naive implementation
                         //naivePhysicsImplementation(event);
@@ -1601,8 +1655,5 @@ companion object {
                 //}
                 //Log.d("DBUG", String.format("From x: %f", Convolve.getXMember(5, 0)));
                 //Log.d("DBUG", String.format("From y: %f", Convolve.getXMember(5, 1)));
-
         }
-
-
 }

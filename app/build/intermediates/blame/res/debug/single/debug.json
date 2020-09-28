@@ -16,12 +16,12 @@
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/icn_chevron_down.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_posenet.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_posenet.xml"
-    },
-    {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_action_info.png.flat",
         "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_action_info.png"
+    },
+    {
+        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_posenet.xml.flat",
+        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_posenet.xml"
     },
     {
         "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",

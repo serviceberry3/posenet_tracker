@@ -1,5 +1,0 @@
-# ninja log v5
-0	61	1598022256	CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o	ef5bda7fdb6c784b
-0	62	1598022256	CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o	fe7c10dee1f65a0d
-0	68	1598022256	CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o	e0daa5a32d9d554a
-68	94	1598022256	../../../../build/intermediates/cmake/debug/obj/x86/libcirc_buffer.so	422891a17940b116

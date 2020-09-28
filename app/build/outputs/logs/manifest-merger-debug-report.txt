@@ -9,6 +9,7 @@ MERGED from [:opengl] /home/nodog/Documents/AndroidStudioProjects/posenet_tracke
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a605f18af49afc7bbd0c91c5c3bb4d06/core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:2:1-12:12
 MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/5c39009c0e8f32f0549696578801375c/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -119,6 +120,8 @@ MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms
 MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a605f18af49afc7bbd0c91c5c3bb4d06/core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
 MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
 MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:7:5-8:41

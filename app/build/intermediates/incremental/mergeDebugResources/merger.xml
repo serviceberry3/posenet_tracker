@@ -142,6 +142,13 @@
     </declare-styleable><declare-styleable name="StateListDrawableItem">
         
         <attr name="android:drawable"/>
+    </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config=":openCVLibrary341$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/packaged_res/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config=":openCVLibrary341" from-dependency="true" generated-set=":openCVLibrary341$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/packaged_res/debug"><file path="/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/packaged_res/debug/values/values.xml" qualifiers=""><declare-styleable name="CameraBridgeViewBase">
+       <attr format="boolean" name="show_fps"/>
+       <attr format="integer" name="camera_id">
+          <enum name="any" value="-1"/>
+          <enum name="back" value="99"/>
+          <enum name="front" value="98"/>
+       </attr>
     </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="androidx.constraintlayout:constraintlayout:1.1.3" from-dependency="true" generated-set="androidx.constraintlayout:constraintlayout:1.1.3$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/res"><file path="/home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/res/values/values.xml" qualifiers=""><attr format="boolean" name="barrierAllowsGoneWidgets"/><attr format="enum" name="barrierDirection">
         <enum name="left" value="0"/>
         <enum name="right" value="1"/>
@@ -3433,6 +3440,13 @@
     </declare-styleable><declare-styleable name="StateListDrawableItem">
         
         <attr name="android:drawable"/>
+    </declare-styleable><declare-styleable name="CameraBridgeViewBase">
+       <attr format="boolean" name="show_fps"/>
+       <attr format="integer" name="camera_id">
+          <enum name="any" value="-1"/>
+          <enum name="back" value="99"/>
+          <enum name="front" value="98"/>
+       </attr>
     </declare-styleable><declare-styleable name="AppCompatTextView">
         
         <attr format="reference|boolean" name="textAllCaps"/>
