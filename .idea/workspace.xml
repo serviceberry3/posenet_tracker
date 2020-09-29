@@ -6,52 +6,29 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cde842a-5e1e-4687-a1aa-f11f73a322cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/openCVLibrary341/openCVLibrary341.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/openCVLibrary341/openCVLibrary341.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/openCVLibrary341/openCVLibrary341.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/posenet/posenet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/posenet/posenet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_deps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/3.10.2/CMakeSystem.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/android_gradle_build_circ_buffer_x86.command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/android_gradle_build_circ_buffer_x86.stderr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/android_gradle_build_circ_buffer_x86.stdout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/values.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/CameraActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/CameraActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$2.class" afterDir="false" />
@@ -64,15 +41,6 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$imageAvailableListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$imageAvailableListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$stateCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity$stateCallback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/weiner/noah/noshake/posenet/test/PosenetActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/3f7effc341007ee0c9e1a2de27be7d8e1222baefeb05ef9a873405a9fc71d147_7.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/CameraActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/CameraActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$2.dex" afterDir="false" />
@@ -85,10 +53,6 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$imageAvailableListener.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$imageAvailableListener.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$stateCallback.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity$stateCallback.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/PosenetActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/TestActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/weiner/noah/noshake/posenet/test/TestActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values_values.arsc.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
@@ -100,9 +64,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
@@ -126,10 +88,10 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/weiner/noah/noshake/posenet/test/TestActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/weiner/noah/noshake/posenet/test/TestActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/CameraActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/CameraActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/PosenetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/PosenetActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary341/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary341/src/main/java/org/opencv/android/OpenCVLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary341/src/main/java/org/opencv/android/OpenCVLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,10 +226,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="125" y="1397" width="1900" height="1084" key="#PSD" timestamp="1601319079248">
+    <state x="125" y="1367" width="1900" height="1084" key="#PSD" timestamp="1601327763758">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="125" y="1397" width="1900" height="1084" key="#PSD/0.54.2160.3786@0.54.2160.3786" timestamp="1601319079248" />
+    <state x="125" y="1367" width="1900" height="1084" key="#PSD/0.54.2160.3786@0.54.2160.3786" timestamp="1601327763758" />
     <state x="479" y="1297" width="1192" height="1324" key="#app" timestamp="1597978571164">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
@@ -308,22 +270,22 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="645" y="1213" width="949" height="1154" key="FileChooserDialogImpl/0.54.2160.3786@0.54.2160.3786" timestamp="1601319044827" />
-    <state width="2160" height="943" key="GridCell.Tab.0.bottom" timestamp="1601319088504">
+    <state width="2160" height="998" key="GridCell.Tab.0.bottom" timestamp="1601393981658">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2160" height="943" key="GridCell.Tab.0.bottom/0.54.2160.3786@0.54.2160.3786" timestamp="1601319088504" />
-    <state width="2160" height="943" key="GridCell.Tab.0.center" timestamp="1601319088504">
+    <state width="2160" height="998" key="GridCell.Tab.0.bottom/0.54.2160.3786@0.54.2160.3786" timestamp="1601393981658" />
+    <state width="2160" height="998" key="GridCell.Tab.0.center" timestamp="1601393981658">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2160" height="943" key="GridCell.Tab.0.center/0.54.2160.3786@0.54.2160.3786" timestamp="1601319088504" />
-    <state width="2160" height="943" key="GridCell.Tab.0.left" timestamp="1601319088503">
+    <state width="2160" height="998" key="GridCell.Tab.0.center/0.54.2160.3786@0.54.2160.3786" timestamp="1601393981658" />
+    <state width="2160" height="998" key="GridCell.Tab.0.left" timestamp="1601393981658">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2160" height="943" key="GridCell.Tab.0.left/0.54.2160.3786@0.54.2160.3786" timestamp="1601319088503" />
-    <state width="2160" height="943" key="GridCell.Tab.0.right" timestamp="1601319088504">
+    <state width="2160" height="998" key="GridCell.Tab.0.left/0.54.2160.3786@0.54.2160.3786" timestamp="1601393981658" />
+    <state width="2160" height="998" key="GridCell.Tab.0.right" timestamp="1601393981658">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2160" height="943" key="GridCell.Tab.0.right/0.54.2160.3786@0.54.2160.3786" timestamp="1601319088504" />
+    <state width="2160" height="998" key="GridCell.Tab.0.right/0.54.2160.3786@0.54.2160.3786" timestamp="1601393981658" />
     <state x="76" y="1207" width="2008" height="1484" key="SettingsEditor" timestamp="1598020811104">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
@@ -336,25 +298,25 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="100" y="134" width="1960" height="3596" key="com.android.tools.idea.avdmanager.AvdListDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1601316042019" />
-    <state x="249" y="1667" key="com.intellij.ide.util.TipDialog" timestamp="1601251324094">
+    <state x="283" y="1354" width="1336" height="396" key="com.intellij.ide.util.TipDialog" timestamp="1601346075677">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="249" y="1667" key="com.intellij.ide.util.TipDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1601251324093" />
-    <state x="79" y="1586" width="1983" height="779" key="psd.add.library.dependency.panel.dimension" timestamp="1597971644229">
+    <state x="283" y="1354" width="1336" height="396" key="com.intellij.ide.util.TipDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1601346075677" />
+    <state x="79" y="1576" width="1983" height="779" key="psd.add.library.dependency.panel.dimension" timestamp="1601327106547">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="79" y="1586" width="1983" height="779" key="psd.add.library.dependency.panel.dimension/0.54.2160.3786@0.54.2160.3786" timestamp="1597971644229" />
-    <state x="454" y="1252" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension" timestamp="1601319077021">
+    <state x="79" y="1576" width="1983" height="779" key="psd.add.library.dependency.panel.dimension/0.54.2160.3786@0.54.2160.3786" timestamp="1601327106547" />
+    <state x="454" y="1212" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension" timestamp="1601327138365">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="454" y="1252" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension/0.54.2160.3786@0.54.2160.3786" timestamp="1601319077021" />
+    <state x="454" y="1212" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension/0.54.2160.3786@0.54.2160.3786" timestamp="1601327138365" />
     <state x="408" y="919" key="run.anything.popup" timestamp="1598027007211">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="408" y="919" key="run.anything.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1598027007211" />
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1598030085808">
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1601399046824">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1598030085807" />
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1601399046824" />
   </component>
 </project>

@@ -29,7 +29,6 @@ import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.hardware.Sensor;
@@ -70,6 +69,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 
+import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,9 +84,16 @@ import weiner.noah.noshake.posenet.test.ctojavaconnector.CircBuffer;
 import weiner.noah.noshake.posenet.test.ctojavaconnector.Convolve;
 import weiner.noah.noshake.posenet.test.ctojavaconnector.ImpulseResponse;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
 import org.opencv.calib3d.Calib3d;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfDouble;
+import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.MatOfPoint3f;
+import org.opencv.core.Point;
 import org.opencv.core.Point3;
 import org.opencv.imgproc.Imgproc;
 import org.tensorflow.lite.examples.noah.lib.BodyPart;
@@ -267,7 +274,20 @@ float noseDeltaX, noseDeltaY;
 //declare global matrix containing my model 3D coordinates of human pose, to be used for camera pose estimation
 private Point3[] humanModelRaw = new Point3[5];
 private List<Point3> humanModelList = new ArrayList<Point3>();
-private MatOfPoint3f humanModelMat = new MatOfPoint3f();
+private MatOfPoint3f humanModelMat;
+
+//declare global matrix containing the actual 2D coordinates of the human found
+private Point[] humanActualRaw = new Point[5];
+private List<Point> humanActualList = new ArrayList<Point>();
+private MatOfPoint2f humanActualMat;
+
+//matrices to be used for pose estimation calculation
+private Mat cameraMatrix, rotationMat, translationMat;
+private MatOfDouble distortionMat;
+
+Point3[] testPt = new Point3[1];
+List<Point3> testPtList = new ArrayList<Point3>();
+
 
 //thread that writes data to the circular buffer
 class getDataWriteBuffer implements Runnable {
@@ -400,18 +420,32 @@ private void showToast(final String text) {
                 if (surfaceHolder==null) {
                         Log.e("DEBUG", "onViewCreated: surfaceHolder came up NULL");
                 }
+
+                humanModelMat = ((CameraActivity) Objects.requireNonNull(getActivity())).getHumanModelMat();
+                humanActualMat = ((CameraActivity) getActivity()).getHumanActualMat();
+
+                testPt[0] = new Point3(0,0,1000.0);
+                testPtList.add(testPt[0]);
         }
 
+        /*
         @Override
         public void onResume() {
                 super.onResume();
 
-                /*
-                startBackgroundThread();
-                sensorManager.registerListener(this, accelerometer, 1);
-                openGLView.onResume();
-                 */
+                if (!OpenCVLoader.initDebug()) {
+                        Log.d("OpenCV", "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+                        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, getActivity(),
+                                ((CameraActivity)getActivity()).getmLoaderCallback());
+                }
+
+                else {
+                        Log.d("OpenCV", "OpenCV library found inside package. Using it!");
+                        ((CameraActivity)getActivity()).getmLoaderCallback().onManagerConnected(LoaderCallbackInterface.SUCCESS);
+                }
         }
+
+         */
 
 
         @Override
@@ -471,7 +505,6 @@ private void showToast(final String text) {
 
 
                 humanModelMat.fromList(humanModelList);
-
 
 
                 /*
@@ -600,6 +633,7 @@ private void requestCameraPermission() {
     it == PackageManager.PERMISSION_GRANTED
   }
          */
+
 private boolean allPermissionsGranted(int[] grantResults) {
         for (int grantResult : grantResults) {
                 if (grantResult != PackageManager.PERMISSION_GRANTED) {
@@ -784,15 +818,21 @@ private class imageAvailableListener implements OnImageAvailableListener {
 
                 //acquire the latest image from the the ImageReader queue
                 Image image = imageReader.acquireLatestImage();
-                if (image==null) {
+                if (image == null) {
                         return;
                 }
+
 
                 //get the planes from the image
                 Image.Plane[] planes = image.getPlanes();
 
+
+                fillBytes(planes, yuvBytes);
+
+                Image.Plane copy = planes[0];
+
                 //get raw bytes from incoming 2d image
-                ByteBuffer byteBuffer = planes[0].getBuffer();
+                ByteBuffer byteBuffer = copy.getBuffer();
 
                 //create new array of raw bytes of the appropriate size (remaining)
                 byte[] buffer = new byte[byteBuffer.remaining()];
@@ -800,16 +840,12 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 //store the ByteBuffer in the raw byte array
                 byteBuffer.get(buffer);
 
-                //instantiate new Matrix object
+                //instantiate new Matrix object to hold the image pixels
                 Mat imageGrab = new Mat();
 
                 //put all of the bytes into the Mat
                 imageGrab.put(0,0,buffer);
 
-
-
-
-                fillBytes(image.getPlanes(), yuvBytes);
 
                 ImageUtils imageUtils = new ImageUtils();
 
@@ -830,6 +866,40 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 Bitmap rotatedBitmap = Bitmap.createBitmap(imageBitmap, 0, 0, previewWidth, previewHeight, rotateMatrix, true);
                 image.close();
 
+                //testing convert bitmap to OpenCV Mat
+                Mat testMat = new Mat();
+
+                org.opencv.android.Utils.bitmapToMat(rotatedBitmap, testMat);
+
+                Log.i(TAG, String.format("Focal length found is %d", testMat.cols()));
+
+                // Camera internals
+                double focal_length = testMat.cols(); // Approximate focal length.
+
+                Point center = new Point(testMat.cols()/2f,testMat.rows()/2f);
+
+                Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
+
+                //create a 3x3 camera (intrinsic params) matrix
+                cameraMatrix = Mat.eye(3, 3, CvType.CV_64F);
+
+                //double[] vals = {focal_length, 0, center.x, 0, focal_length, center.y, 0, 0, 1};
+
+                //populate the 3x3 camera matrix
+                //cameraMatrix.put(0, 0, vals);
+
+                cameraMatrix.put(0, 0, 400);
+                cameraMatrix.put(1, 1, 400);
+                cameraMatrix.put(0, 2, 640 / 2f);
+                cameraMatrix.put(1, 2, 480 / 2f);
+
+                distortionMat = new MatOfDouble();
+
+                //new mat objects to store rotation and translation matrices from camera coords to world coords when solvePnp runs
+                rotationMat = new Mat();
+                translationMat = new Mat();
+
+                //send the final bitmap to be drawn on and output to the screen
                 processImage(rotatedBitmap);
         }
 }
@@ -962,6 +1032,9 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
                         //I'll start by just using the person's nose to try to estimate how fast the phone is moving
                         if (currentPart == BodyPart.NOSE) {
+                                //add nose to first slot of Point array for pose estimation
+                                humanActualRaw[0] = new Point(adjustedX, adjustedY);
+
                                 if (noseFound == 0) {
                                         noseFound = 1;
                                         setInitialNoseLocation(adjustedX, adjustedY);
@@ -973,6 +1046,9 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 }
                         }
                         else if (currentPart == BodyPart.LEFT_EYE) {
+                                //add nose to first slot of Point array for pose estimation
+                                humanActualRaw[1] = new Point(adjustedX, adjustedY);
+
                                 leftEyeFound = 1;
                                 leftEye = new Position(adjustedX, adjustedY);
 
@@ -982,6 +1058,9 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 }
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
+                                //add nose to first slot of Point array for pose estimation
+                                humanActualRaw[2] = new Point(adjustedX, adjustedY);
+
                                 rightEyeFound = 1;
                                 rightEye = new Position(adjustedX, adjustedY);
 
@@ -991,9 +1070,19 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 }
                         }
 
-                        //draw the point
+                        else if (currentPart == BodyPart.RIGHT_SHOULDER) {
+                                //add nose to first slot of Point array for pose estimation
+                                humanActualRaw[3] = new Point(adjustedX, adjustedY);
+                        }
+                        else if (currentPart == BodyPart.LEFT_SHOULDER) {
+                                //add nose to first slot of Point array for pose estimation
+                                humanActualRaw[4] = new Point(adjustedX, adjustedY);
+                        }
+
+                        //draw the point corresponding to this body joint
                         canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint);
                 }
+
                 //if this point is the nose but we've lost our lock on it (confidence level is low)
                 else if (currentPart == BodyPart.NOSE) {
                         //set noseFound back to 0
@@ -1022,6 +1111,49 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 paint
                         );
                 }
+        }
+
+
+        if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null &&
+                humanActualRaw[4]!=null) {
+
+                //clear out the ArrayList
+                humanActualList.clear();
+
+                //compute pose estimation and draw line coming out of nose
+                humanActualList.add(humanActualRaw[0]);
+                humanActualList.add(humanActualRaw[1]);
+                humanActualList.add(humanActualRaw[2]);
+                humanActualList.add(humanActualRaw[3]);
+                humanActualList.add(humanActualRaw[4]);
+
+                humanActualMat.fromList(humanActualList);
+
+                //now should have everything we need to run solvePnP
+
+
+                Calib3d.solvePnP(humanModelMat, humanActualMat, cameraMatrix, distortionMat, rotationMat, translationMat);
+
+                //Now we'll try projecting a 3D point (0, 0, 1000.0) onto the image plane. We'll use this to draw line sticking out of
+                //the nose
+                MatOfPoint3f testPtMat = new MatOfPoint3f();
+                testPtMat.fromList(testPtList);
+
+                MatOfPoint2f imagePts = new MatOfPoint2f();
+
+                Calib3d.projectPoints(testPtMat, rotationMat, translationMat, cameraMatrix, distortionMat, imagePts);
+
+                Log.i(TAG, String.format("Resulting imagepts Mat is of size %d x %d", imagePts.rows(), imagePts.cols()));
+
+                double[] temp_double = imagePts.get(0,0);
+
+                Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
+
+                canvas.drawLine((float)humanActualRaw[0].x, (float)humanActualRaw[0].y, (float)temp_double[0], (float)temp_double[1], paint);
+
+        }
+        else {
+                Log.e(TAG, "Not everything found");
         }
 
         canvas.drawText(
