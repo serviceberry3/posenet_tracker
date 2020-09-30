@@ -491,8 +491,8 @@ private void showToast(final String text) {
 
                 //populate the 3D human model
                 humanModelRaw[0] = new Point3(0.0f, 0.0f, 0.0f); //nose
-                humanModelRaw[1] = new Point3(-150.0f, 170.0f, -135.0f); //left eye ctr
-                humanModelRaw[2] = new Point3(150.0f, 170.0f, -135.0f); //rt eye ctr
+                humanModelRaw[1] = new Point3(-225.0f, 170.0f, -135.0f); //left eye ctr WAS -150
+                humanModelRaw[2] = new Point3(225.0f, 170.0f, -135.0f); //rt eye ctr
                 humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
                 humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
 
@@ -883,17 +883,20 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 //create a 3x3 camera (intrinsic params) matrix
                 cameraMatrix = Mat.eye(3, 3, CvType.CV_64F);
 
-                //double[] vals = {focal_length, 0, center.x, 0, focal_length, center.y, 0, 0, 1};
+                double[] vals = {focal_length, 0, center.x, 0, focal_length, center.y, 0, 0, 1};
 
                 //populate the 3x3 camera matrix
-                //cameraMatrix.put(0, 0, vals);
+                cameraMatrix.put(0, 0, vals);
 
+                /*
                 cameraMatrix.put(0, 0, 400);
                 cameraMatrix.put(1, 1, 400);
                 cameraMatrix.put(0, 2, 640 / 2f);
                 cameraMatrix.put(1, 2, 480 / 2f);
 
-                distortionMat = new MatOfDouble();
+                 */
+
+                distortionMat = new MatOfDouble(0,0,0,0);
 
                 //new mat objects to store rotation and translation matrices from camera coords to world coords when solvePnp runs
                 rotationMat = new Mat();
