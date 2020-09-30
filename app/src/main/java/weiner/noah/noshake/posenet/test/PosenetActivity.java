@@ -491,17 +491,19 @@ private void showToast(final String text) {
 
                 //populate the 3D human model
                 humanModelRaw[0] = new Point3(0.0f, 0.0f, 0.0f); //nose
-                humanModelRaw[1] = new Point3(-225.0f, 170.0f, -135.0f); //left eye ctr WAS -150
-                humanModelRaw[2] = new Point3(225.0f, 170.0f, -135.0f); //rt eye ctr
-                humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
-                humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
+                humanModelRaw[1] = new Point3(0.0f, 0.0f, 0.0f); //nose again
+                humanModelRaw[2] = new Point3(-215.0f, 170.0f, -135.0f); //left eye ctr WAS -150
+                humanModelRaw[3] = new Point3(215.0f, 170.0f, -135.0f); //rt eye ctr
+
+                //humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
+               // humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
 
                 //push all of the model coordinates into the ArrayList version so they can be converted to a MatofPoint3f
                 humanModelList.add(humanModelRaw[0]);
                 humanModelList.add(humanModelRaw[1]);
                 humanModelList.add(humanModelRaw[2]);
                 humanModelList.add(humanModelRaw[3]);
-                humanModelList.add(humanModelRaw[4]);
+                //humanModelList.add(humanModelRaw[4]);
 
 
                 humanModelMat.fromList(humanModelList);
@@ -874,16 +876,17 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 Log.i(TAG, String.format("Focal length found is %d", testMat.cols()));
 
                 // Camera internals
-                double focal_length = testMat.cols(); // Approximate focal length.
+                double focal_length_x = 526.69; // Approximate focal length.
+                double focal_length_y = 540.36;
 
-                Point center = new Point(testMat.cols()/2f,testMat.rows()/2f);
+                Point center = new Point(313.07,238.39);
 
-                Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
+                //Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
 
                 //create a 3x3 camera (intrinsic params) matrix
                 cameraMatrix = Mat.eye(3, 3, CvType.CV_64F);
 
-                double[] vals = {focal_length, 0, center.x, 0, focal_length, center.y, 0, 0, 1};
+                double[] vals = {focal_length_x, 0, center.x, 0, focal_length_y, center.y, 0, 0, 1};
 
                 //populate the 3x3 camera matrix
                 cameraMatrix.put(0, 0, vals);
@@ -893,7 +896,6 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 cameraMatrix.put(1, 1, 400);
                 cameraMatrix.put(0, 2, 640 / 2f);
                 cameraMatrix.put(1, 2, 480 / 2f);
-
                  */
 
                 distortionMat = new MatOfDouble(0,0,0,0);
@@ -970,6 +972,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         canvasHeight = canvas.getHeight();
         canvasWidth = canvas.getWidth();
 
+        Log.i(TAG, String.format("Canvas width and height are %d and %d", canvasWidth, canvasHeight));
+
+
+
         //check screen orientation: if portrait mode, set the camera preview square appropriately
         if (canvasHeight > canvasWidth) {
                 screenWidth = canvasWidth;
@@ -993,12 +999,26 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         //set up the Paint tool
         setPaint();
 
+        int bmWidth = bitmap.getWidth();
+        int bmHeight = bitmap.getHeight();
+
+        Log.i(TAG, String.format("Bitmap width and height are %d and %d", bmWidth, bmHeight));
+
+        int newRectWidth = right - left;
+        int newRectHeight = bottom - top;
+
+        double scaleDownRatioVert = newRectHeight/2280f;
+        double scaleDownRatioHoriz = newRectWidth/1080f;
+
+        Log.i(TAG, String.format("New rect width and height are %d and %d", newRectWidth, newRectHeight));
+        Log.i(TAG, String.format("Scaledown ratios are %f and %f", scaleDownRatioHoriz, scaleDownRatioVert));
+
         //draw the camera preview square bitmap on the screen
         //Android fxn documentation: Draw the specified bitmap, scaling/translating automatically to fill the destination rectangle.
         //*If the source rectangle is not null, it specifies the subset of the bitmap to draw.
         //This function ignores the density associated with the bitmap. This is because the source and destination rectangle
         // coordinate spaces are in their respective densities, so must already have the appropriate scaling factor applied.
-        canvas.drawBitmap(bitmap, /*src*/new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()),
+        canvas.drawBitmap(bitmap, /*src*/new Rect(0, 0, bmWidth, bmHeight), //in other words draw whole bitmap
                 /*dest*/new Rect(left, top, right, bottom), paint);
 
 
@@ -1017,7 +1037,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
         //Log.d(TAG, String.format("Found %d keypoints for the person", keyPoints.size()));
 
-        // Draw key points of the peron's body parts over the camera image
+        // Draw key points of the person's body parts over the camera image
         for (KeyPoint keyPoint : person.getKeyPoints()) {
                 //get the body part ONCE at the beginning
                 currentPart = keyPoint.getBodyPart();
@@ -1036,7 +1056,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         //I'll start by just using the person's nose to try to estimate how fast the phone is moving
                         if (currentPart == BodyPart.NOSE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[0] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[0] = humanActualRaw[1] = new Point(adjustedX, adjustedY);
 
                                 if (noseFound == 0) {
                                         noseFound = 1;
@@ -1050,7 +1070,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         }
                         else if (currentPart == BodyPart.LEFT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[1] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[2] = new Point(adjustedX, adjustedY);
 
                                 leftEyeFound = 1;
                                 leftEye = new Position(adjustedX, adjustedY);
@@ -1062,7 +1082,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[2] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[3] = new Point(adjustedX, adjustedY);
 
                                 rightEyeFound = 1;
                                 rightEye = new Position(adjustedX, adjustedY);
@@ -1075,11 +1095,11 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
                         else if (currentPart == BodyPart.RIGHT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[3] = new Point(adjustedX, adjustedY);
+                                //humanActualRaw[3] = new Point(adjustedX, adjustedY);
                         }
                         else if (currentPart == BodyPart.LEFT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[4] = new Point(adjustedX, adjustedY);
+                                //humanActualRaw[4] = new Point(adjustedX, adjustedY);
                         }
 
                         //draw the point corresponding to this body joint
@@ -1117,8 +1137,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         }
 
 
-        if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null &&
-                humanActualRaw[4]!=null) {
+        if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null
+                //&& humanActualRaw[4]!=null
+        )
+        {
 
                 //clear out the ArrayList
                 humanActualList.clear();
@@ -1128,7 +1150,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 humanActualList.add(humanActualRaw[1]);
                 humanActualList.add(humanActualRaw[2]);
                 humanActualList.add(humanActualRaw[3]);
-                humanActualList.add(humanActualRaw[4]);
+                //humanActualList.add(humanActualRaw[4]);
 
                 humanActualMat.fromList(humanActualList);
 
@@ -1150,6 +1172,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
                 double[] temp_double = imagePts.get(0,0);
 
+                //we need to change the points found so that they fit inside the square Canvas on the screen
+                temp_double[0] *= scaleDownRatioHoriz;
+                temp_double[1] *= scaleDownRatioVert;
+
                 Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
 
                 canvas.drawLine((float)humanActualRaw[0].x, (float)humanActualRaw[0].y, (float)temp_double[0], (float)temp_double[1], paint);
@@ -1159,6 +1185,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 Log.e(TAG, "Not everything found");
         }
 
+        //print out details about the PoseNet computation done
         canvas.drawText(
                 String.format("Score: %.2f",person.getScore()),
                 (15.0f * widthRatio),
@@ -1336,7 +1363,6 @@ private void computeDisplacement(float x, float y) {
                 float pFrictionToApply = NaiveConstants.POSITION_FRICTION_DEFAULT * Nposition[i];
                 Nposition[i] +=  - pFrictionToApply;
         }
-
          */
 
         //move the noshake box accordingly

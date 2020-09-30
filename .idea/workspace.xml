@@ -18,7 +18,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/opengl/opengl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
@@ -56,6 +55,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="99071FFAZ0010G" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -275,9 +275,9 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="408" y="919" key="run.anything.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1598027007211" />
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1601425343934">
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1601484648197">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1601425343934" />
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1601484648197" />
   </component>
 </project>
