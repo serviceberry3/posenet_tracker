@@ -1042,7 +1042,7 @@ private float noseOriginX, noseOriginY, lastNosePosX, lastNosePosY;
 //the Canvas class holds the draw() calls. To draw something, you need 4 basic components: A Bitmap to hold the pixels,
 // a Canvas to host the draw calls (writing into the bitmap),
 // a drawing primitive (e.g. Rect, Path, text, Bitmap), and a paint (to describe the colors and styles for the drawing).
-private void draw(Canvas canvas, Person person, Bitmap bitmap) {
+private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bitmap passed here is 257x257 pixels, good for Posenet model
         //draw clear nothing color to the screen (needs this to clear out the old text and stuff)
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
 
@@ -1060,16 +1060,19 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         canvasHeight = canvas.getHeight();
         canvasWidth = canvas.getWidth();
 
+        //should be 1080 x 2148 (full screen besides navigation bar)
         Log.i(TAG, String.format("Canvas width and height are %d and %d", canvasWidth, canvasHeight));
-
-
 
         //check screen orientation: if portrait mode, set the camera preview square appropriately
         if (canvasHeight > canvasWidth) {
                 screenWidth = canvasWidth;
-                screenHeight = canvasWidth;
+                screenHeight = canvasWidth; //screenwidth x screenHeight should now be 1080 x 1080
                 left = 0;
-                top = (canvasHeight - canvasWidth) / 2;
+
+                //we can find the top of the camera preview square by finding width of the padding on top and bottom of the square
+                //the total amt of padding will be the canvasHeight (2148) minus the heigt of camera preview box, then divide by 2 to get
+                //amt we need to go down from top of screen to find top of camera preview square
+                top = (canvasHeight - canvasWidth) / 2; //should be 534
         }
 
         //otherwise if landscape mode, set the width and height of the camera preview square appropriately
@@ -1081,17 +1084,20 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         }
 
         //right is right edge of screen if portrait mode; otherwise it's in middle of screen
-        right = left + screenWidth;
-        bottom = top + screenHeight;
+        right = left + screenWidth; //should be 1080
+
+        //find bottom of the camera preview square
+        bottom = top + screenHeight; //should be 534 + 1080 = 1614
 
         //set up the Paint tool
         setPaint();
 
-        int bmWidth = bitmap.getWidth();
-        int bmHeight = bitmap.getHeight();
+        int bmWidth = bitmap.getWidth(); //should be 257
+        int bmHeight = bitmap.getHeight(); //should be 257
 
-        Log.i(TAG, String.format("Bitmap width and height are %d and %d", bmWidth, bmHeight));
+        Log.i(TAG, String.format("Bitmap width and height are %d and %d", bmWidth, bmHeight)); //should be 257x257
 
+        //WHAT IS PT OF THIS??
         int newRectWidth = right - left;
         int newRectHeight = bottom - top;
 
@@ -1114,11 +1120,11 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
         //divide the available screen width pixels by PoseNet's required number of width pixels to get the number of real screen pixels
         //widthwise per posenet input image "pixel"
-        float widthRatio = (float) screenWidth / Constants.MODEL_WIDTH;
+        float widthRatio = (float) screenWidth / Constants.MODEL_WIDTH; //should be 1080/257
 
         //divide the available screen height pixels by PoseNet's required number of height pixels to get number of real screen pixels
         //heightwise per posenet input image "pixel"
-        float heightRatio = (float) screenHeight / Constants.MODEL_HEIGHT;
+        float heightRatio = (float) screenHeight / Constants.MODEL_HEIGHT; //should be 1080/257
 
         //get the keypoints list ONCE at the beginning
         List<KeyPoint> keyPoints = person.getKeyPoints();
@@ -1170,7 +1176,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 if (rightEyeFound == 1) {
                                         computeScale(leftEye, rightEye);
                                 }
-
                                  */
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
@@ -1185,7 +1190,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 if (leftEyeFound == 1) {
                                         computeScale(leftEye, rightEye);
                                 }
-
                                  */
                         }
 
@@ -1211,7 +1215,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         //reset velocity array
                         velocity[0] = velocity[1] = 0;
                 }
-
                  */
         }
 
@@ -1317,10 +1320,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 double[] y_ax = imagePts.get(1,0);
                 double[] z_ax = imagePts.get(2,0);
 
-                //we need to change the points found so that they fit inside the square Canvas on the screen
-                //temp_double[0] *= scaleDownRatioHoriz;
-                //temp_double[1] *= scaleDownRatioVert;
-
+                //we need to change the points found so that they map correctly into the square Canvas on the screen (basically we're
+                //scaling up the pts from the original 257x257 bitmap to the 1080x1080 image preview box we now have on screen
                 x_ax[0] = x_ax[0] * widthRatio + left;
                 x_ax[1] = x_ax[1] * heightRatio + top;
 
@@ -1330,12 +1331,15 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 z_ax[0] = z_ax[0] * widthRatio + left;
                 z_ax[1] = z_ax[1] * heightRatio + top;
 
+                torsoCenter.x = torsoCenter.x * widthRatio + left;
+                torsoCenter.y = torsoCenter.y * heightRatio + top;
+
                 //Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
 
                 //draw the projected 3D axes onto the canvas
-                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
+                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
                         (float)x_ax[0], (float)x_ax[1], paint);
-                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
+                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
                         (float)y_ax[0], (float)y_ax[1], paint);
                 canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
                         (float)z_ax[0], (float)z_ax[1], paint);
@@ -1596,7 +1600,7 @@ private void processImage(Bitmap bitmap) {
                 Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureScaled.jpg", scaledImage);
         }
 
-        // Perform inference.
+        //Perform inference.
         Person person = posenet.estimateSinglePose(scaledBitmap);
 
         Canvas canvas = surfaceHolder.lockCanvas();
