@@ -95,6 +95,8 @@ import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.MatOfPoint3f;
 import org.opencv.core.Point;
 import org.opencv.core.Point3;
+import org.opencv.core.Scalar;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.tensorflow.lite.examples.noah.lib.BodyPart;
 import org.tensorflow.lite.examples.noah.lib.Device;
@@ -272,12 +274,12 @@ public static float toMoveX, toMoveY;
 float noseDeltaX, noseDeltaY;
 
 //declare global matrix containing my model 3D coordinates of human pose, to be used for camera pose estimation
-private Point3[] humanModelRaw = new Point3[5];
+private Point3[] humanModelRaw = new Point3[6];
 private List<Point3> humanModelList = new ArrayList<Point3>();
 private MatOfPoint3f humanModelMat;
 
 //declare global matrix containing the actual 2D coordinates of the human found
-private Point[] humanActualRaw = new Point[5];
+private Point[] humanActualRaw = new Point[6];
 private List<Point> humanActualList = new ArrayList<Point>();
 private MatOfPoint2f humanActualMat;
 
@@ -285,8 +287,19 @@ private MatOfPoint2f humanActualMat;
 private Mat cameraMatrix, rotationMat, translationMat;
 private MatOfDouble distortionMat;
 
-Point3[] testPt = new Point3[1];
+Point3[] testPts = new Point3[3];
 List<Point3> testPtList = new ArrayList<Point3>();
+
+private int capture = 0;
+
+//declare floats for computing actual 2D dist found between nose and eyes and shoulders
+//this lets us deduce whether the person is looking left or rt (we need to swap axes)
+private float distToLeftEyeX, distToRightEyeX, distToLeftShouldX, distToRtShouldX;
+
+//float for finding center of human bust (pt between shoulders) in 2D coordinates, used as "origin" for drawing
+private float torsoCtrX, torsoCtrY;
+
+private Point torsoCenter;
 
 
 //thread that writes data to the circular buffer
@@ -421,11 +434,19 @@ private void showToast(final String text) {
                         Log.e("DEBUG", "onViewCreated: surfaceHolder came up NULL");
                 }
 
+                //get the Mats created AFTER OpenCV was loaded successfully
                 humanModelMat = ((CameraActivity) Objects.requireNonNull(getActivity())).getHumanModelMat();
                 humanActualMat = ((CameraActivity) getActivity()).getHumanActualMat();
 
-                testPt[0] = new Point3(0,0,1000.0);
-                testPtList.add(testPt[0]);
+
+                //essentially projecting a 3D axis magnitude 1000 onto 2D image in middle of person's chest
+                testPts[0] = new Point3(1000.0,-1087.5,-918.75);
+                testPts[1] = new Point3(0, 2087.5, -918.75);
+                testPts[2] = new Point3(0,-1087.5,81.25);
+
+                testPtList.add(testPts[0]);
+                testPtList.add(testPts[1]);
+                testPtList.add(testPts[2]);
         }
 
         /*
@@ -444,7 +465,6 @@ private void showToast(final String text) {
                         ((CameraActivity)getActivity()).getmLoaderCallback().onManagerConnected(LoaderCallbackInterface.SUCCESS);
                 }
         }
-
          */
 
 
@@ -487,8 +507,10 @@ private void showToast(final String text) {
 
                 showToast("Added PoseNet submodule fragment into Activity");
                 openCamera();
+
                 posenet = new Posenet(Objects.requireNonNull(this.getContext()), "posenet_model.tflite", Device.GPU);
 
+                /*
                 //populate the 3D human model
                 humanModelRaw[0] = new Point3(0.0f, 0.0f, 0.0f); //nose
                 humanModelRaw[1] = new Point3(0.0f, 0.0f, 0.0f); //nose again
@@ -496,15 +518,26 @@ private void showToast(final String text) {
                 humanModelRaw[3] = new Point3(215.0f, 170.0f, -135.0f); //rt eye ctr
 
                 //humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
-               // humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
+                //humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
+
+                 */
+
+
+                //from real measured coords
+                humanModelRaw[0] = new Point3(0.0f, 0.0f, 0.0f); //nose
+                humanModelRaw[1] = new Point3(0.0f, 0.0f, 0.0f); //nose
+                humanModelRaw[2] = new Point3(-225.0f, 318.75f, -262.5f); //left eye ctr
+                humanModelRaw[3] = new Point3(225.0f, 318.75f, -262.5f); //right eye ctr WAS -150
+                humanModelRaw[4] = new Point3(-871.875f, -1087.5f, -918.75f); //rt shoulder 450, -700, -600
+                humanModelRaw[5] = new Point3(871.875f, -1087.5f, -918.75f); //left shoulder -450, -700, -600
 
                 //push all of the model coordinates into the ArrayList version so they can be converted to a MatofPoint3f
                 humanModelList.add(humanModelRaw[0]);
                 humanModelList.add(humanModelRaw[1]);
                 humanModelList.add(humanModelRaw[2]);
                 humanModelList.add(humanModelRaw[3]);
-                //humanModelList.add(humanModelRaw[4]);
-
+                humanModelList.add(humanModelRaw[4]);
+                humanModelList.add(humanModelRaw[5]);
 
                 humanModelMat.fromList(humanModelList);
 
@@ -873,40 +906,86 @@ private class imageAvailableListener implements OnImageAvailableListener {
 
                 org.opencv.android.Utils.bitmapToMat(rotatedBitmap, testMat);
 
+                //save the final rotated 480 x 640 bitmap
+                if (capture == 0) {
+                        Log.i(TAG, "Writing image");
+                        Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCapture.jpg", testMat);
+                }
+
                 Log.i(TAG, String.format("Focal length found is %d", testMat.cols()));
 
-                // Camera internals
-                double focal_length_x = 526.69; // Approximate focal length.
-                double focal_length_y = 540.36;
-
-                Point center = new Point(313.07,238.39);
-
-                //Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
-
-                //create a 3x3 camera (intrinsic params) matrix
-                cameraMatrix = Mat.eye(3, 3, CvType.CV_64F);
-
-                double[] vals = {focal_length_x, 0, center.x, 0, focal_length_y, center.y, 0, 0, 1};
-
-                //populate the 3x3 camera matrix
-                cameraMatrix.put(0, 0, vals);
-
-                /*
-                cameraMatrix.put(0, 0, 400);
-                cameraMatrix.put(1, 1, 400);
-                cameraMatrix.put(0, 2, 640 / 2f);
-                cameraMatrix.put(1, 2, 480 / 2f);
-                 */
-
-                distortionMat = new MatOfDouble(0,0,0,0);
-
-                //new mat objects to store rotation and translation matrices from camera coords to world coords when solvePnp runs
-                rotationMat = new Mat();
-                translationMat = new Mat();
+                //set up the intrinsic camera matrix and initialize the world-to-camera translation and rotation matrices
+                makeCameraMat();
 
                 //send the final bitmap to be drawn on and output to the screen
                 processImage(rotatedBitmap);
         }
+}
+
+private void makeCameraMat() {
+        // Camera internals
+        double focal_length_x = 526.69; // Approximate focal length.
+        double focal_length_y = 540.36;
+
+        Point center = new Point(313.07,238.39);
+
+        //Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
+
+        //create a 3x3 camera (intrinsic params) matrix
+        cameraMatrix = Mat.eye(3, 3, CvType.CV_64F);
+
+        double[] vals = {focal_length_x, 0, center.x, 0, focal_length_y, center.y, 0, 0, 1};
+
+        //populate the 3x3 camera matrix
+        cameraMatrix.put(0, 0, vals);
+
+        /*
+        cameraMatrix.put(0, 0, 400);
+        cameraMatrix.put(1, 1, 400);
+        cameraMatrix.put(0, 2, 640 / 2f);
+        cameraMatrix.put(1, 2, 480 / 2f);
+         */
+
+        //distortionMat = new MatOfDouble(0,0,0,0);
+
+        /*
+        cameraMatrix.put(0, 0, 400);
+        cameraMatrix.put(1, 1, 400);
+        cameraMatrix.put(0, 2, 640 / 2f);
+        cameraMatrix.put(1, 2, 480 / 2f);
+         */
+
+        //assume no camera distortion
+        distortionMat = new MatOfDouble(new Mat(4, 1, CvType.CV_64FC1));
+        distortionMat.put(0,0,0);
+        distortionMat.put(1,0,0);
+        distortionMat.put(2,0,0);
+        distortionMat.put(3,0,0);
+
+        //new mat objects to store rotation and translation matrices from camera coords to world coords when solvePnp runs
+        rotationMat = new Mat(1, 3, CvType.CV_64FC1);
+        translationMat = new Mat(1, 3, CvType.CV_64FC1);
+
+        // Hack! initialize transition and rotation matrixes to improve estimation
+        translationMat.put(0,0,-100);
+        translationMat.put(0,0,100);
+        translationMat.put(0,0,1000);
+
+
+        if (distToLeftEyeX < distToRightEyeX) {
+                // looking at left
+                rotationMat.put(0,0,-1.0);
+                rotationMat.put(1,0,-0.75);
+                rotationMat.put(2,0,-3.0);
+
+
+        } else {
+                // looking at right
+                rotationMat.put(0,0,1.0);
+                rotationMat.put(1,0,-0.75);
+                rotationMat.put(2,0,-3.0);
+        }
+
 }
 
 /** Crop Bitmap to maintain aspect ratio of model input. */
@@ -935,6 +1014,15 @@ private Bitmap cropBitmap(Bitmap bitmap) {
                 float cropWidth = bitmap.getWidth() - ((float)bitmap.getHeight() * modelInputRatio);
 
                 croppedBitmap = Bitmap.createBitmap(bitmap, (int)(cropWidth / 2), 0, (int)(bitmap.getWidth() - cropWidth), bitmap.getHeight());
+        }
+
+        Mat croppedImage = new Mat();
+
+        org.opencv.android.Utils.bitmapToMat(croppedBitmap, croppedImage);
+
+        if (capture == 0) {
+                Log.i(TAG, "Writing cropped image");
+                Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureCropped.jpg", croppedImage);
         }
 
         return croppedBitmap;
@@ -1038,7 +1126,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
         //Log.d(TAG, String.format("Found %d keypoints for the person", keyPoints.size()));
 
         // Draw key points of the person's body parts over the camera image
-        for (KeyPoint keyPoint : person.getKeyPoints()) {
+        for (KeyPoint keyPoint : keyPoints) {
                 //get the body part ONCE at the beginning
                 currentPart = keyPoint.getBodyPart();
 
@@ -1056,8 +1144,9 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         //I'll start by just using the person's nose to try to estimate how fast the phone is moving
                         if (currentPart == BodyPart.NOSE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[0] = humanActualRaw[1] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[0] = humanActualRaw[1] = new Point(xValue, yValue);
 
+                                /*
                                 if (noseFound == 0) {
                                         noseFound = 1;
                                         setInitialNoseLocation(adjustedX, adjustedY);
@@ -1067,11 +1156,13 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                         //compute the displacement from the starting position that the nose has traveled (helper fxn)
                                         computeDisplacement(adjustedX, adjustedY);
                                 }
+                                 */
                         }
                         else if (currentPart == BodyPart.LEFT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[2] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[2] = new Point(xValue, yValue);
 
+                                /*
                                 leftEyeFound = 1;
                                 leftEye = new Position(adjustedX, adjustedY);
 
@@ -1079,11 +1170,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 if (rightEyeFound == 1) {
                                         computeScale(leftEye, rightEye);
                                 }
+
+                                 */
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[3] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[3] = new Point(xValue, yValue);
 
+                                /*
                                 rightEyeFound = 1;
                                 rightEye = new Position(adjustedX, adjustedY);
 
@@ -1091,21 +1185,24 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                                 if (leftEyeFound == 1) {
                                         computeScale(leftEye, rightEye);
                                 }
+
+                                 */
                         }
 
                         else if (currentPart == BodyPart.RIGHT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                //humanActualRaw[3] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[4] = new Point(adjustedX, adjustedY);
                         }
                         else if (currentPart == BodyPart.LEFT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                //humanActualRaw[4] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[5] = new Point(adjustedX, adjustedY);
                         }
 
                         //draw the point corresponding to this body joint
                         canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint);
                 }
 
+                /*
                 //if this point is the nose but we've lost our lock on it (confidence level is low)
                 else if (currentPart == BodyPart.NOSE) {
                         //set noseFound back to 0
@@ -1114,8 +1211,11 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                         //reset velocity array
                         velocity[0] = velocity[1] = 0;
                 }
+
+                 */
         }
 
+        /*
         //draw the lines of the person's limbs
         for (Pair line : bodyJoints) {
                 assert line.first != null;
@@ -1136,11 +1236,51 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 }
         }
 
+         */
 
+        //check that all of the keypoints for a human body bust area were found
         if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null
-                //&& humanActualRaw[4]!=null
+                && humanActualRaw[4]!=null && humanActualRaw[5]!=null
         )
         {
+                distToLeftEyeX = (float)Math.abs(humanActualRaw[2].x - humanActualRaw[0].x);
+                distToRightEyeX = (float)Math.abs(humanActualRaw[3].x - humanActualRaw[0].x);
+
+                distToLeftEyeX = (float)Math.abs(humanActualRaw[5].x - humanActualRaw[0].x);
+                distToRightEyeX = (float)Math.abs(humanActualRaw[4].x - humanActualRaw[0].x);
+
+
+                //correction for axis flipping
+                if (distToLeftEyeX > distToRightEyeX) {
+                        //person looking towards left, swap left eye and rt eye for actual
+                        Point temp = humanActualRaw[2];
+                        humanActualRaw[2] = humanActualRaw[3];
+                        humanActualRaw[3] = temp;
+                }
+
+                //correction for axis flipping
+                if (distToLeftShouldX < distToRtShouldX) {
+                        //person looking towards left, swap left eye and rt eye for actual
+                        Point temp = humanActualRaw[5];
+                        humanActualRaw[5] = humanActualRaw[4];
+                        humanActualRaw[4] = temp;
+                }
+
+
+                //HARDCODED, MUST BE FIXED
+
+                torsoCtrX = (float) (humanActualRaw[4].x + humanActualRaw[5].x)/2;
+                torsoCtrY = (float) (humanActualRaw[4].y + humanActualRaw[5].y)/2;
+
+
+
+                torsoCenter = new Point(torsoCtrX, torsoCtrY);
+                //torsoCenter = new Point((rt_should.x + left_should.x)/2, (rt_should.y + left_should.y)/2);
+                //humanActualRaw[0] = torsoCenter;
+
+                //draw the point corresponding to this body joint
+                canvas.drawCircle(torsoCtrX, torsoCtrY, circleRadius, paint);
+
 
                 //clear out the ArrayList
                 humanActualList.clear();
@@ -1150,13 +1290,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 humanActualList.add(humanActualRaw[1]);
                 humanActualList.add(humanActualRaw[2]);
                 humanActualList.add(humanActualRaw[3]);
-                //humanActualList.add(humanActualRaw[4]);
+                humanActualList.add(humanActualRaw[4]);
+                humanActualList.add(humanActualRaw[5]);
 
                 humanActualMat.fromList(humanActualList);
 
                 //now should have everything we need to run solvePnP
 
-
+                //solve for translation and rotation matrices
                 Calib3d.solvePnP(humanModelMat, humanActualMat, cameraMatrix, distortionMat, rotationMat, translationMat);
 
                 //Now we'll try projecting a 3D point (0, 0, 1000.0) onto the image plane. We'll use this to draw line sticking out of
@@ -1166,19 +1307,38 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
 
                 MatOfPoint2f imagePts = new MatOfPoint2f();
 
+                //project our basic x-y-z axis from the world coordinate system onto the camera coord system using rot and trans mats we solved
                 Calib3d.projectPoints(testPtMat, rotationMat, translationMat, cameraMatrix, distortionMat, imagePts);
 
                 Log.i(TAG, String.format("Resulting imagepts Mat is of size %d x %d", imagePts.rows(), imagePts.cols()));
 
-                double[] temp_double = imagePts.get(0,0);
+                //extract
+                double[] x_ax = imagePts.get(0,0);
+                double[] y_ax = imagePts.get(1,0);
+                double[] z_ax = imagePts.get(2,0);
 
                 //we need to change the points found so that they fit inside the square Canvas on the screen
-                temp_double[0] *= scaleDownRatioHoriz;
-                temp_double[1] *= scaleDownRatioVert;
+                //temp_double[0] *= scaleDownRatioHoriz;
+                //temp_double[1] *= scaleDownRatioVert;
 
-                Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
+                x_ax[0] = x_ax[0] * widthRatio + left;
+                x_ax[1] = x_ax[1] * heightRatio + top;
 
-                canvas.drawLine((float)humanActualRaw[0].x, (float)humanActualRaw[0].y, (float)temp_double[0], (float)temp_double[1], paint);
+                y_ax[0] = y_ax[0] * widthRatio + left;
+                y_ax[1] = y_ax[1] * heightRatio + top;
+
+                z_ax[0] = z_ax[0] * widthRatio + left;
+                z_ax[1] = z_ax[1] * heightRatio + top;
+
+                //Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
+
+                //draw the projected 3D axes onto the canvas
+                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
+                        (float)x_ax[0], (float)x_ax[1], paint);
+                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
+                        (float)y_ax[0], (float)y_ax[1], paint);
+                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
+                        (float)z_ax[0], (float)z_ax[1], paint);
 
         }
         else {
@@ -1216,7 +1376,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) {
                 paint
         );
 
-        //draw/push the Canvas bits to the screen
+        //draw/push the Canvas bits to the screen - FINISHED THE CYCLE
         surfaceHolder.unlockCanvasAndPost(canvas);
 }
 
@@ -1420,8 +1580,21 @@ private void processImage(Bitmap bitmap) {
         // Crop bitmap.
         Bitmap croppedBitmap = cropBitmap(bitmap);
 
-        // Created scaled version of bitmap for model input.
+        Mat scaledImage = new Mat();
+
+
+        // Created scaled version of bitmap for model input (scales it to 257 x 257)
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(croppedBitmap, Constants.MODEL_WIDTH, Constants.MODEL_HEIGHT, true);
+
+        //get mat from scaled bitmap
+        org.opencv.android.Utils.bitmapToMat(scaledBitmap, scaledImage);
+
+        //save the scaled down bitmap of the first image taken (as a jpg)
+        if (capture == 0) {
+                capture = 1;
+                Log.i(TAG, "Writing scaled image");
+                Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureScaled.jpg", scaledImage);
+        }
 
         // Perform inference.
         Person person = posenet.estimateSinglePose(scaledBitmap);
@@ -1433,8 +1606,8 @@ private void processImage(Bitmap bitmap) {
                 Log.e("DEBUG", "processImage: canvas came up NULL");
                 return;
         }
+        */
 
-         */
         draw(canvas, person, scaledBitmap);
 
         //displacementOnly(person, canvas);
