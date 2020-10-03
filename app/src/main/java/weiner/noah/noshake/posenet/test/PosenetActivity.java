@@ -134,7 +134,9 @@ private double minConfidence = 0.5;
 private float circleRadius = 8.0f;
 
 /** Paint class holds the style and color information to draw geometries,text and bitmaps. */
-private Paint paint = new Paint();
+private Paint redPaint = new Paint();
+private Paint bluePaint = new Paint();
+private Paint greenPaint = new Paint();
 
 /** A shape for extracting frame data.   */
 private int PREVIEW_WIDTH = 640;
@@ -1030,9 +1032,17 @@ private Bitmap cropBitmap(Bitmap bitmap) {
 
 /** Set the paint color and size.    */
 private void setPaint() {
-        paint.setColor(Color.RED);
-        paint.setTextSize(70.0f);
-        paint.setStrokeWidth(8.0f);
+        redPaint.setColor(Color.RED);
+        redPaint.setTextSize(70.0f);
+        redPaint.setStrokeWidth(8.0f);
+
+        bluePaint.setColor(Color.BLUE);
+        bluePaint.setTextSize(70.0f);
+        bluePaint.setStrokeWidth(8.0f);
+
+        greenPaint.setColor(Color.GREEN);
+        greenPaint.setTextSize(70.0f);
+        greenPaint.setStrokeWidth(8.0f);
 }
 
 private int noseFound = 0;
@@ -1113,7 +1123,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         //This function ignores the density associated with the bitmap. This is because the source and destination rectangle
         // coordinate spaces are in their respective densities, so must already have the appropriate scaling factor applied.
         canvas.drawBitmap(bitmap, /*src*/new Rect(0, 0, bmWidth, bmHeight), //in other words draw whole bitmap
-                /*dest*/new Rect(left, top, right, bottom), paint);
+                /*dest*/new Rect(left, top, right, bottom), redPaint);
 
 
         //Next need to calculate ratios used to scale image back up from the 257x257 passed to PoseNet to the actual display
@@ -1150,7 +1160,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                         //I'll start by just using the person's nose to try to estimate how fast the phone is moving
                         if (currentPart == BodyPart.NOSE) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[0] = humanActualRaw[1] = new Point(xValue, yValue);
+                                humanActualRaw[0] = new Point(xValue, yValue);
+                                humanActualRaw[1] = new Point(xValue, yValue);
 
                                 /*
                                 if (noseFound == 0) {
@@ -1195,15 +1206,15 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                         else if (currentPart == BodyPart.RIGHT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[4] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[4] = new Point(xValue, yValue);
                         }
                         else if (currentPart == BodyPart.LEFT_SHOULDER) {
                                 //add nose to first slot of Point array for pose estimation
-                                humanActualRaw[5] = new Point(adjustedX, adjustedY);
+                                humanActualRaw[5] = new Point(xValue, yValue);
                         }
 
                         //draw the point corresponding to this body joint
-                        canvas.drawCircle(adjustedX, adjustedY, circleRadius, paint);
+                        canvas.drawCircle(adjustedX, adjustedY, circleRadius, redPaint);
                 }
 
                 /*
@@ -1282,13 +1293,13 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 //humanActualRaw[0] = torsoCenter;
 
                 //draw the point corresponding to this body joint
-                canvas.drawCircle(torsoCtrX, torsoCtrY, circleRadius, paint);
+                canvas.drawCircle(torsoCtrX, torsoCtrY, circleRadius, redPaint);
 
 
                 //clear out the ArrayList
                 humanActualList.clear();
 
-                //compute pose estimation and draw line coming out of nose
+                //compute pose estimation and draw line coming out of person's chest
                 humanActualList.add(humanActualRaw[0]);
                 humanActualList.add(humanActualRaw[1]);
                 humanActualList.add(humanActualRaw[2]);
@@ -1338,11 +1349,11 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                 //draw the projected 3D axes onto the canvas
                 canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
-                        (float)x_ax[0], (float)x_ax[1], paint);
+                        (float)x_ax[0], (float)x_ax[1], bluePaint);
                 canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
-                        (float)y_ax[0], (float)y_ax[1], paint);
-                canvas.drawLine((float)torsoCenter.x * widthRatio + left, (float)torsoCenter.y * heightRatio + top,
-                        (float)z_ax[0], (float)z_ax[1], paint);
+                        (float)y_ax[0], (float)y_ax[1], greenPaint);
+                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
+                        (float)z_ax[0], (float)z_ax[1], redPaint);
 
         }
         else {
@@ -1354,14 +1365,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 String.format("Score: %.2f",person.getScore()),
                 (15.0f * widthRatio),
                 (30.0f * heightRatio + bottom),
-                paint
+                redPaint
         );
 
         canvas.drawText(
                 String.format("Device: %s",posenet.getDevice()),
                 (15.0f * widthRatio),
                 (50.0f * heightRatio + bottom),
-                paint
+                redPaint
         );
 
         //print out the time it took to do calculation of this frame
@@ -1369,9 +1380,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 String.format("Time to run image: %.2f ms", posenet.getLastInferenceTimeNanos() * 1.0f / 1_000_000),
                 (15.0f * widthRatio),
                 (70.0f * heightRatio + bottom),
-                paint
+                redPaint
         );
 
+        /*
         //print out velocity vector values
         canvas.drawText(
                 String.format("Velocity(m/s) X: %.2f, Y: %.2f", velocity[0], velocity[1]),
@@ -1379,6 +1391,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 (90.0f * heightRatio + bottom),
                 paint
         );
+         */
 
         //draw/push the Canvas bits to the screen - FINISHED THE CYCLE
         surfaceHolder.unlockCanvasAndPost(canvas);
@@ -1401,7 +1414,6 @@ private void displacementOnly(Person person, Canvas canvas) {
 
         canvasHeight = 2280;
         canvasWidth = 1080;
-
 
         //check screen orientation: if portrait mode, set the camera preview square appropriately
         if (canvasHeight > canvasWidth) {
