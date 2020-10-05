@@ -293,6 +293,7 @@ Point3[] testPts = new Point3[3];
 List<Point3> testPtList = new ArrayList<Point3>();
 
 private int capture = 0;
+private int looking;
 
 //declare floats for computing actual 2D dist found between nose and eyes and shoulders
 //this lets us deduce whether the person is looking left or rt (we need to swap axes)
@@ -979,6 +980,7 @@ private void makeCameraMat() {
                 rotationMat.put(0,0,-1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
+                looking = 0;
 
 
         } else {
@@ -986,6 +988,7 @@ private void makeCameraMat() {
                 rotationMat.put(0,0,1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
+                looking = 1;
         }
 
 }
@@ -1249,12 +1252,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                         );
                 }
         }
-
          */
 
+
+        //ONLY EVERY THIRD FRAME
         //check that all of the keypoints for a human body bust area were found
         if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null
                 && humanActualRaw[4]!=null && humanActualRaw[5]!=null
+                //&& frameCounter==3
         )
         {
                 distToLeftEyeX = (float)Math.abs(humanActualRaw[2].x - humanActualRaw[0].x);
@@ -1345,20 +1350,28 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 torsoCenter.x = torsoCenter.x * widthRatio + left;
                 torsoCenter.y = torsoCenter.y * heightRatio + top;
 
-                //Log.i(TAG, String.format("Found point %f, %f to draw line to from nose", temp_double[0], temp_double[1]));
+                Log.i(TAG, String.format("Found point %f, %f for x axis", x_ax[0], x_ax[1]));
+                Log.i(TAG, String.format("Found point %f, %f for y axis", y_ax[0], y_ax[1]));
+                Log.i(TAG, String.format("Found point %f, %f for z axis", z_ax[0], z_ax[1]));
 
-                //draw the projected 3D axes onto the canvas
-                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
-                        (float)x_ax[0], (float)x_ax[1], bluePaint);
-                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
-                        (float)y_ax[0], (float)y_ax[1], greenPaint);
-                canvas.drawLine((float)torsoCenter.x, (float)torsoCenter.y,
-                        (float)z_ax[0], (float)z_ax[1], redPaint);
 
+                if (!(x_ax[0]>2500 || x_ax[1]>1400 || y_ax[0] > 1200 || y_ax[1] < -1000 || z_ax[0] > 1000 || z_ax[1] < -900
+                || (looking==0 && z_ax[0] < y_ax[0]) || (looking==1 && z_ax[0] > y_ax[0]))) {
+                        //draw the projected 3D axes onto the canvas
+                        canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
+                                (float) x_ax[0], (float) x_ax[1], bluePaint);
+                        canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
+                                (float) y_ax[0], (float) y_ax[1], greenPaint);
+                        canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
+                                (float) z_ax[0], (float) z_ax[1], redPaint);
+                }
         }
-        else {
-                Log.e(TAG, "Not everything found");
-        }
+
+        //reset contents of the arrays
+        humanActualRaw[0] = humanActualRaw[1] = humanActualRaw[2] = humanActualRaw[3] = humanActualRaw[4] = null;
+
+        //estimate angles for yaw and pitch of the human's upper body
+        
 
         //print out details about the PoseNet computation done
         canvas.drawText(
@@ -1369,7 +1382,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         );
 
         canvas.drawText(
-                String.format("Device: %s",posenet.getDevice()),
+                String.format("Device: %s", posenet.getDevice()),
                 (15.0f * widthRatio),
                 (50.0f * heightRatio + bottom),
                 redPaint
@@ -1395,6 +1408,12 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
         //draw/push the Canvas bits to the screen - FINISHED THE CYCLE
         surfaceHolder.unlockCanvasAndPost(canvas);
+
+        //increment framecounter, if at 4 set to 0
+        frameCounter++;
+        if (frameCounter==4) {
+                frameCounter = 0;
+        }
 }
 
 private void displacementOnly(Person person, Canvas canvas) {
@@ -1609,7 +1628,7 @@ private void processImage(Bitmap bitmap) {
         if (capture == 0) {
                 capture = 1;
                 Log.i(TAG, "Writing scaled image");
-                Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureScaled.jpg", scaledImage);
+                Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureScaled0.jpg", scaledImage);
         }
 
         //Perform inference.
