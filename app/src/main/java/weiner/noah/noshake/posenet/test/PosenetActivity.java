@@ -1364,18 +1364,58 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                                 (float) y_ax[0], (float) y_ax[1], greenPaint);
                         canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
                                 (float) z_ax[0], (float) z_ax[1], redPaint);
+
+                        //estimate angles for yaw and pitch of the human's upper body
+                /*
+                Mat eulerAngles = new Mat();
+
+                getEulerAngles(eulerAngles);
+
+                Log.i(TAG, String.format("Euler angles mat is of size %d x %d", eulerAngles.rows(), eulerAngles.cols()));
+
+                //pitch, yaw, roll
+                double[] angles = eulerAngles.get(0,0);
+
+
+
+
+                double[] pitch = rotationMat.get(0,0);
+                double[] yaw = rotationMat.get(1,0);
+
+                //Log.i(TAG, String.format("Len of angles is %d", angles.length));
+
+                //print out pitch value (rotation about x axis)
+                canvas.drawText(
+                        String.format("Pitch of human: %f", pitch[0] * 180/3.14),
+                        (15.0f * widthRatio),
+                        (90.0f * heightRatio + bottom),
+                        bluePaint
+                );
+
+                //print out yaw value (rotation about y axis)
+                canvas.drawText(
+                        String.format("Yaw of human: %f", yaw[0] * 180/3.14),
+                        (15.0f * widthRatio),
+                        (110.0f * heightRatio + bottom),
+                        greenPaint
+                );
+
+                 */
+                
                 }
+
+
         }
 
         //reset contents of the arrays
         humanActualRaw[0] = humanActualRaw[1] = humanActualRaw[2] = humanActualRaw[3] = humanActualRaw[4] = null;
 
-        //estimate angles for yaw and pitch of the human's upper body
-        
+
+
 
         //print out details about the PoseNet computation done
         canvas.drawText(
-                String.format("Score: %.2f",person.getScore()),
+                String.format("Score (fit): %.2f",person.getScore()),
                 (15.0f * widthRatio),
                 (30.0f * heightRatio + bottom),
                 redPaint
@@ -1406,6 +1446,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         );
          */
 
+
+
         //draw/push the Canvas bits to the screen - FINISHED THE CYCLE
         surfaceHolder.unlockCanvasAndPost(canvas);
 
@@ -1414,6 +1456,34 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         if (frameCounter==4) {
                 frameCounter = 0;
         }
+}
+
+void getEulerAngles(Mat eulerAngles){
+        Mat cameraMatrix = new Mat(),rotMatrix = new Mat(),transVect = new Mat(),rotMatrixX = new Mat(),
+                rotMatrixY = new Mat(), rotMatrixZ = new Mat();
+
+        int needed = (int)rotationMat.total() * rotationMat.channels();
+
+        Log.i(TAG, String.format("Rotation mat has %d rows, %d cols, needed is %d", rotationMat.rows(), rotationMat.cols(), needed));
+
+        double[] projMatrix = new double[needed];
+
+        rotationMat.get(0,0,projMatrix);
+
+        ByteBuffer byteBuffer = ByteBuffer.allocate(needed);
+
+        for (double thisDouble : projMatrix) {
+                byteBuffer.putDouble(thisDouble);
+        }
+
+        Calib3d.decomposeProjectionMatrix(new Mat(3,4,CvType.CV_64FC1,byteBuffer),
+                cameraMatrix,
+                rotMatrix,
+                transVect,
+                rotMatrixX,
+                rotMatrixY,
+                rotMatrixZ,
+                eulerAngles);
 }
 
 private void displacementOnly(Person person, Canvas canvas) {

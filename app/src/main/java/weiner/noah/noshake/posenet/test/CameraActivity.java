@@ -85,6 +85,7 @@ public class CameraActivity extends AppCompatActivity {
             //add the PoseNet submodule into the activity
             getSupportFragmentManager().beginTransaction() //Returns: FragmentManager, FragmentTransaction
                     .replace(R.id.container, new PosenetActivity()).commit();
+
         }
     };
 
