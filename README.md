@@ -2,7 +2,7 @@ Implementing Tensorflow Posenet so that an Android device can use a single camer
 
 UPDATE: The app implements Posenet and then draws x, y, and z axes through the person's chest area, indicating the angle of their torso. I'm working on figuring out why I'm getting bogus data from solvePnP() sometimes (I blocked the incorrect data, which is responsible for the flickering of the axes).
 
-Here's a preview:
+Here's a preview:  
 ![Posenet PnP preview](https://github.com/serviceberry3/posenet_tracker/blob/master/img/pose_est.gif?raw=true)
 
 
