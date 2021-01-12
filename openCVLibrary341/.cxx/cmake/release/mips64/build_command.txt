@@ -1,0 +1,22 @@
+                Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/home/nodog/docs/asp/posenet_tracker/openCVLibrary341
+-DCMAKE_CXX_FLAGS=-frtti -fexceptions
+-DCMAKE_FIND_ROOT_PATH=/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/.cxx/cmake/release/prefab/mips64/prefab
+-DCMAKE_BUILD_TYPE=Release
+-DCMAKE_TOOLCHAIN_FILE=/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=mips64
+-DANDROID_NDK=/home/nodog/VENV/opt/android-ndk-r15c
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=mips64
+-DCMAKE_ANDROID_NDK=/home/nodog/VENV/opt/android-ndk-r15c
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/build/intermediates/cmake/release/obj/mips64
+-DCMAKE_MAKE_PROGRAM=/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-B/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/.cxx/cmake/release/mips64
+-GNinja
+jvmArgs : 
+
+Build command args:

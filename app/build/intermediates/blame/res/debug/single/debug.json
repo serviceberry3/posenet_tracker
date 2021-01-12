@@ -1,146 +1,146 @@
 [
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable/ic_launcher_background.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_tfl2_logo_dark.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-xxhdpi/tfl2_logo_dark.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-hdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_chevron_down.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/icn_chevron_down.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_action_info.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_action_info.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_tfl2_logo.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-xxhdpi/tfl2_logo.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_posenet.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_posenet.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_camera.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_camera.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_tfl2_logo_dark.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/tfl2_logo_dark.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_test.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_test.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_camera.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_camera.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_image.jpg.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable/image.jpg"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_chevron_up.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/icn_chevron_up.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_action.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable/action.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_action_info.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_action_info.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_test.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_test.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_chevron_down.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-xxhdpi/icn_chevron_down.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/layout_tfe_pn_activity_posenet.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/layout/tfe_pn_activity_posenet.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_action_info.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_action_info.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-mdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_icn_chevron_up.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-xxhdpi/icn_chevron_up.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_action.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable/action.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/layout_activity_pose_net_java.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/layout/activity_pose_net_java.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_action_info.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_action_info.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_action_info.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_action_info.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable_image.jpg.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable/image.jpg"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_action_info.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_action_info.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_tfl2_logo.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/drawable-xxhdpi/tfl2_logo.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_action_info.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_action_info.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_action_info.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_action_info.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/drawable-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/res/merged/debug/layout_activity_pose_net_java.xml.flat",
-        "source": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/res/layout/activity_pose_net_java.xml"
+        "merged": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/nodog/docs/asp/posenet_tracker/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     }
 ]

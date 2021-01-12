@@ -1,7 +1,7 @@
-set(CMAKE_C_COMPILER "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang")
+set(CMAKE_C_COMPILER "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "Clang")
-set(CMAKE_C_COMPILER_VERSION "9.0")
+set(CMAKE_C_COMPILER_VERSION "3.8")
 set(CMAKE_C_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_C_COMPILER_WRAPPER "")
 set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")
@@ -16,11 +16,11 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar")
+set(CMAKE_AR "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar")
 set(CMAKE_C_COMPILER_AR "CMAKE_C_COMPILER_AR-NOTFOUND")
-set(CMAKE_RANLIB "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ranlib")
+set(CMAKE_RANLIB "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-ranlib")
 set(CMAKE_C_COMPILER_RANLIB "CMAKE_C_COMPILER_RANLIB-NOTFOUND")
-set(CMAKE_LINKER "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ld")
+set(CMAKE_LINKER "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-ld")
 set(CMAKE_COMPILER_IS_GNUCC )
 set(CMAKE_C_COMPILER_LOADED 1)
 set(CMAKE_C_COMPILER_WORKS TRUE)
@@ -65,9 +65,17 @@ if(CMAKE_C_CL_SHOWINCLUDES_PREFIX)
 endif()
 
 
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG "linux-x86_64")
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION "clang")
+set(CMAKE_C_ANDROID_TOOLCHAIN_MACHINE "aarch64-linux-android")
+set(CMAKE_C_ANDROID_TOOLCHAIN_VERSION "4.9")
+set(CMAKE_C_COMPILER_EXTERNAL_TOOLCHAIN "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64")
+set(CMAKE_C_ANDROID_TOOLCHAIN_PREFIX "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-")
+set(CMAKE_C_ANDROID_TOOLCHAIN_SUFFIX "")
+
 
 
 
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;dl;c;gcc;dl")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

@@ -18,13 +18,14 @@ package org.tensorflow.lite.examples.noah.lib
 import android.content.Context
 import android.graphics.Bitmap
 import android.os.SystemClock
+import android.util.Log
+import org.tensorflow.lite.Interpreter
 import java.io.FileInputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 import kotlin.math.exp
-import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.gpu.GpuDelegate
 
 enum class BodyPart (val value: Int) {
@@ -86,6 +87,7 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
   private fun getInterpreter(): Interpreter {
     //get the Posenet Interpreter instance
     if (interpreter != null) {
+      Log.i("Test", "Reusing interpreter")
       return interpreter!!
     }
 
@@ -101,7 +103,11 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
       }
       Device.NNAPI -> options.setUseNNAPI(true)
     }
+
+
     interpreter = Interpreter(loadModelFile(filename, context), options)
+
+
     return interpreter!!
   }
 
@@ -149,6 +155,8 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
       inputBuffer.putFloat(((pixelValue and 0xFF) - mean) / std)
     }
 
+    Log.i("Test", String.format("InputBuffer has length %d", batchSize * bytesPerChannel * bitmap.height * bitmap.width * inputChannels))
+
     return inputBuffer
   }
 
@@ -191,7 +199,7 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
       }
     }
 
-    // 1 * 9 * 9 * 32 contains backward displacements
+    //1 * 9 * 9 * 32 contains backward displacements
     val displacementsBwdShape = interpreter.getOutputTensor(3).shape()
     outputMap[3] = Array(displacementsBwdShape[0]) {
       Array(displacementsBwdShape[1]) {
@@ -254,6 +262,9 @@ class Posenet(val context: Context, val filename: String = "posenet_model.tflite
           }
         }
       }
+
+      Log.i("Test", String.format("Maxrow finished as %d", maxRow));
+
       keypointPositions[keypoint] = Pair(maxRow, maxCol)
     }
 

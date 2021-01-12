@@ -1,3 +1,6 @@
+include ':openCVLibrary341'
 include ':opengl'
 include ':app', ':posenet'
 include ':openCVLibrary341'
+rootProject.name = "posenet_tracker"
+

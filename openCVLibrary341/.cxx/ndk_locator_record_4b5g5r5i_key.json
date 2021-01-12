@@ -1,0 +1,11 @@
+{
+  "ndkDirProperty": "/home/nodog/VENV/opt/android-ndk-r15c",
+  "sdkFolder": "/home/nodog/Android/Sdk",
+  "sideBySideNdkFolderNames": [
+    "android-ndk-r11c-linux-x86_64",
+    "21.3.6528147",
+    "android-ndk-r17c-linux-x86_64",
+    "21.2.6472646",
+    "android-ndk-r21d-linux-x86_64"
+  ]
+}

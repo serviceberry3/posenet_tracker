@@ -1,49 +1,50 @@
 {
   "stringTable": {
-    "0": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a",
-    "1": "--target=armv7-none-linux-androideabi16 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dcirc_buffer_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -frtti -fexceptions -fsigned-char -std=c++11 -Oz -DNDEBUG -fPIC"
+    "0": "/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -Dcirc_buffer_EXPORTS -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/arm-linux-androideabi -isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=16 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -frtti -fexceptions -fsigned-char -std=c++11 -Os -DNDEBUG -fPIC"
   },
   "buildFiles": [
-    "/home/nodog/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake",
-    "/home/nodog/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake",
-    "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/CMakeLists.txt"
+    "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake"
   ],
   "cleanCommands": [
-    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" clean"
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" clean"
   ],
-  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "circ_buffer-Release-armeabi-v7a": {
-      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" circ_buffer",
+      "buildCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/armeabi-v7a\" circ_buffer",
       "buildType": "release",
-      "toolchain": "4068951531",
+      "toolchain": "434286962",
       "abi": "armeabi-v7a",
       "artifactName": "circ_buffer",
       "files": [
         {
-          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/convolve.cpp",
+          "src": "/home/nodog/docs/asp/posenet_tracker/app/src/main/cpp/convolve.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/circ_buffer.cpp",
+          "src": "/home/nodog/docs/asp/posenet_tracker/app/src/main/cpp/circ_buffer.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         },
         {
-          "src": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/cpp/impulse_response.cpp",
+          "src": "/home/nodog/docs/asp/posenet_tracker/app/src/main/cpp/impulse_response.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/cmake/release/obj/armeabi-v7a/libcirc_buffer.so",
-      "runtimeFiles": []
+      "output": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/cmake/release/obj/armeabi-v7a/libcirc_buffer.so",
+      "runtimeFiles": [
+        "/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-16/arch-arm/usr/lib/liblog.so"
+      ]
     }
   },
   "toolchains": {
-    "4068951531": {
-      "cppCompilerExecutable": "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    "434286962": {
+      "cppCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
     }
   },
   "cFileExtensions": [],

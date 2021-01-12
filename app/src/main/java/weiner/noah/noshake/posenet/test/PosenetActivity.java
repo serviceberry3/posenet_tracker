@@ -834,6 +834,7 @@ private void fillBytes(Image.Plane[] planes, byte[][] yuvBytes) {
         for (int i = 0; i < planes.length; i++) {
                 ByteBuffer buffer = planes[i].getBuffer();
 
+                //create new byte array in yuvBytes the size of this plane
                 if (yuvBytes[i] == null) {
                         yuvBytes[i] = new byte[(buffer.capacity())];
                 }
@@ -849,7 +850,7 @@ private class imageAvailableListener implements OnImageAvailableListener {
         public void onImageAvailable(ImageReader imageReader) {
                 //Log.i("DBUG", "onImageAvailable");
 
-                // We need to wait until we have some size from onPreviewSizeChosen
+                //We need to wait until we have some size from onPreviewSizeChosen
                 if (previewWidth == 0 || previewHeight == 0) {
                         return;
                 }
@@ -860,13 +861,13 @@ private class imageAvailableListener implements OnImageAvailableListener {
                         return;
                 }
 
-
                 //get the planes from the image
                 Image.Plane[] planes = image.getPlanes();
 
-
+                //put all planes data into 2D byte array called yuvBytes
                 fillBytes(planes, yuvBytes);
 
+                //get first plane
                 Image.Plane copy = planes[0];
 
                 //get raw bytes from incoming 2d image
@@ -875,7 +876,7 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 //create new array of raw bytes of the appropriate size (remaining)
                 byte[] buffer = new byte[byteBuffer.remaining()];
 
-                //store the ByteBuffer in the raw byte array
+                //store the ByteBuffer in the raw byte array (the pixels from first plane of image)
                 byteBuffer.get(buffer);
 
                 //instantiate new Matrix object to hold the image pixels
@@ -887,11 +888,12 @@ private class imageAvailableListener implements OnImageAvailableListener {
 
                 ImageUtils imageUtils = new ImageUtils();
 
+                //convert the three planes into single int array called rgbBytes
                 imageUtils.convertYUV420ToARGB8888(yuvBytes[0], yuvBytes[1], yuvBytes[2], previewWidth, previewHeight,
                         /*yRowStride=*/ image.getPlanes()[0].getRowStride(),
                         /*uvRowStride=*/ image.getPlanes()[1].getRowStride(),
                         /*uvPixelStride=*/ image.getPlanes()[1].getPixelStride(),
-                        rgbBytes
+                        rgbBytes //an int[]
                 );
 
                 // Create bitmap from int array
@@ -1401,7 +1403,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 );
 
                  */
-                
+
                 }
 
 
@@ -1409,8 +1411,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
         //reset contents of the arrays
         humanActualRaw[0] = humanActualRaw[1] = humanActualRaw[2] = humanActualRaw[3] = humanActualRaw[4] = null;
-
-
 
 
         //print out details about the PoseNet computation done
@@ -1445,8 +1445,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 paint
         );
          */
-
-
 
         //draw/push the Canvas bits to the screen - FINISHED THE CYCLE
         surfaceHolder.unlockCanvasAndPost(canvas);
@@ -1679,6 +1677,7 @@ private float computeVelocity() {
         return 0;
 }
 
+
 //Process image using Posenet library. The image needs to be scaled in order to fit Posenet's input dimension requirements of
 //257 x 257 (defined in Constants.java), and probably needs to be cropped in order to preserve the image's aspect ratio
 private void processImage(Bitmap bitmap) {
@@ -1687,11 +1686,13 @@ private void processImage(Bitmap bitmap) {
 
         Mat scaledImage = new Mat();
 
+        Log.i(TAG, String.valueOf(croppedBitmap.getConfig()));
+
 
         // Created scaled version of bitmap for model input (scales it to 257 x 257)
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(croppedBitmap, Constants.MODEL_WIDTH, Constants.MODEL_HEIGHT, true);
 
-        //get mat from scaled bitmap
+        //get bitmap from mat
         org.opencv.android.Utils.bitmapToMat(scaledBitmap, scaledImage);
 
         //save the scaled down bitmap of the first image taken (as a jpg)

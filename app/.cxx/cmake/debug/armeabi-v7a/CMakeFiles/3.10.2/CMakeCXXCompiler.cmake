@@ -1,10 +1,10 @@
-set(CMAKE_CXX_COMPILER "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++")
+set(CMAKE_CXX_COMPILER "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "Clang")
-set(CMAKE_CXX_COMPILER_VERSION "9.0")
+set(CMAKE_CXX_COMPILER_VERSION "3.8")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
-set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
+set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "98")
 set(CMAKE_CXX_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters;cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_attributes;cxx_auto_type;cxx_constexpr;cxx_decltype;cxx_decltype_incomplete_return_types;cxx_default_function_template_args;cxx_defaulted_functions;cxx_defaulted_move_initializers;cxx_delegating_constructors;cxx_deleted_functions;cxx_enum_forward_declarations;cxx_explicit_conversions;cxx_extended_friend_declarations;cxx_extern_templates;cxx_final;cxx_func_identifier;cxx_generalized_initializers;cxx_inheriting_constructors;cxx_inline_namespaces;cxx_lambdas;cxx_local_type_template_args;cxx_long_long_type;cxx_noexcept;cxx_nonstatic_member_init;cxx_nullptr;cxx_override;cxx_range_for;cxx_raw_string_literals;cxx_reference_qualified_functions;cxx_right_angle_brackets;cxx_rvalue_references;cxx_sizeof_member;cxx_static_assert;cxx_strong_enums;cxx_thread_local;cxx_trailing_return_types;cxx_unicode_literals;cxx_uniform_initialization;cxx_unrestricted_unions;cxx_user_literals;cxx_variadic_macros;cxx_variadic_templates;cxx_std_14;cxx_aggregate_default_initializers;cxx_attribute_deprecated;cxx_binary_literals;cxx_contextual_conversions;cxx_decltype_auto;cxx_digit_separators;cxx_generic_lambdas;cxx_lambda_init_captures;cxx_relaxed_constexpr;cxx_return_type_deduction;cxx_variable_templates;cxx_std_17")
 set(CMAKE_CXX98_COMPILE_FEATURES "cxx_std_98;cxx_template_template_parameters")
 set(CMAKE_CXX11_COMPILE_FEATURES "cxx_std_11;cxx_alias_templates;cxx_alignas;cxx_alignof;cxx_attributes;cxx_auto_type;cxx_constexpr;cxx_decltype;cxx_decltype_incomplete_return_types;cxx_default_function_template_args;cxx_defaulted_functions;cxx_defaulted_move_initializers;cxx_delegating_constructors;cxx_deleted_functions;cxx_enum_forward_declarations;cxx_explicit_conversions;cxx_extended_friend_declarations;cxx_extern_templates;cxx_final;cxx_func_identifier;cxx_generalized_initializers;cxx_inheriting_constructors;cxx_inline_namespaces;cxx_lambdas;cxx_local_type_template_args;cxx_long_long_type;cxx_noexcept;cxx_nonstatic_member_init;cxx_nullptr;cxx_override;cxx_range_for;cxx_raw_string_literals;cxx_reference_qualified_functions;cxx_right_angle_brackets;cxx_rvalue_references;cxx_sizeof_member;cxx_static_assert;cxx_strong_enums;cxx_thread_local;cxx_trailing_return_types;cxx_unicode_literals;cxx_uniform_initialization;cxx_unrestricted_unions;cxx_user_literals;cxx_variadic_macros;cxx_variadic_templates")
@@ -17,11 +17,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar")
+set(CMAKE_AR "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ar")
 set(CMAKE_CXX_COMPILER_AR "CMAKE_CXX_COMPILER_AR-NOTFOUND")
-set(CMAKE_RANLIB "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ranlib")
+set(CMAKE_RANLIB "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ranlib")
 set(CMAKE_CXX_COMPILER_RANLIB "CMAKE_CXX_COMPILER_RANLIB-NOTFOUND")
-set(CMAKE_LINKER "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ld")
+set(CMAKE_LINKER "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-ld")
 set(CMAKE_COMPILER_IS_GNUCXX )
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
@@ -67,9 +67,17 @@ if(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX)
 endif()
 
 
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_HOST_TAG "linux-x86_64")
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION "clang")
+set(CMAKE_CXX_ANDROID_TOOLCHAIN_MACHINE "arm-linux-androideabi")
+set(CMAKE_CXX_ANDROID_TOOLCHAIN_VERSION "4.9")
+set(CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64")
+set(CMAKE_CXX_ANDROID_TOOLCHAIN_PREFIX "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-")
+set(CMAKE_CXX_ANDROID_TOOLCHAIN_SUFFIX "")
 
 
 
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "c++;m;gcc;dl;c;gcc;dl")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/arm;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/arm-linux-androideabi/lib/armv7-a/thumb;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/16;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib")
+
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc;gcc;dl;c;gcc;gcc;dl")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/arm;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib/armv7-a/thumb;/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-16/arch-arm/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

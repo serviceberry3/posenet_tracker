@@ -1,0 +1,35 @@
+weiner/noah/noshake/posenet/test/ctojavaconnector/Convolve.java
+ weiner.noah.noshake.posenet.test.ctojavaconnector.Convolve
+weiner/noah/noshake/posenet/test/noshake/TimerFunctions.java
+ weiner.noah.noshake.posenet.test.noshake.TimerFunctions
+ weiner.noah.noshake.posenet.test.noshake.TimerFunctions$1
+ weiner.noah.noshake.posenet.test.noshake.TimerFunctions$1$1
+weiner/noah/noshake/posenet/test/utils/Utils.java
+ weiner.noah.noshake.posenet.test.utils.Utils
+weiner/noah/noshake/posenet/test/ctojavaconnector/ImpulseResponse.java
+ weiner.noah.noshake.posenet.test.ctojavaconnector.ImpulseResponse
+weiner/noah/noshake/posenet/test/ctojavaconnector/CircBuffer.java
+ weiner.noah.noshake.posenet.test.ctojavaconnector.CircBuffer
+weiner/noah/noshake/posenet/test/Constants.java
+ weiner.noah.noshake.posenet.test.Constants
+weiner/noah/noshake/posenet/test/CameraActivity.java
+ weiner.noah.noshake.posenet.test.CameraActivity
+ weiner.noah.noshake.posenet.test.CameraActivity$1
+weiner/noah/noshake/posenet/test/NoShakeConstants.java
+ weiner.noah.noshake.posenet.test.NoShakeConstants
+weiner/noah/noshake/posenet/test/PosenetActivity.java
+ weiner.noah.noshake.posenet.test.PosenetActivity
+ weiner.noah.noshake.posenet.test.PosenetActivity$1
+ weiner.noah.noshake.posenet.test.PosenetActivity$2
+ weiner.noah.noshake.posenet.test.PosenetActivity$ErrorDialog
+ weiner.noah.noshake.posenet.test.PosenetActivity$ErrorDialog$1
+ weiner.noah.noshake.posenet.test.PosenetActivity$bufferWait
+ weiner.noah.noshake.posenet.test.PosenetActivity$captureCallback
+ weiner.noah.noshake.posenet.test.PosenetActivity$detectShaking
+ weiner.noah.noshake.posenet.test.PosenetActivity$getDataWriteBuffer
+ weiner.noah.noshake.posenet.test.PosenetActivity$imageAvailableListener
+ weiner.noah.noshake.posenet.test.PosenetActivity$stateCallback
+weiner/noah/noshake/posenet/test/NaiveConstants.java
+ weiner.noah.noshake.posenet.test.NaiveConstants
+weiner/noah/noshake/posenet/test/BuildConfig.java
+ weiner.noah.noshake.posenet.test.BuildConfig

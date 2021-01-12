@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml",
+            "outputFile": "/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml",
             "map": [
                 {
                     "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/res/values-el/values-el.xml",

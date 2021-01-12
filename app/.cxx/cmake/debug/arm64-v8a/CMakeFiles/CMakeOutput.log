@@ -1,112 +1,103 @@
-The target system is: Android - 1 - aarch64
-The host system is: Linux - 5.4.0-42-generic - x86_64
+The target system is: Android - 21 - aarch64
+The host system is: Linux - 5.8.0-36-generic - x86_64
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e2b51"
-[1/2] Building C object CMakeFiles/cmTC_e2b51.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_e2b51
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d51b3"
+[1/2] Building C object CMakeFiles/cmTC_d51b3.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_d51b3
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_cf9df"
-[1/2] Building C object CMakeFiles/cmTC_cf9df.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_cf9df
-Android (6454773 based on r365631c2) clang version 9.0.8 (https://android.googlesource.com/toolchain/llvm-project 98c855489587874b2a325e7a516b99d838599c6f) (based on LLVM 9.0.8svn)
-Target: aarch64-none-linux-android21
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_1edf4"
+[1/2] Building C object CMakeFiles/cmTC_1edf4.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_1edf4
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: aarch64-none-linux-android
 Thread model: posix
-InstalledDir: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin
-Found candidate GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
-Selected GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+InstalledDir: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin
+Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=both --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_cf9df /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_cf9df.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_1edf4 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_1edf4.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_cf9df"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_cf9df.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_cf9df]
-  ignore line: [Android (6454773 based on r365631c2) clang version 9.0.8 (https://android.googlesource.com/toolchain/llvm-project 98c855489587874b2a325e7a516b99d838599c6f) (based on LLVM 9.0.8svn)]
-  ignore line: [Target: aarch64-none-linux-android21]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_1edf4"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_1edf4.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_1edf4]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: aarch64-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin]
-  ignore line: [Found candidate GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-  ignore line: [Selected GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [InstalledDir: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+  ignore line: [Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=both --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_cf9df /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_cf9df.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o]
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_1edf4 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_1edf4.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
+    arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znoexecstack] ==> ignore
-    arg [-EL] ==> ignore
     arg [--fix-cortex-a53-843419] ==> ignore
-    arg [--warn-shared-textrel] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [-zmax-page-size=4096] ==> ignore
-    arg [--hash-style=both] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [aarch64linux] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_cf9df] ==> ignore
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o] ==> ignore
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+    arg [cmTC_1edf4] ==> ignore
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libgcc_real.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libatomic.a] ==> ignore
     arg [--build-id] ==> ignore
+    arg [--warn-shared-textrel] ==> ignore
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_cf9df.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_1edf4.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o] ==> ignore
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib] ==> [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
   implicit libs: [gcc;dl;c;gcc;dl]
-  implicit dirs: [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+  implicit dirs: [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
   implicit fwks: []
 
 
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_bc8ff"
-[1/2] Building C object CMakeFiles/cmTC_bc8ff.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_bc8ff
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_73ec2"
+[1/2] Building C object CMakeFiles/cmTC_73ec2.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_73ec2
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -116,11 +107,11 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_13005"
-[1/2] Building C object CMakeFiles/cmTC_13005.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_13005
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_7b0e6"
+[1/2] Building C object CMakeFiles/cmTC_7b0e6.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_7b0e6
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -130,11 +121,11 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c8ef9"
-[1/2] Building C object CMakeFiles/cmTC_c8ef9.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_c8ef9
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_c1d00"
+[1/2] Building C object CMakeFiles/cmTC_c1d00.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_c1d00
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -142,116 +133,107 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_0d8c7"
-[1/2] Building CXX object CMakeFiles/cmTC_0d8c7.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_0d8c7
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_39ec3"
+[1/2] Building CXX object CMakeFiles/cmTC_39ec3.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_39ec3
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_41a6d"
-[1/2] Building CXX object CMakeFiles/cmTC_41a6d.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_41a6d
-Android (6454773 based on r365631c2) clang version 9.0.8 (https://android.googlesource.com/toolchain/llvm-project 98c855489587874b2a325e7a516b99d838599c6f) (based on LLVM 9.0.8svn)
-Target: aarch64-none-linux-android21
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d023b"
+[1/2] Building CXX object CMakeFiles/cmTC_d023b.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_d023b
+Android clang version 5.0.300080  (based on LLVM 5.0.300080)
+Target: aarch64-none-linux-android
 Thread model: posix
-InstalledDir: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin
-Found candidate GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
-Selected GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+InstalledDir: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin
+Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=both --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_41a6d /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_41a6d.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_d023b /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_d023b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_41a6d"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_41a6d.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_41a6d]
-  ignore line: [Android (6454773 based on r365631c2) clang version 9.0.8 (https://android.googlesource.com/toolchain/llvm-project 98c855489587874b2a325e7a516b99d838599c6f) (based on LLVM 9.0.8svn)]
-  ignore line: [Target: aarch64-none-linux-android21]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d023b"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_d023b.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_d023b]
+  ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
+  ignore line: [Target: aarch64-none-linux-android]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin]
-  ignore line: [Found candidate GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-  ignore line: [Selected GCC installation: /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [InstalledDir: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin]
+  ignore line: [Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
   ignore line: [Candidate multilib: .]
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -z noexecstack -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=both --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_41a6d /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21 -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_41a6d.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o]
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
-    arg [--sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_d023b /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_d023b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
+    arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znoexecstack] ==> ignore
-    arg [-EL] ==> ignore
     arg [--fix-cortex-a53-843419] ==> ignore
-    arg [--warn-shared-textrel] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [-zmax-page-size=4096] ==> ignore
-    arg [--hash-style=both] ==> ignore
-    arg [--enable-new-dtags] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
     arg [-m] ==> ignore
     arg [aarch64linux] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_41a6d] ==> ignore
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtbegin_dynamic.o] ==> ignore
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
-    arg [-L/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+    arg [cmTC_d023b] ==> ignore
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
+    arg [-L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
     arg [--exclude-libs] ==> ignore
     arg [libgcc.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libgcc_real.a] ==> ignore
-    arg [--exclude-libs] ==> ignore
-    arg [libatomic.a] ==> ignore
     arg [--build-id] ==> ignore
+    arg [--warn-shared-textrel] ==> ignore
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_41a6d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-Bstatic] ==> ignore
-    arg [-lc++] ==> lib [c++]
-    arg [-Bdynamic] ==> ignore
+    arg [-znocopyreloc] ==> ignore
+    arg [CMakeFiles/cmTC_d023b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
+    arg [-lgcc] ==> lib [gcc]
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
-    arg [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/crtend_android.o] ==> ignore
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib]
-  collapse library dir [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
-  implicit libs: [c++;m;gcc;dl;c;gcc;dl]
-  implicit dirs: [/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/lib/linux/aarch64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+    arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+  collapse library dir [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib] ==> [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
+  implicit libs: [stdc++;m;gcc;gcc;dl;c;gcc;gcc;dl]
+  implicit dirs: [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib]
   implicit fwks: []
 
 
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_b6e74"
-[1/2] Building CXX object CMakeFiles/cmTC_b6e74.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_b6e74
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e2267"
+[1/2] Building CXX object CMakeFiles/cmTC_e2267.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_e2267
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -314,11 +296,11 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_17229"
-[1/2] Building CXX object CMakeFiles/cmTC_17229.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_17229
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_4d245"
+[1/2] Building CXX object CMakeFiles/cmTC_4d245.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_4d245
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -381,11 +363,11 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_21563"
-[1/2] Building CXX object CMakeFiles/cmTC_21563.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_21563
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8c5bd"
+[1/2] Building CXX object CMakeFiles/cmTC_8c5bd.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_8c5bd
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -448,11 +430,11 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
+Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_38132"
-[1/2] Building CXX object CMakeFiles/cmTC_38132.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_38132
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5e2e5"
+[1/2] Building CXX object CMakeFiles/cmTC_5e2e5.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_5e2e5
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

@@ -1,0 +1,17 @@
+Android: Targeting API '21' with architecture 'x86_64', ABI 'x86_64', and processor 'x86_64'
+Android: Selected Clang toolchain 'x86_64-clang' with GCC toolchain 'x86_64-4.9'
+Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works
+Detecting C compiler ABI info
+Detecting C compiler ABI info - done
+Detecting C compile features
+Detecting C compile features - done
+Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++
+Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works
+Detecting CXX compiler ABI info
+Detecting CXX compiler ABI info - done
+Detecting CXX compile features
+Detecting CXX compile features - done
+Found OpenCV: /home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src (found version "3.4.1") 
+OpenCV libraries: opencv_highgui;opencv_features2d;opencv_shape;opencv_imgcodecs;opencv_ml;opencv_videoio;opencv_dnn;opencv_flann;opencv_objdetect;opencv_core;opencv_calib3d;opencv_video;opencv_superres;opencv_photo;opencv_imgproc;opencv_stitching;opencv_videostab
+Configuring done

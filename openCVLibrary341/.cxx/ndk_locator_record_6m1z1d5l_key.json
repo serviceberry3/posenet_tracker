@@ -1,0 +1,12 @@
+{
+  "ndkVersionFromDsl": "16.1.4479499",
+  "ndkDirProperty": "/home/nodog/VENV/opt/android-ndk-r15c",
+  "sdkFolder": "/home/nodog/Android/Sdk",
+  "sideBySideNdkFolderNames": [
+    "android-ndk-r11c-linux-x86_64",
+    "21.1.6352462",
+    "android-ndk-r17c-linux-x86_64",
+    "android-ndk-r21d-linux-x86_64",
+    "16.1.4479499"
+  ]
+}

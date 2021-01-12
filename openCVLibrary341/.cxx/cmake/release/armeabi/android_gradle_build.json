@@ -1,0 +1,25 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/CMakeLists.txt",
+    "/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake",
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/sdk/native/jni/OpenCVConfig-version.cmake",
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/sdk/native/jni/OpenCVConfig.cmake",
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/sdk/native/jni/abi-armeabi/OpenCVConfig.cmake",
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/sdk/native/jni/abi-armeabi/OpenCVModules.cmake",
+    "/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/sdk/native/jni/abi-armeabi/OpenCVModules-release.cmake"
+  ],
+  "cleanCommands": [
+    "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/.cxx/cmake/release/armeabi\" clean"
+  ],
+  "buildTargetsCommand": "/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/.cxx/cmake/release/armeabi\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {},
+  "toolchains": {
+    "1748819036": {
+      "cCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+      "cppCompilerExecutable": "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}

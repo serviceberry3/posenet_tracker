@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule CXX_COMPILER__circ_buffer
   depfile = $DEP_FILE
   deps = gcc
-  command = /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -33,7 +33,7 @@ rule CXX_COMPILER__circ_buffer
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__circ_buffer
-  command = $PRE_LINK && /home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android21 --gcc-toolchain=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/nodog/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android --gcc-toolchain=/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64 --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -42,7 +42,7 @@ rule CXX_SHARED_LIBRARY_LINKER__circ_buffer
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app -B/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a
+  command = /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/nodog/docs/asp/posenet_tracker/app -B/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/arm64-v8a
   description = Re-running CMake...
   generator = 1
 

@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <cmath>
 
 class circular_buffer {
 public:

@@ -1,178 +1,178 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-MERGED from [:posenet] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:opengl] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a605f18af49afc7bbd0c91c5c3bb4d06/core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
-MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:2:1-12:12
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:2:1-12:12
-MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/5c39009c0e8f32f0549696578801375c/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e78ba1effd33d2e5f8ff9d49c3c506e5/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c25996a050d48e7712b417859d5802cf/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6a0452334cf1cdc2b383b11db3d65894/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/802c65d434671be485574d6e76bc3a87/loader-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08661f64c284da975bf100a9e571670e/activity-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1854e7d997875f9a6bc62a2642a354da/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1e4e14a07bc57f8e860a6618a3da35d4/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a8d625384a1ac76ee98d2ba1703b23c9/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/d55350d4d22adcc2447dbfd6529c876e/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/afe2a379ac154cefa8117e76c6a630d5/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0733ec2551c82650b2f526ee67a14efa/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ee5eb7d61131167d5b03a2b0f3bd3400/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/85ae02cbf10d8abe64d41fe468e4aed5/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c80971d41edaf9881b130e3d3df20984/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e3d9db15d6d3b5eb832680ba4e4ff292/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/971b1e7d4d680acefcaa5d5e27784ba8/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/01d8bbb8237cfde9bc736457d6c0d2da/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+MERGED from [:posenet] /home/nodog/docs/asp/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/28b45f4e7bc2d91011e1f0f02676baa2/jetified-core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [:opengl] /home/nodog/docs/asp/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8fee389d41461248961ddfa158bb9eb5/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e61f89e77cfa63781f56503c7fcdf58/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [:openCVLibrary341] /home/nodog/docs/asp/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e06ba99b8d572a6792281137a34c25f0/jetified-tensorflow-lite-2.2.0/AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e3fe7ad6cea5b1ef6c71d1b5bf67196/jetified-tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/682acfe647556007911d9bb044d13f51/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8f23910bc1ec75a05b00ff51646e6915/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e24b1be08b5b69a395c0b4d6a96181e5/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/344337274bc21aec4947a5e8a76969a8/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8b5a5585e7010066a337158d00b21246/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de8b5a84b2a0e1d6cbb062932340dc44/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/10b535fbff34708785fcc046112f0b50/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ad564ea9852e8b73ec0a5cb2ad5b2dda/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de823e4e1f948d011125af5ea94c9436/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/9ab4a7849caea1fb5915de4c260a3f5d/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/b70bab439b2bdf5345a6d0dc7ade59a4/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/144ae24217696a50261cf8daed077125/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/39cea3bb569bb5fb3b954afe388051c6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/2da1ec38ca69b90fdf5bc4611fbddf35/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/eb0a5dd042952bcaa645a95f4c297a62/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c950abec5e5c1a1b37cbc55b697f4bfa/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/964c2379c8aff5c70fad1e5b68a1417b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6da5adb3e48940050bed3a3b32abe32a/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
 	package
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:4:5-47
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:4:5-47
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:1-29:12
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.CAMERA
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:6:5-65
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:6:5-65
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:6:22-62
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:6:22-62
 uses-feature#android.hardware.camera
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:5-60
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:8:5-60
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:8:19-57
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:8:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:5-70
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:9:5-70
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:9:19-67
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:9:19-67
 application
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:11:5-28:19
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
-MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:10:5-20
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:10:5-20
-MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/afe2a379ac154cefa8117e76c6a630d5/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/afe2a379ac154cefa8117e76c6a630d5/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:11:5-28:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e61f89e77cfa63781f56503c7fcdf58/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e61f89e77cfa63781f56503c7fcdf58/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e06ba99b8d572a6792281137a34c25f0/jetified-tensorflow-lite-2.2.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e06ba99b8d572a6792281137a34c25f0/jetified-tensorflow-lite-2.2.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e3fe7ad6cea5b1ef6c71d1b5bf67196/jetified-tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e3fe7ad6cea5b1ef6c71d1b5bf67196/jetified-tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/b70bab439b2bdf5345a6d0dc7ade59a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/b70bab439b2bdf5345a6d0dc7ade59a4/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-32
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-32
 	android:roundIcon
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-54
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-54
 	android:icon
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-43
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-48
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-48
 	tools:replace
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:18:9-52
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:18:9-52
 activity#weiner.noah.noshake.posenet.test.CameraActivity
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-26:20
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-26:20
 	android:exported
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:50-73
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:50-73
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:21:19-49
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-25:29
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-25:29
 action#android.intent.action.MAIN
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:17-68
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:23:17-68
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:23:25-66
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:17-77
+ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml:24:27-74
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:24:27-74
 uses-sdk
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-MERGED from [:posenet] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:posenet] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:opengl] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:opengl] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08d82195477c2bbb67312b95cc318b7b/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a605f18af49afc7bbd0c91c5c3bb4d06/core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a605f18af49afc7bbd0c91c5c3bb4d06/core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/7dcc52a1124594c469119b1aee62e7f6/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:openCVLibrary341] /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de3a6c28207b5cedd34b3e325d190359/tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:7:5-8:41
-MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0e27e3ba909d0c154341d06040b48f61/tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:7:5-8:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/5c39009c0e8f32f0549696578801375c/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/5c39009c0e8f32f0549696578801375c/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e78ba1effd33d2e5f8ff9d49c3c506e5/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e78ba1effd33d2e5f8ff9d49c3c506e5/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c25996a050d48e7712b417859d5802cf/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c25996a050d48e7712b417859d5802cf/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6a0452334cf1cdc2b383b11db3d65894/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6a0452334cf1cdc2b383b11db3d65894/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/802c65d434671be485574d6e76bc3a87/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/802c65d434671be485574d6e76bc3a87/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08661f64c284da975bf100a9e571670e/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/08661f64c284da975bf100a9e571670e/activity-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1854e7d997875f9a6bc62a2642a354da/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1854e7d997875f9a6bc62a2642a354da/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1e4e14a07bc57f8e860a6618a3da35d4/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/1e4e14a07bc57f8e860a6618a3da35d4/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a8d625384a1ac76ee98d2ba1703b23c9/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/a8d625384a1ac76ee98d2ba1703b23c9/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/30ca76bf5232201eae91d926772d466e/core-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/d55350d4d22adcc2447dbfd6529c876e/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/d55350d4d22adcc2447dbfd6529c876e/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/afe2a379ac154cefa8117e76c6a630d5/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/afe2a379ac154cefa8117e76c6a630d5/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0733ec2551c82650b2f526ee67a14efa/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/0733ec2551c82650b2f526ee67a14efa/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ee5eb7d61131167d5b03a2b0f3bd3400/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ee5eb7d61131167d5b03a2b0f3bd3400/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/85ae02cbf10d8abe64d41fe468e4aed5/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/85ae02cbf10d8abe64d41fe468e4aed5/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c80971d41edaf9881b130e3d3df20984/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c80971d41edaf9881b130e3d3df20984/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e3d9db15d6d3b5eb832680ba4e4ff292/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e3d9db15d6d3b5eb832680ba4e4ff292/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/971b1e7d4d680acefcaa5d5e27784ba8/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/971b1e7d4d680acefcaa5d5e27784ba8/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/01d8bbb8237cfde9bc736457d6c0d2da/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/01d8bbb8237cfde9bc736457d6c0d2da/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+MERGED from [:posenet] /home/nodog/docs/asp/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:posenet] /home/nodog/docs/asp/posenet_tracker/posenet/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/28b45f4e7bc2d91011e1f0f02676baa2/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/28b45f4e7bc2d91011e1f0f02676baa2/jetified-core-ktx-1.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [:opengl] /home/nodog/docs/asp/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:opengl] /home/nodog/docs/asp/posenet_tracker/opengl/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8fee389d41461248961ddfa158bb9eb5/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8fee389d41461248961ddfa158bb9eb5/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e61f89e77cfa63781f56503c7fcdf58/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e61f89e77cfa63781f56503c7fcdf58/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [:openCVLibrary341] /home/nodog/docs/asp/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:openCVLibrary341] /home/nodog/docs/asp/posenet_tracker/openCVLibrary341/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e06ba99b8d572a6792281137a34c25f0/jetified-tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e06ba99b8d572a6792281137a34c25f0/jetified-tensorflow-lite-2.2.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e3fe7ad6cea5b1ef6c71d1b5bf67196/jetified-tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.2.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8e3fe7ad6cea5b1ef6c71d1b5bf67196/jetified-tensorflow-lite-gpu-2.2.0/AndroidManifest.xml:7:5-8:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/682acfe647556007911d9bb044d13f51/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/682acfe647556007911d9bb044d13f51/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8f23910bc1ec75a05b00ff51646e6915/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8f23910bc1ec75a05b00ff51646e6915/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e24b1be08b5b69a395c0b4d6a96181e5/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/e24b1be08b5b69a395c0b4d6a96181e5/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/344337274bc21aec4947a5e8a76969a8/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/344337274bc21aec4947a5e8a76969a8/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8b5a5585e7010066a337158d00b21246/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/8b5a5585e7010066a337158d00b21246/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de8b5a84b2a0e1d6cbb062932340dc44/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de8b5a84b2a0e1d6cbb062932340dc44/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/10b535fbff34708785fcc046112f0b50/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/10b535fbff34708785fcc046112f0b50/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ad564ea9852e8b73ec0a5cb2ad5b2dda/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/ad564ea9852e8b73ec0a5cb2ad5b2dda/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de823e4e1f948d011125af5ea94c9436/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/de823e4e1f948d011125af5ea94c9436/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/9ab4a7849caea1fb5915de4c260a3f5d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/9ab4a7849caea1fb5915de4c260a3f5d/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/b70bab439b2bdf5345a6d0dc7ade59a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/b70bab439b2bdf5345a6d0dc7ade59a4/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/144ae24217696a50261cf8daed077125/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/144ae24217696a50261cf8daed077125/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/39cea3bb569bb5fb3b954afe388051c6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/39cea3bb569bb5fb3b954afe388051c6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/2da1ec38ca69b90fdf5bc4611fbddf35/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/2da1ec38ca69b90fdf5bc4611fbddf35/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/eb0a5dd042952bcaa645a95f4c297a62/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/eb0a5dd042952bcaa645a95f4c297a62/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c950abec5e5c1a1b37cbc55b697f4bfa/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/c950abec5e5c1a1b37cbc55b697f4bfa/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/964c2379c8aff5c70fad1e5b68a1417b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/964c2379c8aff5c70fad1e5b68a1417b/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6da5adb3e48940050bed3a3b32abe32a/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/6da5adb3e48940050bed3a3b32abe32a/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		ADDED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		MERGED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
-		INJECTED from /home/nodog/Documents/AndroidStudioProjects/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		MERGED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		MERGED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml

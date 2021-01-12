@@ -5,10 +5,10 @@
 5    android:versionName="3.4.1" >
 6
 7    <uses-sdk
-7-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:5-47
+7-->/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:5-47
 8        android:minSdkVersion="8"
-8-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:5-47
+8-->/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:5-47
 9        android:targetSdkVersion="30" />
-9-->/home/nodog/Documents/AndroidStudioProjects/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:15-44
+9-->/home/nodog/docs/asp/posenet_tracker/openCVLibrary341/src/main/AndroidManifest.xml:7:15-44
 10
 11</manifest>
