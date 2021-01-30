@@ -33,4 +33,10 @@ public class Constants {
 
     //average pupillary distance for adults? use this *for now* to estimate drone's distance from person
     public static final float PD = (float) 0.063; //63 mm
+
+    //91 cm away -> ~90 pixel pupillary distance.
+    //Thus experimental focal len of camera = (P x D) / W = (90px x 0.91m) / 0.063m = 1300
+    public static final float focalLenExp = 1300f;
+
+    //Meanwhile, using opencv chessboard calibration, claimed focal length x is 524.1, y is 523.9
 }

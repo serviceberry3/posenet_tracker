@@ -1,5 +1,2 @@
 ninja: Entering directory `/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/debug/x86_64'
-[1/4] Building CXX object CMakeFiles/circ_buffer.dir/src/main/cpp/impulse_response.cpp.o
-[2/4] Building CXX object CMakeFiles/circ_buffer.dir/src/main/cpp/convolve.cpp.o
-[3/4] Building CXX object CMakeFiles/circ_buffer.dir/src/main/cpp/circ_buffer.cpp.o
-[4/4] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/x86_64/libcirc_buffer.so
+ninja: no work to do.

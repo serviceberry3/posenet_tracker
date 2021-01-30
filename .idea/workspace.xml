@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="opencv" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="human angle" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -23,7 +23,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cde842a-5e1e-4687-a1aa-f11f73a322cc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_gpu_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_tensorflow_tensorflow_lite_gpu_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/posenet_tracker.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/posenet_tracker.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/opengl/posenet_tracker.opengl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/opengl/posenet_tracker.opengl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/posenet/posenet_tracker.posenet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/posenet/posenet_tracker.posenet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/PosenetActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/weiner/noah/noshake/posenet/test/PosenetActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,53 +261,37 @@
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="30" y="1290" width="1900" height="1084" key="#PSD/0.54.2160.3786@0.54.2160.3786" timestamp="1610434477108" />
-    <state x="698" y="1609" width="753" height="700" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1602009828946">
-      <screen x="0" y="54" width="2160" height="3786" />
-    </state>
-    <state x="698" y="1609" width="753" height="700" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1602009828946" />
     <state x="611" y="845" width="949" height="1208" key="FileChooserDialogImpl" timestamp="1610434448930">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="611" y="845" width="949" height="1208" key="FileChooserDialogImpl/0.54.2160.3786@0.54.2160.3786" timestamp="1610434448930" />
-    <state width="2072" height="756" key="GridCell.Tab.0.bottom" timestamp="1610431665233">
+    <state width="2072" height="764" key="GridCell.Tab.0.bottom" timestamp="1611951754222">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2072" height="756" key="GridCell.Tab.0.bottom/0.54.2160.3786@0.54.2160.3786" timestamp="1610431665233" />
-    <state width="2072" height="756" key="GridCell.Tab.0.center" timestamp="1610431665233">
+    <state width="2072" height="764" key="GridCell.Tab.0.bottom/0.54.2160.3786@0.54.2160.3786" timestamp="1611951754222" />
+    <state width="2072" height="764" key="GridCell.Tab.0.center" timestamp="1611951754222">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2072" height="756" key="GridCell.Tab.0.center/0.54.2160.3786@0.54.2160.3786" timestamp="1610431665233" />
-    <state width="2072" height="756" key="GridCell.Tab.0.left" timestamp="1610431665233">
+    <state width="2072" height="764" key="GridCell.Tab.0.center/0.54.2160.3786@0.54.2160.3786" timestamp="1611951754222" />
+    <state width="2072" height="764" key="GridCell.Tab.0.left" timestamp="1611951754221">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2072" height="756" key="GridCell.Tab.0.left/0.54.2160.3786@0.54.2160.3786" timestamp="1610431665233" />
-    <state width="2072" height="756" key="GridCell.Tab.0.right" timestamp="1610431665233">
+    <state width="2072" height="764" key="GridCell.Tab.0.left/0.54.2160.3786@0.54.2160.3786" timestamp="1611951754221" />
+    <state width="2072" height="764" key="GridCell.Tab.0.right" timestamp="1611951754222">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state width="2072" height="756" key="GridCell.Tab.0.right/0.54.2160.3786@0.54.2160.3786" timestamp="1610431665233" />
+    <state width="2072" height="764" key="GridCell.Tab.0.right/0.54.2160.3786@0.54.2160.3786" timestamp="1611951754222" />
     <state x="76" y="1177" width="2008" height="1484" key="SettingsEditor" timestamp="1603652197510">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="76" y="1177" width="2008" height="1484" key="SettingsEditor/0.54.2160.3786@0.54.2160.3786" timestamp="1603652197510" />
-    <state x="100" y="124" width="1960" height="3596" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1602005927191">
-      <screen x="0" y="54" width="2160" height="3786" />
-    </state>
-    <state x="100" y="124" width="1960" height="3596" key="com.android.tools.idea.avdmanager.AvdListDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1602005927191" />
-    <state x="283" y="1214" width="1336" height="396" key="com.intellij.ide.util.TipDialog" timestamp="1602029428275">
-      <screen x="0" y="54" width="2160" height="3786" />
-    </state>
-    <state x="283" y="1214" width="1336" height="396" key="com.intellij.ide.util.TipDialog/0.54.2160.3786@0.54.2160.3786" timestamp="1602029428275" />
-    <state x="513" y="1061" width="1190" height="1530" key="find.popup" timestamp="1603301068184">
-      <screen x="0" y="54" width="2160" height="3786" />
-    </state>
-    <state x="513" y="1061" width="1190" height="1530" key="find.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1603301068184" />
     <state x="359" y="1135" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension" timestamp="1610434475605">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
     <state x="359" y="1135" width="1231" height="1428" key="psd.add.module.dependency.panel.dimension/0.54.2160.3786@0.54.2160.3786" timestamp="1610434475605" />
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1605315545759">
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup" timestamp="1611967652601">
       <screen x="0" y="54" width="2160" height="3786" />
     </state>
-    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1605315545759" />
+    <state x="358" y="931" width="1440" height="2556" key="search.everywhere.popup/0.54.2160.3786@0.54.2160.3786" timestamp="1611967652601" />
   </component>
 </project>

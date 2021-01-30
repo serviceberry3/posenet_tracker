@@ -137,6 +137,7 @@ private float circleRadius = 8.0f;
 private Paint redPaint = new Paint();
 private Paint bluePaint = new Paint();
 private Paint greenPaint = new Paint();
+private Paint whitePaint = new Paint();
 
 /** A shape for extracting frame data.   */
 private int PREVIEW_WIDTH = 640;
@@ -208,6 +209,9 @@ private int sensorOrientation = 0;  //was null. Need Integer?
 
 /** Abstract interface to someone holding a display surface.    */
 private SurfaceHolder surfaceHolder; //nullable
+
+//canvas that displays relevant info on the screen
+private Canvas infoCanvas;
 
 //NAIVE IMPLEMENTATION ACCEL ARRAYS
 
@@ -282,6 +286,10 @@ private MatOfPoint3f humanModelMat;
 
 //declare global matrix containing the actual 2D coordinates of the human found
 private Point[] humanActualRaw = new Point[6];
+
+//used for bounding box points
+private Point[] boundingBox = new Point[4];
+
 private List<Point> humanActualList = new ArrayList<Point>();
 private MatOfPoint2f humanActualMat;
 
@@ -442,7 +450,7 @@ private void showToast(final String text) {
                 humanActualMat = ((CameraActivity) getActivity()).getHumanActualMat();
 
 
-                //essentially projecting a 3D axis magnitude 1000 onto 2D image in middle of person's chest
+                //these are the 3d pts we'd like to draw: essentially projecting a 3D axis magnitude 1000 onto 2D image in middle of person's chest
                 testPts[0] = new Point3(1000.0,-1087.5,-918.75);
                 testPts[1] = new Point3(0, 2087.5, -918.75);
                 testPts[2] = new Point3(0,-1087.5,81.25);
@@ -468,8 +476,7 @@ private void showToast(final String text) {
                         ((CameraActivity)getActivity()).getmLoaderCallback().onManagerConnected(LoaderCallbackInterface.SUCCESS);
                 }
         }
-         */
-
+        */
 
         @Override
         public void onStart() {
@@ -522,7 +529,6 @@ private void showToast(final String text) {
 
                 //humanModelRaw[3] = new Point3(450.0f, -700.0f, -600.0f); //rt shoulder
                 //humanModelRaw[4] = new Point3(-450.0f, -700.0f, -600.0f); //left shoulder
-
                  */
 
 
@@ -929,9 +935,10 @@ private class imageAvailableListener implements OnImageAvailableListener {
 
 private void makeCameraMat() {
         // Camera internals
-        double focal_length_x = 526.69; // Approximate focal length.
+        double focal_length_x = 526.69; // Approximate focal length, found from OpenCV chessboard calibration
         double focal_length_y = 540.36;
 
+        //center of image plane
         Point center = new Point(313.07,238.39);
 
         //Log.i(TAG, String.format("Center at %f, %f", center.x, center.y));
@@ -978,7 +985,7 @@ private void makeCameraMat() {
 
 
         if (distToLeftEyeX < distToRightEyeX) {
-                // looking at left
+                //looking at left
                 rotationMat.put(0,0,-1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
@@ -986,7 +993,7 @@ private void makeCameraMat() {
 
 
         } else {
-                // looking at right
+                //looking at right
                 rotationMat.put(0,0,1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
@@ -1048,6 +1055,11 @@ private void setPaint() {
         greenPaint.setColor(Color.GREEN);
         greenPaint.setTextSize(70.0f);
         greenPaint.setStrokeWidth(8.0f);
+
+        whitePaint.setColor(Color.WHITE);
+        whitePaint.setTextSize(70.0f);
+        whitePaint.setStrokeWidth(8.0f);
+        whitePaint.setStyle(Paint.Style.STROKE);
 }
 
 private int noseFound = 0;
@@ -1058,15 +1070,19 @@ private float noseOriginX, noseOriginY, lastNosePosX, lastNosePosY;
 // a Canvas to host the draw calls (writing into the bitmap),
 // a drawing primitive (e.g. Rect, Path, text, Bitmap), and a paint (to describe the colors and styles for the drawing).
 private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bitmap passed here is 257x257 pixels, good for Posenet model
+        //save canvas into a global
+        infoCanvas = canvas;
+
         //draw clear nothing color to the screen (needs this to clear out the old text and stuff)
         canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
 
-        // Draw `bitmap` and `person` in square canvas.
+        //Draw `bitmap` and `person` in square canvas.
         int screenWidth, screenHeight, left, right, top, bottom, canvasHeight, canvasWidth;
 
         int rightEyeFound = 0, leftEyeFound = 0;
 
         float xValue, yValue, xVel, yVel;
+        float dist = 0;
 
         BodyPart currentPart;
         Position leftEye = null, rightEye = null;
@@ -1116,8 +1132,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         int newRectWidth = right - left;
         int newRectHeight = bottom - top;
 
-        double scaleDownRatioVert = newRectHeight/2280f;
-        double scaleDownRatioHoriz = newRectWidth/1080f;
+        double scaleDownRatioVert = newRectHeight / 2280f;
+        double scaleDownRatioHoriz = newRectWidth / 1080f;
 
         Log.i(TAG, String.format("New rect width and height are %d and %d", newRectWidth, newRectHeight));
         Log.i(TAG, String.format("Scaledown ratios are %f and %f", scaleDownRatioHoriz, scaleDownRatioVert));
@@ -1146,7 +1162,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
         //Log.d(TAG, String.format("Found %d keypoints for the person", keyPoints.size()));
 
-        // Draw key points of the person's body parts over the camera image
+        //Draw key points of the person's body parts over the camera image
         for (KeyPoint keyPoint : keyPoints) {
                 //get the body part ONCE at the beginning
                 currentPart = keyPoint.getBodyPart();
@@ -1178,44 +1194,54 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                                         //compute the displacement from the starting position that the nose has traveled (helper fxn)
                                         computeDisplacement(adjustedX, adjustedY);
                                 }
-                                 */
+                                */
                         }
                         else if (currentPart == BodyPart.LEFT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
                                 humanActualRaw[2] = new Point(xValue, yValue);
 
-                                /*
+                                //add x val of left eye to bbox array
+                                boundingBox[1] = new Point(adjustedX, adjustedY);
+
+
                                 leftEyeFound = 1;
                                 leftEye = new Position(adjustedX, adjustedY);
 
                                 //if we've also already found right eye, we have both eyes. Send data to the scale computer
                                 if (rightEyeFound == 1) {
-                                        computeScale(leftEye, rightEye);
+                                        dist = computeScale(leftEye, rightEye);
                                 }
-                                 */
+
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
                                 humanActualRaw[3] = new Point(xValue, yValue);
 
-                                /*
+                                //add x val of rt eye to bbox array
+                                boundingBox[0] = new Point(adjustedX, adjustedY);
+
+
                                 rightEyeFound = 1;
                                 rightEye = new Position(adjustedX, adjustedY);
 
                                 //if we've also already found left eye, we have both eyes. Send data to the scale computer
                                 if (leftEyeFound == 1) {
-                                        computeScale(leftEye, rightEye);
+                                        dist = computeScale(leftEye, rightEye);
                                 }
-                                 */
+
                         }
 
                         else if (currentPart == BodyPart.RIGHT_SHOULDER) {
-                                //add nose to first slot of Point array for pose estimation
+                                //add rt shoulder to fifth slot of Point array for pose estimation
                                 humanActualRaw[4] = new Point(xValue, yValue);
+
+                                boundingBox[2] = new Point(adjustedX, adjustedY);
                         }
                         else if (currentPart == BodyPart.LEFT_SHOULDER) {
-                                //add nose to first slot of Point array for pose estimation
+                                //add left shoulder to sixth slot of Point array for pose estimation
                                 humanActualRaw[5] = new Point(xValue, yValue);
+
+                                boundingBox[3] = new Point(adjustedX, adjustedY);
                         }
 
                         //draw the point corresponding to this body joint
@@ -1231,7 +1257,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                         //reset velocity array
                         velocity[0] = velocity[1] = 0;
                 }
-                 */
+                */
         }
 
         /*
@@ -1254,16 +1280,34 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                         );
                 }
         }
-         */
+        */
 
 
-        //ONLY EVERY THIRD FRAME
+        //ONLY EVERY THIRD FRAME, maybe?
         //check that all of the keypoints for a human body bust area were found
         if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null
                 && humanActualRaw[4]!=null && humanActualRaw[5]!=null
                 //&& frameCounter==3
         )
         {
+                //DRAW BOUNDING BOX
+                //top is aligned with uppermost eye
+                double bbox_top = Math.max(humanActualRaw[3].y, humanActualRaw[2].y);
+
+                //left is aligned w right shoulder
+                double bbox_left = humanActualRaw[4].x;
+
+                //rt is aligned w left shoulder
+                double bbox_rt = humanActualRaw[5].x;
+
+                //bottom is at lowermost shoulder
+                double bbox_bot = Math.min(humanActualRaw[4].y, humanActualRaw[5].y);
+
+
+                canvas.drawRect(new Rect((int)boundingBox[2].x, (int)Math.min(boundingBox[0].y, boundingBox[1].y),
+                        (int)boundingBox[3].x, (int)Math.max(boundingBox[2].y, boundingBox[3].y)), whitePaint);
+
+
                 distToLeftEyeX = (float)Math.abs(humanActualRaw[2].x - humanActualRaw[0].x);
                 distToRightEyeX = (float)Math.abs(humanActualRaw[3].x - humanActualRaw[0].x);
 
@@ -1290,23 +1334,24 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                 //HARDCODED, MUST BE FIXED
 
-                torsoCtrX = (float) (humanActualRaw[4].x + humanActualRaw[5].x)/2;
-                torsoCtrY = (float) (humanActualRaw[4].y + humanActualRaw[5].y)/2;
-
+                //find chest pt (midpt between shoulders)
+                torsoCtrX = (float) (humanActualRaw[4].x + humanActualRaw[5].x) / 2;
+                torsoCtrY = (float) (humanActualRaw[4].y + humanActualRaw[5].y) / 2;
 
 
                 torsoCenter = new Point(torsoCtrX, torsoCtrY);
                 //torsoCenter = new Point((rt_should.x + left_should.x)/2, (rt_should.y + left_should.y)/2);
                 //humanActualRaw[0] = torsoCenter;
 
-                //draw the point corresponding to this body joint
+                //draw the point corresponding to the chest
                 canvas.drawCircle(torsoCtrX, torsoCtrY, circleRadius, redPaint);
-
 
                 //clear out the ArrayList
                 humanActualList.clear();
 
                 //compute pose estimation and draw line coming out of person's chest
+
+                //add the pts of interest to a list
                 humanActualList.add(humanActualRaw[0]);
                 humanActualList.add(humanActualRaw[1]);
                 humanActualList.add(humanActualRaw[2]);
@@ -1318,22 +1363,24 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                 //now should have everything we need to run solvePnP
 
-                //solve for translation and rotation matrices
+                //solve for translation and rotation matrices based on a model of 3d pts for human bust area
                 Calib3d.solvePnP(humanModelMat, humanActualMat, cameraMatrix, distortionMat, rotationMat, translationMat);
 
-                //Now we'll try projecting a 3D point (0, 0, 1000.0) onto the image plane. We'll use this to draw line sticking out of
-                //the nose
+                //Now we'll try projecting our 3D axes onto the image plane
                 MatOfPoint3f testPtMat = new MatOfPoint3f();
                 testPtMat.fromList(testPtList);
 
+                //the 2d pts that correspond to the 3d pts above. Will be filled upon return of projectPoints()
                 MatOfPoint2f imagePts = new MatOfPoint2f();
 
                 //project our basic x-y-z axis from the world coordinate system onto the camera coord system using rot and trans mats we solved
                 Calib3d.projectPoints(testPtMat, rotationMat, translationMat, cameraMatrix, distortionMat, imagePts);
 
+                //imagePts now contains 3 2D coordinates which correspond to ends of the 3D axes
+
                 Log.i(TAG, String.format("Resulting imagepts Mat is of size %d x %d", imagePts.rows(), imagePts.cols()));
 
-                //extract
+                //extract the 3 2D coordinates for drawing the 3D axes
                 double[] x_ax = imagePts.get(0,0);
                 double[] y_ax = imagePts.get(1,0);
                 double[] z_ax = imagePts.get(2,0);
@@ -1357,7 +1404,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 Log.i(TAG, String.format("Found point %f, %f for z axis", z_ax[0], z_ax[1]));
 
 
-                if (!(x_ax[0]>2500 || x_ax[1]>1400 || y_ax[0] > 1200 || y_ax[1] < -1000 || z_ax[0] > 1000 || z_ax[1] < -900
+                //filter out the weird bogus data I was getting
+                if (!(x_ax[0] > 2500 || x_ax[1] > 1400 || y_ax[0] > 1200 || y_ax[1] < -1000 || z_ax[0] > 1000 || z_ax[1] < -900
                 || (looking==0 && z_ax[0] < y_ax[0]) || (looking==1 && z_ax[0] > y_ax[0]))) {
                         //draw the projected 3D axes onto the canvas
                         canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
@@ -1368,45 +1416,60 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                                 (float) z_ax[0], (float) z_ax[1], redPaint);
 
                         //estimate angles for yaw and pitch of the human's upper body
-                /*
-                Mat eulerAngles = new Mat();
 
-                getEulerAngles(eulerAngles);
+                        //Mat eulerAngles = new Mat();
 
-                Log.i(TAG, String.format("Euler angles mat is of size %d x %d", eulerAngles.rows(), eulerAngles.cols()));
+                        //THIS FXN DOESN'T WORK RIGHT NOW
+                        //getEulerAngles(eulerAngles);
 
-                //pitch, yaw, roll
-                double[] angles = eulerAngles.get(0,0);
+                        Log.i(TAG, "z ax[0] is " + z_ax[0]);
+                        Log.i(TAG, "torsoCenter.x is ");
+                        //we know length of z axis to be 81.25. Let's find length of 'opposite' side of the rt triangle so that we can use sine to find angle
+                        float lenOpposite = (float) z_ax[0] - (float)torsoCenter.x;
+                        Log.i(TAG, "Len opposite is " + lenOpposite);
+
+                        float humAngle = getHumAnglesTrig(lenOpposite, 135f); //81.25?
+
+                        Log.i(TAG, "Human angle is " + humAngle + " degrees");
+
+                        //Log.i(TAG, String.format("Euler angles mat is of size %d x %d", eulerAngles.rows(), eulerAngles.cols()));
+
+                        //pitch, yaw, roll
+                        //double[] angles = eulerAngles.get(0,0);
+
+                        double[] pitch = rotationMat.get(0,0);
+                        double[] yaw = rotationMat.get(1,0);
+
+                        //Log.i(TAG, String.format("Len of angles is %d", angles.length));
+
+                        canvas.drawText(
+                                String.format("Horiz angle of human: %.2f°", humAngle),
+                                (15.0f * widthRatio),
+                                (110.0f * heightRatio + bottom),
+                                bluePaint
+                        );
 
 
+                        /*
+                        //print out pitch value (rotation about x axis)
+                        canvas.drawText(
+                                String.format("Pitch of human: %f", pitch[0] * 180/3.14),
+                                (15.0f * widthRatio),
+                                (110.0f * heightRatio + bottom),
+                                bluePaint
+                        );
 
 
-                double[] pitch = rotationMat.get(0,0);
-                double[] yaw = rotationMat.get(1,0);
+                        //print out yaw value (rotation about y axis)
+                        canvas.drawText(
+                                String.format("Yaw of human: %f", yaw[0] * 180/3.14),
+                                (15.0f * widthRatio),
+                                (130.0f * heightRatio + bottom),
+                                greenPaint
+                        );*/
 
-                //Log.i(TAG, String.format("Len of angles is %d", angles.length));
-
-                //print out pitch value (rotation about x axis)
-                canvas.drawText(
-                        String.format("Pitch of human: %f", pitch[0] * 180/3.14),
-                        (15.0f * widthRatio),
-                        (90.0f * heightRatio + bottom),
-                        bluePaint
-                );
-
-                //print out yaw value (rotation about y axis)
-                canvas.drawText(
-                        String.format("Yaw of human: %f", yaw[0] * 180/3.14),
-                        (15.0f * widthRatio),
-                        (110.0f * heightRatio + bottom),
-                        greenPaint
-                );
-
-                 */
 
                 }
-
-
         }
 
         //reset contents of the arrays
@@ -1436,6 +1499,14 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 redPaint
         );
 
+        //print out the time it took to do calculation of this frame
+        canvas.drawText(
+                String.format("Dist to hum: %.2fm", dist),
+                (15.0f * widthRatio),
+                (90.0f * heightRatio + bottom),
+                redPaint
+        );
+
         /*
         //print out velocity vector values
         canvas.drawText(
@@ -1451,14 +1522,29 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
         //increment framecounter, if at 4 set to 0
         frameCounter++;
-        if (frameCounter==4) {
+        if (frameCounter == 4) {
                 frameCounter = 0;
         }
 }
 
-void getEulerAngles(Mat eulerAngles){
-        Mat cameraMatrix = new Mat(),rotMatrix = new Mat(),transVect = new Mat(),rotMatrixX = new Mat(),
-                rotMatrixY = new Mat(), rotMatrixZ = new Mat();
+private float getHumAnglesTrig(float opp, float hyp) {
+        Log.i(TAG, "opp/hyp is " + (opp/hyp));
+
+        float ratio = opp/hyp;
+
+        if (ratio <= -1)
+                return -90f;
+        else if (ratio >= 1)
+                return 90f;
+
+        return (float) Math.toDegrees(Math.asin(ratio));
+}
+
+//DON'T USE FOR NOW; THERE'S SOMETHING WRONG
+/*
+void getEulerAngles(Mat eulerAngles) {
+        //create several blank Mats for the decomposeProjectionMatrix fxn
+        Mat cameraMatrix = new Mat(), rotMatrix = new Mat(), transVect = new Mat(),rotMatrixX = new Mat(), rotMatrixY = new Mat(), rotMatrixZ = new Mat();
 
         int needed = (int)rotationMat.total() * rotationMat.channels();
 
@@ -1466,15 +1552,18 @@ void getEulerAngles(Mat eulerAngles){
 
         double[] projMatrix = new double[needed];
 
-        rotationMat.get(0,0,projMatrix);
+        //fill projMatrix with the rotation matrix we found using solvePnP
+        rotationMat.get(0,0, projMatrix);
 
-        ByteBuffer byteBuffer = ByteBuffer.allocate(needed);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(needed * 8);
 
+        Log.i(TAG, "Length of projMatrix is " + projMatrix.length);
         for (double thisDouble : projMatrix) {
+                Log.i(TAG, "Put into buffer");
                 byteBuffer.putDouble(thisDouble);
         }
 
-        Calib3d.decomposeProjectionMatrix(new Mat(3,4,CvType.CV_64FC1,byteBuffer),
+        Calib3d.decomposeProjectionMatrix(new Mat(3,1, CvType.CV_64FC1, byteBuffer),
                 cameraMatrix,
                 rotMatrix,
                 transVect,
@@ -1482,10 +1571,10 @@ void getEulerAngles(Mat eulerAngles){
                 rotMatrixY,
                 rotMatrixZ,
                 eulerAngles);
-}
+}*/
 
 private void displacementOnly(Person person, Canvas canvas) {
-        // Draw `bitmap` and `person` in square canvas.
+        //Draw `bitmap` and `person` in square canvas.
         int screenWidth, screenHeight, left, right, top, bottom, canvasHeight, canvasWidth;
 
         int rightEyeFound = 0, leftEyeFound = 0;
@@ -1651,6 +1740,24 @@ private void computeDisplacement(float x, float y) {
 }
 
 
+private float calculateDistanceToHuman(float pixelDistance) {
+        //Triangle simularity
+        //D = (W * F) / P
+
+        //find distance to human in meters
+        return Constants.PD * Constants.focalLenExp / pixelDistance;
+}
+
+private void drawDataToCanv(Canvas canv, String data, float x, float y, Paint paint) {
+        infoCanvas.drawText(
+                data,
+                x,
+                y,
+                redPaint
+        );
+}
+
+
 //how many real-world meters each pixel in the camera image represents
 private float mPerPixel;
 
@@ -1658,17 +1765,19 @@ private float mPerPixel;
 private float computeScale(Position leftEye, Position rightEye) {
         //I'll just use the x distance between left eye and right eye points to get distance in pixels between eyes
         //don't forget left eye is on the right and vice versa
-        float distance = leftEye.getX() - rightEye.getX();
+        float pixelDistance = leftEye.getX() - rightEye.getX();
 
-        Log.d(TAG, String.format("Pupillary distance in pixels: %f", distance));
+        Log.d(TAG, String.format("Pupillary distance in pixels: %f", pixelDistance));
 
         //now we want to find out how many real meters each pixel on the display corresponds to
-        float scale = Constants.PD/distance;
+        float scale = Constants.PD / pixelDistance;
         mPerPixel = scale;
 
         Log.d(TAG, String.format("Each pixel on the screen represents %f meters in real life in plane of peron's face", scale));
 
-        return 0;
+        //find experimental distance from camera to human and display it on screen
+
+        return calculateDistanceToHuman(pixelDistance);
 }
 
 //use calculated meters per pixel and pixel displacement to calculate estimated velocity of the phone (or person, for now)
