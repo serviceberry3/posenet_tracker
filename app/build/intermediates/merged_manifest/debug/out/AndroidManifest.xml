@@ -25,7 +25,8 @@
         android:theme="@style/AppTheme.Posenet" >
         <activity
             android:name="weiner.noah.noshake.posenet.test.CameraActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="sensorLandscape" > <!-- locks to either landscape or reverse landscape based on rotation -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

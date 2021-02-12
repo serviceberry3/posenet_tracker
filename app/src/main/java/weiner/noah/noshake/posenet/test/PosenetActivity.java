@@ -434,14 +434,14 @@ private void showToast(final String text) {
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
                 //super.onViewCreated(view, savedInstanceState);
                 surfaceView = view.findViewById(R.id.surfaceView);
-                if (surfaceView==null) {
+                if (surfaceView == null) {
                         Log.e("DEBUG", "onViewCreated: surfaceView came up NULL");
                         return;
                 }
 
 
                 surfaceHolder = surfaceView.getHolder();
-                if (surfaceHolder==null) {
+                if (surfaceHolder == null) {
                         Log.e("DEBUG", "onViewCreated: surfaceHolder came up NULL");
                 }
 
@@ -701,8 +701,8 @@ private void setUpCameraOutputs() {
                         //don't use front facing camera in this example
                         Integer cameraDirection = cameraCharacteristics.get(CameraCharacteristics.LENS_FACING);
 
-                        if (cameraDirection !=null && cameraDirection == CameraCharacteristics.LENS_FACING_FRONT) {
-                                //skip this one because it's a front-facing camera
+                        if (cameraDirection !=null && cameraDirection == CameraCharacteristics.LENS_FACING_BACK) {
+                                //skip this one because it's a back-facing camera, we wanna use the front-facing
                                 continue;
                         }
 
@@ -711,8 +711,10 @@ private void setUpCameraOutputs() {
                         imageReader = ImageReader.newInstance(PREVIEW_WIDTH, PREVIEW_HEIGHT, ImageFormat.YUV_420_888, 2);
 
                         try {
+                                //get current orientation of camera sensor
                                 sensorOrientation = cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-                        } catch (NullPointerException e) {
+                        }
+                        catch (NullPointerException e) {
                                 e.printStackTrace();
                         }
 
@@ -743,28 +745,31 @@ private void setUpCameraOutputs() {
  */
 private void openCamera() {
         int permissionCamera = Objects.requireNonNull(getContext()).checkPermission(Manifest.permission.CAMERA, Process.myPid(), Process.myUid());
+
+        //make sure we have camera permission
         if (permissionCamera != PackageManager.PERMISSION_GRANTED) {
                 //still need permission to access camera, so get it now
                 requestCameraPermission();
         }
 
+        //find and set up the camera
         setUpCameraOutputs();
 
         CameraManager cameraManager = (CameraManager)Objects.requireNonNull(getActivity()).getSystemService(Context.CAMERA_SERVICE);
 
         try {
-        // Wait for camera to open - 2.5 seconds is sufficient
-        if (!cameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
-                throw new RuntimeException("Time out waiting to lock camera opening.");
+                // Wait for camera to open - 2.5 seconds is sufficient
+                if (!cameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
+                        throw new RuntimeException("Time out waiting to lock camera opening.");
+                }
+
+                cameraManager.openCamera(cameraId, new stateCallback(), backgroundHandler);
         }
-
-        cameraManager.openCamera(cameraId, new stateCallback(), backgroundHandler);
-
-
-        } catch (InterruptedException e) {
+        catch (InterruptedException e) {
                 e.printStackTrace();
                 throw new RuntimeException("Interrupted while trying to lock camera opening.");
-        } catch (CameraAccessException e) {
+        }
+        catch (CameraAccessException e) {
                 e.printStackTrace();
         }
 
@@ -889,7 +894,7 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 Mat imageGrab = new Mat();
 
                 //put all of the bytes into the Mat
-                imageGrab.put(0,0,buffer);
+                imageGrab.put(0,0, buffer);
 
 
                 ImageUtils imageUtils = new ImageUtils();
@@ -905,23 +910,25 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 // Create bitmap from int array
                 Bitmap imageBitmap = Bitmap.createBitmap(rgbBytes, previewWidth, previewHeight, Bitmap.Config.ARGB_8888);
 
-                // Create rotated version for portrait display
+                /*
+                // Create rotated version (FOR PORTRAIT DISPLAY)
                 Matrix rotateMatrix = new Matrix();
                 rotateMatrix.postRotate(90.0f);
 
-                Bitmap rotatedBitmap = Bitmap.createBitmap(imageBitmap, 0, 0, previewWidth, previewHeight, rotateMatrix, true);
+                Bitmap rotatedBitmap = Bitmap.createBitmap(imageBitmap, 0, 0, previewWidth, previewHeight, rotateMatrix, true);*/
                 image.close();
 
                 //testing convert bitmap to OpenCV Mat
                 Mat testMat = new Mat();
 
-                org.opencv.android.Utils.bitmapToMat(rotatedBitmap, testMat);
+                org.opencv.android.Utils.bitmapToMat(imageBitmap, testMat);
 
+                /*
                 //save the final rotated 480 x 640 bitmap
                 if (capture == 0) {
                         Log.i(TAG, "Writing image");
                         Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCapture.jpg", testMat);
-                }
+                }*/
 
                 Log.i(TAG, String.format("Focal length found is %d", testMat.cols()));
 
@@ -929,7 +936,7 @@ private class imageAvailableListener implements OnImageAvailableListener {
                 makeCameraMat();
 
                 //send the final bitmap to be drawn on and output to the screen
-                processImage(rotatedBitmap);
+                processImage(imageBitmap);
         }
 }
 
@@ -992,7 +999,8 @@ private void makeCameraMat() {
                 looking = 0;
 
 
-        } else {
+        }
+        else {
                 //looking at right
                 rotationMat.put(0,0,1.0);
                 rotationMat.put(1,0,-0.75);
@@ -1282,11 +1290,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         }
         */
 
-
         //ONLY EVERY THIRD FRAME, maybe?
         //check that all of the keypoints for a human body bust area were found
-        if (humanActualRaw[0]!=null && humanActualRaw[1]!=null && humanActualRaw[2]!=null && humanActualRaw[3]!=null
-                && humanActualRaw[4]!=null && humanActualRaw[5]!=null
+        if (humanActualRaw[0] != null && humanActualRaw[1] != null && humanActualRaw[2] != null && humanActualRaw[3] != null
+                && humanActualRaw[4] != null && humanActualRaw[5] != null
                 //&& frameCounter==3
         )
         {
@@ -1332,7 +1339,7 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 }
 
 
-                //HARDCODED, MUST BE FIXED
+                //HARDCODED, FIXME
 
                 //find chest pt (midpt between shoulders)
                 torsoCtrX = (float) (humanActualRaw[4].x + humanActualRaw[5].x) / 2;
@@ -1406,7 +1413,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                 //filter out the weird bogus data I was getting
                 if (!(x_ax[0] > 2500 || x_ax[1] > 1400 || y_ax[0] > 1200 || y_ax[1] < -1000 || z_ax[0] > 1000 || z_ax[1] < -900
-                || (looking==0 && z_ax[0] < y_ax[0]) || (looking==1 && z_ax[0] > y_ax[0]))) {
+                //check for illogical axes layout
+                || (looking == 0 && z_ax[0] < y_ax[0]) || (looking == 1 && z_ax[0] > y_ax[0]))) {
                         //draw the projected 3D axes onto the canvas
                         canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
                                 (float) x_ax[0], (float) x_ax[1], bluePaint);
@@ -1444,8 +1452,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                         canvas.drawText(
                                 String.format("Horiz angle of human: %.2f°", humAngle),
-                                (15.0f * widthRatio),
-                                (110.0f * heightRatio + bottom),
+                                100,
+                                500,
                                 bluePaint
                         );
 
@@ -1467,43 +1475,45 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                                 (130.0f * heightRatio + bottom),
                                 greenPaint
                         );*/
-
-
+                }
+                else {
+                        Log.i(TAG,"Triggered");
                 }
         }
 
         //reset contents of the arrays
+
         humanActualRaw[0] = humanActualRaw[1] = humanActualRaw[2] = humanActualRaw[3] = humanActualRaw[4] = null;
 
 
         //print out details about the PoseNet computation done
         canvas.drawText(
                 String.format("Score (fit): %.2f",person.getScore()),
-                (15.0f * widthRatio),
-                (30.0f * heightRatio + bottom),
+                100,
+                100,
                 redPaint
         );
 
         canvas.drawText(
                 String.format("Device: %s", posenet.getDevice()),
-                (15.0f * widthRatio),
-                (50.0f * heightRatio + bottom),
+                100,
+                200,
                 redPaint
         );
 
         //print out the time it took to do calculation of this frame
         canvas.drawText(
-                String.format("Time to run image: %.2f ms", posenet.getLastInferenceTimeNanos() * 1.0f / 1_000_000),
-                (15.0f * widthRatio),
-                (70.0f * heightRatio + bottom),
+                String.format("Time to run: %.2f ms", posenet.getLastInferenceTimeNanos() * 1.0f / 1_000_000),
+                100,
+                300,
                 redPaint
         );
 
         //print out the time it took to do calculation of this frame
         canvas.drawText(
                 String.format("Dist to hum: %.2fm", dist),
-                (15.0f * widthRatio),
-                (90.0f * heightRatio + bottom),
+                100,
+                400,
                 redPaint
         );
 
@@ -1797,19 +1807,19 @@ private void processImage(Bitmap bitmap) {
 
         Log.i(TAG, String.valueOf(croppedBitmap.getConfig()));
 
-
         // Created scaled version of bitmap for model input (scales it to 257 x 257)
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(croppedBitmap, Constants.MODEL_WIDTH, Constants.MODEL_HEIGHT, true);
 
         //get bitmap from mat
         org.opencv.android.Utils.bitmapToMat(scaledBitmap, scaledImage);
 
+        /*
         //save the scaled down bitmap of the first image taken (as a jpg)
         if (capture == 0) {
                 capture = 1;
                 Log.i(TAG, "Writing scaled image");
                 Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureScaled0.jpg", scaledImage);
-        }
+        }*/
 
         //Perform inference.
         Person person = posenet.estimateSinglePose(scaledBitmap);

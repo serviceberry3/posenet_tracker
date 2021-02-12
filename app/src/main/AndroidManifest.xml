@@ -18,7 +18,9 @@
         tools:replace="android:label,android:theme">
 
 
-        <activity android:name=".CameraActivity" android:exported="true">
+        <activity android:name=".CameraActivity"
+            android:exported="true"
+            android:screenOrientation="sensorLandscape"> <!--locks to either landscape or reverse landscape based on rotation-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER" />
