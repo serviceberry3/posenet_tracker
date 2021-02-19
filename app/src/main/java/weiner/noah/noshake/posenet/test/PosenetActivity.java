@@ -143,12 +143,21 @@ private Paint whitePaint = new Paint();
 private int PREVIEW_WIDTH = 640;
 private int PREVIEW_HEIGHT = 480;
 public static final String ARG_MESSAGE = "message";
+
+
+//Macros for 'looking' variable
+private final int LOOKING_LEFT = 0;
+private final int LOOKING_RIGHT = 1;
+
 /**
  * Tag for the [Log].
  */
 private String TAG = "PosenetActivity";
 
 private String FRAGMENT_DIALOG = "dialog";
+
+//Whether to use front- or rear-facing camera
+private final boolean USE_FRONT_CAM = true;
 
 /** An object for the Posenet library.    */
 private Posenet posenet;
@@ -267,7 +276,7 @@ private float impulseSum;
 //is the device shaking??
 private volatile int shaking = 0;
 
-private int index=0, check=0, times=0;
+private int index = 0, check = 0, times = 0;
 
 private Thread outputPlayerThread=null;
 
@@ -301,6 +310,8 @@ Point3[] testPts = new Point3[3];
 List<Point3> testPtList = new ArrayList<Point3>();
 
 private int capture = 0;
+
+//which direction the person is looking (split at exactly perp to camera)
 private int looking;
 
 //declare floats for computing actual 2D dist found between nose and eyes and shoulders
@@ -670,14 +681,6 @@ private void requestCameraPermission() {
                 }
         }
 
-//was a lambda expression in Kotlin
-        /*
-        private fun allPermissionsGranted(grantResults: IntArray) = grantResults.all {
-    //this returns true if all elements of grantResults match this constant
-    it == PackageManager.PERMISSION_GRANTED
-  }
-         */
-
 private boolean allPermissionsGranted(int[] grantResults) {
         for (int grantResult : grantResults) {
                 if (grantResult != PackageManager.PERMISSION_GRANTED) {
@@ -701,8 +704,12 @@ private void setUpCameraOutputs() {
                         //don't use front facing camera in this example
                         Integer cameraDirection = cameraCharacteristics.get(CameraCharacteristics.LENS_FACING);
 
-                        if (cameraDirection !=null && cameraDirection == CameraCharacteristics.LENS_FACING_BACK) {
+                        if (USE_FRONT_CAM && cameraDirection != null && cameraDirection == CameraCharacteristics.LENS_FACING_BACK) {
                                 //skip this one because it's a back-facing camera, we wanna use the front-facing
+                                continue;
+                        }
+                        else if (!USE_FRONT_CAM && cameraDirection != null && cameraDirection == CameraCharacteristics.LENS_FACING_FRONT) {
+                                //skip this one because it's front-facing cam, we wanna use the rear-facing
                                 continue;
                         }
 
@@ -985,27 +992,24 @@ private void makeCameraMat() {
         rotationMat = new Mat(1, 3, CvType.CV_64FC1);
         translationMat = new Mat(1, 3, CvType.CV_64FC1);
 
-        // Hack! initialize transition and rotation matrixes to improve estimation
+        //Hack! initialize transition and rotation matrixes to improve estimation
         translationMat.put(0,0,-100);
         translationMat.put(0,0,100);
         translationMat.put(0,0,1000);
-
 
         if (distToLeftEyeX < distToRightEyeX) {
                 //looking at left
                 rotationMat.put(0,0,-1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
-                looking = 0;
-
-
+                looking = LOOKING_LEFT;
         }
         else {
                 //looking at right
                 rotationMat.put(0,0,1.0);
                 rotationMat.put(1,0,-0.75);
                 rotationMat.put(2,0,-3.0);
-                looking = 1;
+                looking = LOOKING_RIGHT;
         }
 
 }
@@ -1042,15 +1046,16 @@ private Bitmap cropBitmap(Bitmap bitmap) {
 
         org.opencv.android.Utils.bitmapToMat(croppedBitmap, croppedImage);
 
+        /*
         if (capture == 0) {
                 Log.i(TAG, "Writing cropped image");
                 Imgcodecs.imwrite("/data/data/weiner.noah.noshake.posenet.test/testCaptureCropped.jpg", croppedImage);
-        }
+        }*/
 
         return croppedBitmap;
 }
 
-/** Set the paint color and size.    */
+/** Set color and size for the paints. */
 private void setPaint() {
         redPaint.setColor(Color.RED);
         redPaint.setTextSize(70.0f);
@@ -1073,7 +1078,7 @@ private void setPaint() {
 private int noseFound = 0;
 private float noseOriginX, noseOriginY, lastNosePosX, lastNosePosY;
 
-/** Draw bitmap on Canvas.   */
+/** Draw bitmap on Canvas. */
 //the Canvas class holds the draw() calls. To draw something, you need 4 basic components: A Bitmap to hold the pixels,
 // a Canvas to host the draw calls (writing into the bitmap),
 // a drawing primitive (e.g. Rect, Path, text, Bitmap), and a paint (to describe the colors and styles for the drawing).
@@ -1122,6 +1127,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 top = 0;
         }
 
+        Log.i(TAG, "Left is " + left);
+
         //right is right edge of screen if portrait mode; otherwise it's in middle of screen
         right = left + screenWidth; //should be 1080
 
@@ -1164,6 +1171,8 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
         //divide the available screen height pixels by PoseNet's required number of height pixels to get number of real screen pixels
         //heightwise per posenet input image "pixel"
         float heightRatio = (float) screenHeight / Constants.MODEL_HEIGHT; //should be 1080/257
+
+        Log.i(TAG, "Widthratio is " + widthRatio + ", heightRatio is " + heightRatio);
 
         //get the keypoints list ONCE at the beginning
         List<KeyPoint> keyPoints = person.getKeyPoints();
@@ -1219,7 +1228,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                                 if (rightEyeFound == 1) {
                                         dist = computeScale(leftEye, rightEye);
                                 }
-
                         }
                         else if (currentPart == BodyPart.RIGHT_EYE) {
                                 //add nose to first slot of Point array for pose estimation
@@ -1227,7 +1235,6 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
                                 //add x val of rt eye to bbox array
                                 boundingBox[0] = new Point(adjustedX, adjustedY);
-
 
                                 rightEyeFound = 1;
                                 rightEye = new Position(adjustedX, adjustedY);
@@ -1366,6 +1373,20 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
                 humanActualList.add(humanActualRaw[4]);
                 humanActualList.add(humanActualRaw[5]);
 
+                Log.i(TAG, String.format("Human actual: [%f,%f], [%f,%f], [%f,%f], [%f,%f], [%f,%f], [%f, %f]",
+                        humanActualList.get(0).x,
+                        humanActualList.get(0).y,
+                        humanActualList.get(1).x,
+                        humanActualList.get(1).y,
+                        humanActualList.get(2).x,
+                        humanActualList.get(2).y,
+                        humanActualList.get(3).x,
+                        humanActualList.get(3).y,
+                        humanActualList.get(4).x,
+                        humanActualList.get(4).y,
+                        humanActualList.get(5).x,
+                        humanActualList.get(5).y));
+
                 humanActualMat.fromList(humanActualList);
 
                 //now should have everything we need to run solvePnP
@@ -1412,9 +1433,10 @@ private void draw(Canvas canvas, Person person, Bitmap bitmap) { //NOTE: the Bit
 
 
                 //filter out the weird bogus data I was getting
-                if (!(x_ax[0] > 2500 || x_ax[1] > 1400 || y_ax[0] > 1200 || y_ax[1] < -1000 || z_ax[0] > 1000 || z_ax[1] < -900
+                if (!(x_ax[0] > 2500 || x_ax[1] > 1400 || y_ax[0] > 1500 || y_ax[1] < -1000 || z_ax[0] > 1500 || z_ax[1] < -900
                 //check for illogical axes layout
-                || (looking == 0 && z_ax[0] < y_ax[0]) || (looking == 1 && z_ax[0] > y_ax[0]))) {
+                || (looking == LOOKING_LEFT && z_ax[0] < y_ax[0]) || (looking == LOOKING_RIGHT && z_ax[0] > y_ax[0]))) {
+
                         //draw the projected 3D axes onto the canvas
                         canvas.drawLine((float) torsoCenter.x, (float) torsoCenter.y,
                                 (float) x_ax[0], (float) x_ax[1], bluePaint);
