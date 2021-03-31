@@ -1,7 +1,7 @@
 [
   {
     "level": "INFO",
-    "message": "Start JSON generation. Platform version: 21 min SDK version: x86_64",
+    "message": "Start JSON generation. Platform version: 24 min SDK version: x86_64",
     "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
     "tag": "release|x86_64"
   },
@@ -19,7 +19,403 @@
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64/android_gradle_build.json\u0027 was up-to-date",
+    "message": "rebuilding JSON /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64/android_gradle_build.json due to:",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\u0027",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\u0027",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : /home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/home/nodog/docs/asp/posenet_tracker/app\n-DCMAKE_CXX_FLAGS\u003d-frtti -fexceptions -fsigned-char -std\u003dc++11\n-DCMAKE_C_FLAGS\u003d-O3 -fsigned-char -std\u003dc11\n-DCMAKE_FIND_ROOT_PATH\u003d/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/prefab/x86_64/prefab\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DCMAKE_TOOLCHAIN_FILE\u003d/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake\n-DANDROID_ABI\u003dx86_64\n-DANDROID_NDK\u003d/home/nodog/VENV/opt/android-ndk-r15c\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DCMAKE_ANDROID_NDK\u003d/home/nodog/VENV/opt/android-ndk-r15c\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/cmake/release/obj/x86_64\n-DCMAKE_MAKE_PROGRAM\u003d/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d24\n-DANDROID_TOOLCHAIN\u003dclang\n-DANDROID_PLATFORM\u003dandroid-16\n-DANDROID_STL\u003dc++_static\n-B/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\n-GNinja\njvmArgs : \n\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"/home/nodog/docs/asp/posenet_tracker/app\",\n  \"buildDirectory\": \"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"gradle-cmake-cookie\",\"inReplyTo\":\"handshake\",\"type\":\"reply\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_CXX_FLAGS\\u003d-frtti -fexceptions -fsigned-char -std\\u003dc++11\",\n    \"-DCMAKE_C_FLAGS\\u003d-O3 -fsigned-char -std\\u003dc11\",\n    \"-DCMAKE_FIND_ROOT_PATH\\u003d/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/prefab/x86_64/prefab\",\n    \"-DCMAKE_BUILD_TYPE\\u003dRelease\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003d/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003dx86_64\",\n    \"-DANDROID_NDK\\u003d/home/nodog/VENV/opt/android-ndk-r15c\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003dx86_64\",\n    \"-DCMAKE_ANDROID_NDK\\u003d/home/nodog/VENV/opt/android-ndk-r15c\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003d/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/cmake/release/obj/x86_64\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003d/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d24\",\n    \"-DANDROID_TOOLCHAIN\\u003dclang\",\n    \"-DANDROID_PLATFORM\\u003dandroid-16\",\n    \"-DANDROID_STL\\u003dc++_static\"\n  ]\n}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Android: Targeting API \u002721\u0027 with architecture \u0027x86_64\u0027, ABI \u0027x86_64\u0027, and processor \u0027x86_64\u0027\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Android: Targeting API \u002721\u0027 with architecture \u0027x86_64\u0027, ABI \u0027x86_64\u0027, and processor \u0027x86_64\u0027",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Android: Selected Clang toolchain \u0027x86_64-clang\u0027 with GCC toolchain \u0027x86_64-4.9\u0027\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Android: Selected Clang toolchain \u0027x86_64-clang\u0027 with GCC toolchain \u0027x86_64-4.9\u0027",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":33,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working C compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compiler ABI info\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting C compiler ABI info",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":65,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compiler ABI info - done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting C compiler ABI info - done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compile features\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting C compile features",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":96,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":126,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":155,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting C compile features - done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting C compile features - done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":184,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Check for working CXX compiler: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compiler ABI info",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":211,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compiler ABI info - done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compiler ABI info - done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compile features",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":237,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":262,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":287,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":311,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Detecting CXX compile features - done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Detecting CXX compile features - done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Configuring\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"message\":\"Configuring done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Configuring done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"configure\",\"type\":\"reply\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"compute\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"progressCurrent\":1000,\"progressMaximum\":1000,\"progressMessage\":\"Generating\",\"progressMinimum\":0,\"type\":\"progress\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"message\":\"Generating done\",\"type\":\"message\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Generating done",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"inReplyTo\":\"compute\",\"type\":\"reply\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"cmakeInputs\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"buildFiles\":[{\"isCMake\":true,\"isTemporary\":false,\"sources\":[\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler-NDK.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Common.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/ndk-stl-c++_static.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/ndk-stl-c++.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/abi-x86_64-Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/abi-common-Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/abi-common.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake\",\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in\"]},{\"isCMake\":false,\"isTemporary\":false,\"sources\":[\"CMakeLists.txt\",\"/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake\",\"/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake\"]},{\"isCMake\":false,\"isTemporary\":true,\"sources\":[\".cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeSystem.cmake\",\".cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.c\",\".cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCCompiler.cmake\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86_64/CMakeFiles/feature_tests.cxx\",\".cxx/cmake/release/x86_64/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake\"]}],\"cmakeRootDirectory\":\"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10\",\"cookie\":\"\",\"inReplyTo\":\"cmakeInputs\",\"sourceDirectory\":\"/home/nodog/docs/asp/posenet_tracker/app\",\"type\":\"reply\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"type\":\"codemodel\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"configurations\":[{\"name\":\"Release\",\"projects\":[{\"buildDirectory\":\"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\",\"name\":\"Project\",\"sourceDirectory\":\"/home/nodog/docs/asp/posenet_tracker/app\",\"targets\":[{\"artifacts\":[\"/home/nodog/docs/asp/posenet_tracker/app/build/intermediates/cmake/release/obj/x86_64/libcirc_buffer.so\"],\"buildDirectory\":\"/home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64\",\"fileGroups\":[{\"compileFlags\":\"-isystem /home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/x86_64-linux-android -D__ANDROID_API__\u003d21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -Wa,--noexecstack -Wformat -Werror\u003dformat-security -std\u003dc++11 -frtti -fexceptions -fsigned-char -std\u003dc++11 -O2 -DNDEBUG  -fPIC  \",\"defines\":[\"circ_buffer_EXPORTS\"],\"includePath\":[{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/android/support/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++abi/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include\"},{\"isSystem\":true,\"path\":\"/home/nodog/VENV/opt/android-ndk-r15c/sysroot/usr/include/x86_64-linux-android\"}],\"isGenerated\":false,\"language\":\"CXX\",\"sources\":[\"src/main/cpp/convolve.cpp\",\"src/main/cpp/circ_buffer.cpp\",\"src/main/cpp/impulse_response.cpp\"]}],\"fullName\":\"libcirc_buffer.so\",\"linkFlags\":\"-Wl,--exclude-libs,libgcc.a --sysroot /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-x86_64 -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86_64 -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now\",\"linkLibraries\":\"-landroid /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-x86_64/usr/lib64/liblog.so -lm \\\"/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/x86_64/libc++.a\\\"\",\"linkerLanguage\":\"CXX\",\"name\":\"circ_buffer\",\"sourceDirectory\":\"/home/nodog/docs/asp/posenet_tracker/app\",\"sysroot\":\"/home/nodog/VENV/opt/android-ndk-r15c/sysroot\",\"type\":\"SHARED_LIBRARY\"}]}]}],\"cookie\":\"\",\"inReplyTo\":\"codemodel\",\"type\":\"reply\"}\n",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64/build_output.txt",
+    "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
+    "tag": "release|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/x86_64/build_command.txt",
     "file": "/home/nodog/docs/asp/posenet_tracker/app/CMakeLists.txt",
     "tag": "release|x86_64"
   },

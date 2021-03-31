@@ -152,7 +152,7 @@
                     }
                 },
                 {
-                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/8f23910bc1ec75a05b00ff51646e6915/jetified-appcompat-resources-1.1.0/res/values/values.xml",
+                    "source": "/home/nodog/.gradle/caches/transforms-2/files-2.1/8f23910bc1ec75a05b00ff51646e6915/appcompat-resources-1.1.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,29,36,47,74",
                         "startColumns": "4,4,4,4,4",

@@ -1,19 +1,19 @@
 The target system is: Android - 21 - aarch64
-The host system is: Linux - 5.8.0-36-generic - x86_64
+The host system is: Linux - 5.8.0-45-generic - x86_64
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_99f5e"
-[1/2] Building C object CMakeFiles/cmTC_99f5e.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_99f5e
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_3e490"
+[1/2] Building C object CMakeFiles/cmTC_3e490.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_3e490
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_14131"
-[1/2] Building C object CMakeFiles/cmTC_14131.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_14131
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5bd12"
+[1/2] Building C object CMakeFiles/cmTC_5bd12.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_5bd12
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: aarch64-none-linux-android
 Thread model: posix
@@ -22,16 +22,16 @@ Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchai
 Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_14131 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_14131.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_5bd12 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5bd12.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_14131"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_14131.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_14131]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5bd12"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_5bd12.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_5bd12]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: aarch64-none-linux-android]
   ignore line: [Thread model: posix]
@@ -42,7 +42,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_14131 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_14131.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_5bd12 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5bd12.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
     arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64] ==> ignore
     arg [-pie] ==> ignore
@@ -53,7 +53,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_14131] ==> ignore
+    arg [cmTC_5bd12] ==> ignore
     arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
@@ -72,7 +72,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_14131.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_5bd12.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -95,9 +95,9 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_6d3bb"
-[1/2] Building C object CMakeFiles/cmTC_6d3bb.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_6d3bb
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_ed57e"
+[1/2] Building C object CMakeFiles/cmTC_ed57e.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_ed57e
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -109,9 +109,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_0f872"
-[1/2] Building C object CMakeFiles/cmTC_0f872.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_0f872
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_275c8"
+[1/2] Building C object CMakeFiles/cmTC_275c8.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_275c8
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -123,9 +123,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_e4f02"
-[1/2] Building C object CMakeFiles/cmTC_e4f02.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_e4f02
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_363f4"
+[1/2] Building C object CMakeFiles/cmTC_363f4.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_363f4
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -135,17 +135,17 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_aa6c4"
-[1/2] Building CXX object CMakeFiles/cmTC_aa6c4.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_aa6c4
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8a7dd"
+[1/2] Building CXX object CMakeFiles/cmTC_8a7dd.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_8a7dd
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d84af"
-[1/2] Building CXX object CMakeFiles/cmTC_d84af.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_d84af
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5a258"
+[1/2] Building CXX object CMakeFiles/cmTC_5a258.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_5a258
 Android clang version 5.0.300080  (based on LLVM 5.0.300080)
 Target: aarch64-none-linux-android
 Thread model: posix
@@ -154,16 +154,16 @@ Found candidate GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchai
 Selected GCC installation: /home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_d84af /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_d84af.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
+ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_5a258 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5a258.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_d84af"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_d84af.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_d84af]
+  ignore line: [Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_5a258"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_5a258.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_5a258]
   ignore line: [Android clang version 5.0.300080  (based on LLVM 5.0.300080)]
   ignore line: [Target: aarch64-none-linux-android]
   ignore line: [Thread model: posix]
@@ -174,7 +174,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_d84af /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_d84af.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+  link line: [ "/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64 -pie --fix-cortex-a53-843419 --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_5a258 /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib --exclude-libs libgcc.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack -z relro -z now --gc-sections -z nocopyreloc CMakeFiles/cmTC_5a258.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc -lgcc -ldl -lc -lgcc -lgcc -ldl /home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
     arg [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
     arg [--sysroot=/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64] ==> ignore
     arg [-pie] ==> ignore
@@ -185,7 +185,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker64] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d84af] ==> ignore
+    arg [cmTC_5a258] ==> ignore
     arg [/home/nodog/VENV/opt/android-ndk-r15c/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> ignore
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/sources/cxx-stl/llvm-libc++/libs/arm64-v8a]
     arg [-L/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64] ==> dir [/home/nodog/VENV/opt/android-ndk-r15c/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/5.0.300080/lib/linux/aarch64]
@@ -204,7 +204,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [--gc-sections] ==> ignore
     arg [-znocopyreloc] ==> ignore
-    arg [CMakeFiles/cmTC_d84af.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_5a258.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc] ==> lib [gcc]
@@ -231,9 +231,9 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_0ae3d"
-[1/2] Building CXX object CMakeFiles/cmTC_0ae3d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_0ae3d
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_8b958"
+[1/2] Building CXX object CMakeFiles/cmTC_8b958.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_8b958
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -298,9 +298,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_9376d"
-[1/2] Building CXX object CMakeFiles/cmTC_9376d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_9376d
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_26acf"
+[1/2] Building CXX object CMakeFiles/cmTC_26acf.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_26acf
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -365,9 +365,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_437ad"
-[1/2] Building CXX object CMakeFiles/cmTC_437ad.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_437ad
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_51c2c"
+[1/2] Building CXX object CMakeFiles/cmTC_51c2c.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_51c2c
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -432,9 +432,9 @@ Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/nodog/docs/asp/posenet_tracker/app/.cxx/cmake/release/arm64-v8a/CMakeFiles/CMakeTmp
 
-Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_692b9"
-[1/2] Building CXX object CMakeFiles/cmTC_692b9.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_692b9
+Run Build Command:"/home/nodog/Android/Sdk/cmake/3.10.2.4988404/bin/ninja" "cmTC_2395a"
+[1/2] Building CXX object CMakeFiles/cmTC_2395a.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_2395a
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-5.8.0-36-generic")
+set(CMAKE_HOST_SYSTEM "Linux-5.8.0-45-generic")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "5.8.0-36-generic")
+set(CMAKE_HOST_SYSTEM_VERSION "5.8.0-45-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/nodog/VENV/opt/android-ndk-r15c/build/cmake/android.toolchain.cmake")

@@ -1,6 +1,6 @@
 {
   "abi": "ARM64_V8A",
-  "abiPlatformVersion": 21,
+  "abiPlatformVersion": 24,
   "buildSettings": {
     "environmentVariables": []
   },
@@ -73,7 +73,7 @@
         },
         {
           "name": "CMAKE_SYSTEM_VERSION",
-          "value": "21"
+          "value": "24"
         },
         {
           "name": "ANDROID_TOOLCHAIN",

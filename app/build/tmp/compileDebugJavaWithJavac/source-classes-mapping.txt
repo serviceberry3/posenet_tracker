@@ -33,3 +33,5 @@ weiner/noah/noshake/posenet/test/NaiveConstants.java
  weiner.noah.noshake.posenet.test.NaiveConstants
 weiner/noah/noshake/posenet/test/BuildConfig.java
  weiner.noah.noshake.posenet.test.BuildConfig
+weiner/noah/noshake/posenet/test/KeyFeature.java
+ weiner.noah.noshake.posenet.test.KeyFeature

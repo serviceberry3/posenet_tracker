@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="21"
+8        android:minSdkVersion="24"
 8-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="30" />
 9-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml
@@ -28,36 +28,37 @@
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 18-->[androidx.core:core:1.1.0] /home/nodog/.gradle/caches/transforms-2/files-2.1/97fe055d0bdb9b55afbe2c06a2ebd78a/core-1.1.0/AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-43
-21        android:label="PoseNet"
-21-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-32
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-54
-23        android:supportsRtl="true"
-23-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-35
-24        android:testOnly="true"
-25        android:theme="@style/AppTheme.Posenet" >
-25-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-48
-26        <activity
-26-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-28:20
-27            android:name="weiner.noah.noshake.posenet.test.CameraActivity"
-27-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:19-49
-28            android:exported="true"
-28-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-36
-29            android:screenOrientation="sensorLandscape" > <!-- locks to either landscape or reverse landscape based on rotation -->
-29-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:23:13-56
-30            <intent-filter>
-30-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:24:13-27:29
-31                <action android:name="android.intent.action.MAIN" />
-31-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:25:17-68
-31-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:25:25-66
-32
-33                <category android:name="android.intent.category.LAUNCHER" />
-33-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:26:17-77
-33-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:26:27-74
-34            </intent-filter>
-35        </activity>
-36    </application>
-37
-38</manifest>
+20        android:extractNativeLibs="false"
+21        android:icon="@mipmap/ic_launcher"
+21-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:13:9-43
+22        android:label="PoseNet"
+22-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:14:9-32
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:15:9-54
+24        android:supportsRtl="true"
+24-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:16:9-35
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme.Posenet" >
+26-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:17:9-48
+27        <activity
+27-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:9-28:20
+28            android:name="weiner.noah.noshake.posenet.test.CameraActivity"
+28-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:21:19-49
+29            android:exported="true"
+29-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:22:13-36
+30            android:screenOrientation="sensorLandscape" > <!-- locks to either landscape or reverse landscape based on rotation -->
+30-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:23:13-56
+31            <intent-filter>
+31-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:24:13-27:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:25:17-68
+32-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:25:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:26:17-77
+34-->/home/nodog/docs/asp/posenet_tracker/app/src/main/AndroidManifest.xml:26:27-74
+35            </intent-filter>
+36        </activity>
+37    </application>
+38
+39</manifest>
