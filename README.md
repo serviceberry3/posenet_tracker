@@ -2,7 +2,7 @@
 
 Implementing Tensorflow Posenet such that an Android device can use a single camera to calculate the angle of a person's torso (which direction they are facing) and then locate its own position and velocity relative to their shoulders.
 
-UPDATE(April 2021): for some more features, look at the ```control/PosenetStats.java``` file in my ![crazyflie_receiver](https://github.com/serviceberry3/posenet_tracker/blob/master/img/humdisttest.gif?raw=true) repo:  
+UPDATE(April 2021): for some more features, look at the ```control/PosenetStats.java``` file in my ![crazyflie_receiver](https://github.com/serviceberry3/crazyflie_receiver/) repo:  
 * Trig-based estimation of torso angle (models head and shoulders and two intersecting ellipses based on real measurements taken)
 * Estimation of human's angular and x, y, z velocities
 * Calculation of offset between center of frame and human's torso center
